@@ -1,0 +1,29 @@
+# Quinn
+
+> Quinn is the AI studio for fashion brands. It turns flat garment photography — flatlays and ghost-mannequin shots — into photoreal on-model imagery and social-ready catalog videos, without a studio, models, or shoot logistics.
+
+Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, and lifestyle brands produce e-commerce and marketing visuals from the product shots they already have, replacing weeks of sample shipping, model casting, and shoot logistics with a desk workflow.
+
+## What Quinn does
+
+- **On-model shots**: Upload a flatlay or ghost-mannequin image and Quinn generates photoreal on-model photography with control over model, pose, body type, skin tone, and backdrop — kept consistent across a catalog and ready for product detail pages (PDP) and ads.
+- **Catalog video**: Turn an existing catalog shoot — or just a flatlay — into motion: model walks, 360° product spins, and dynamic reels. Exported for Reels/TikTok (9:16), feed (1:1), and hero (16:9) placements.
+
+## Key facts
+
+- Inputs: garment flatlays, ghost-mannequin shots, and existing catalog photography.
+- Outputs: on-model still images and catalog videos for e-commerce, paid ads, and social.
+- Works across western wear and ethnic wear (e.g. sarees).
+- Quinn does not use customer content to train general-purpose AI models without explicit permission.
+- Customers retain ownership of their uploaded content; output rights are assigned to the customer.
+
+## Pages
+
+- [Home](https://quinn.live/): Product overview — on-model photography and catalog video for fashion brands.
+- [Privacy Policy](https://quinn.live/privacy.html): How Quinn collects, uses, and protects personal data (India DPDP Act, GDPR, CCPA).
+- [Terms & Conditions](https://quinn.live/terms.html): Terms governing use of the Quinn platform, including content and output licensing.
+
+## Contact
+
+- Book a demo: https://quinn.live/#start
+- Email: support@quinn.live
