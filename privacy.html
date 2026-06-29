@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Quinn</title>
+  <meta name="description" content="How Quinn Care Private Limited collects, uses, and protects personal data across the Quinn AI product photography and video platform." />
+  <meta name="theme-color" content="#0c0b0f" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0b0f'/%3E%3Ccircle cx='15' cy='15' r='7.5' fill='none' stroke='%23ec9fb8' stroke-width='2.4'/%3E%3Cline x1='20' y1='20' x2='24' y2='25' stroke='%23b6a6e6' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#0c0b0f;--bg-soft:#141318;--card:#17161d;--line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.16);--ink:#f5f1ea;--muted:#a8a29a;--faint:#726c66;--grad:linear-gradient(118deg,#f7cba4,#ec9fb8 50%,#b6a6e6);--radius:18px;--maxw:1180px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
+    body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+    .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.12}
+    .eyebrow{font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);font-weight:500}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.78rem 1.4rem;border-radius:100px;cursor:pointer;border:1px solid transparent;transition:transform .18s,opacity .18s}
+    .btn-primary{background:var(--grad);color:#1a1118}
+    .btn-primary:hover{opacity:.92;transform:translateY(-1px)}
+    header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid transparent;transition:border-color .3s}
+    header.nav.scrolled{border-bottom-color:var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .brand{display:flex;align-items:center;gap:.6rem;font-family:"Fraunces",serif;font-size:1.45rem}
+    .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--grad);display:inline-grid;place-items:center;color:#1a1118;font-size:.9rem;font-weight:600;font-family:"Fraunces",serif}
+    .doc{max-width:800px;margin:0 auto;padding:clamp(2.4rem,6vw,4.2rem) 0 3rem}
+    .doc-head{border-bottom:1px solid var(--line);padding-bottom:2rem;margin-bottom:2.2rem}
+    .doc-head h1{font-size:clamp(2.3rem,6vw,3.5rem);margin:.8rem 0 .7rem}
+    .doc-head .updated{color:var(--faint);font-size:.9rem}
+    .doc-head .lead{color:var(--muted);margin-top:1.2rem;font-size:1.04rem}
+    .toc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem 1.6rem;margin-bottom:2.6rem}
+    .toc h2{font-family:"Inter",sans-serif;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.9rem;font-weight:600}
+    .toc ol{list-style:none;counter-reset:toc;columns:2;column-gap:2rem}
+    .toc li{counter-increment:toc;margin:.3rem 0;break-inside:avoid}
+    .toc a{color:var(--muted);font-size:.92rem}
+    .toc a:hover{color:var(--ink)}
+    .toc a::before{content:counter(toc,decimal-leading-zero);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums;margin-right:.5rem;font-weight:600}
+    .prose h2{font-size:1.5rem;margin:2.5rem 0 .7rem;scroll-margin-top:92px}
+    .prose h2 .n{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-family:"Inter",sans-serif;font-weight:600;font-size:.92rem;margin-right:.55rem;vertical-align:middle}
+    .prose h3{font-size:1.08rem;font-family:"Inter",sans-serif;font-weight:600;margin:1.4rem 0 .4rem;color:var(--ink)}
+    .prose p{color:#d0ccc2;margin:.7rem 0}
+    .prose ul{margin:.6rem 0 .8rem 1.15rem;color:#d0ccc2}
+    .prose li{margin:.38rem 0}
+    .prose strong{color:var(--ink);font-weight:600}
+    .prose a{color:#ec9fb8;text-decoration:underline;text-underline-offset:2px}
+    .callout{background:var(--card);border:1px solid var(--line);border-left:3px solid #ec9fb8;border-radius:12px;padding:1rem 1.2rem;margin:1.4rem 0;color:var(--muted);font-size:.95rem}
+    hr{border:0;border-top:1px solid var(--line);margin:2.6rem 0}
+    .backhome{display:inline-flex;gap:.45rem;margin-top:2.4rem;color:var(--muted);font-size:.95rem}
+    .backhome:hover{color:var(--ink)}
+    footer.site{border-top:1px solid var(--line);padding:3.5rem 0 2.5rem}
+    .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2rem}
+    .foot-grid h4{font-family:"Inter",sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem;font-weight:600}
+    .foot-grid a{display:block;color:var(--muted);font-size:.95rem;padding:.28rem 0}
+    .foot-grid a:hover{color:var(--ink)}
+    .foot-brand p{color:var(--muted);font-size:.95rem;margin-top:.8rem;max-width:34ch}
+    .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line);color:var(--faint);font-size:.85rem}
+    @media(max-width:760px){.toc ol{columns:1}.foot-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="mark">Q</span> Quinn</a>
+      <a href="index.html#start" class="btn btn-primary">Book a demo</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="doc prose">
+      <div class="doc-head">
+        <span class="eyebrow">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: 29 June 2026</p>
+        <p class="lead">This Policy explains what personal data Quinn collects, how we use and safeguard it, and the rights and choices you have. It applies to <a href="https://quinn.live">quinn.live</a> and the Quinn platform.</p>
+      </div>
+
+      <nav class="toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#who-we-are">Who we are</a></li>
+          <li><a href="#info">Information we collect</a></li>
+          <li><a href="#use">How we use information</a></li>
+          <li><a href="#ai-content">AI processing &amp; your content</a></li>
+          <li><a href="#sharing">How we share information</a></li>
+          <li><a href="#transfers">International transfers</a></li>
+          <li><a href="#retention">Data retention</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#rights">Your rights &amp; choices</a></li>
+          <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes">Changes to this Policy</a></li>
+          <li><a href="#contact">Contact &amp; grievances</a></li>
+        </ol>
+      </nav>
+
+      <p>Quinn Care Private Limited (<strong>"Quinn"</strong>, <strong>"we"</strong>, <strong>"us"</strong>, or <strong>"our"</strong>) provides an AI-powered platform that helps fashion and lifestyle brands generate on-model product imagery and catalog videos from their existing garment photography (the <strong>"Service"</strong>). By using the Service, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the Service.</p>
+
+      <h2 id="who-we-are"><span class="n">01</span>Who we are</h2>
+      <p>Quinn is the controller of the personal data described here. Under India's Digital Personal Data Protection Act, 2023 (<strong>"DPDP Act"</strong>) we act as the <strong>Data Fiduciary</strong>; under the EU/UK GDPR we act as the <strong>data controller</strong> for our own data and as a <strong>processor</strong> for the Customer Content you upload. You can reach us at <a href="mailto:hello@quinn.live">hello@quinn.live</a>.</p>
+
+      <h2 id="info"><span class="n">02</span>Information we collect</h2>
+      <h3>Information you provide</h3>
+      <ul>
+        <li><strong>Account &amp; profile data</strong> — your name, work email, company, role, and password.</li>
+        <li><strong>Billing data</strong> — billing name, address, and tax/GST identifiers. Card payments are handled by our payment provider; we do not store full card numbers.</li>
+        <li><strong>Customer Content</strong> — the product/garment images, flatlays, catalog photos and videos, prompts, and related materials you submit for processing. This may incidentally include images of people (for example, models in your existing shoots).</li>
+        <li><strong>Communications</strong> — messages you send us for support, sales, or feedback.</li>
+      </ul>
+      <h3>Information we collect automatically</h3>
+      <ul>
+        <li><strong>Usage &amp; device data</strong> — log data, IP address, browser and device information, pages and features used, and diagnostics.</li>
+        <li><strong>Cookies and similar technologies</strong> — see <a href="#cookies">Cookies</a>.</li>
+      </ul>
+
+      <h2 id="use"><span class="n">03</span>How we use information</h2>
+      <p>We use personal data to:</p>
+      <ul>
+        <li>provide, operate, and maintain the Service, including generating AI outputs from your Customer Content;</li>
+        <li>authenticate you and manage your account;</li>
+        <li>process payments and detect or prevent fraud and abuse;</li>
+        <li>provide customer support and respond to your requests;</li>
+        <li>improve, secure, troubleshoot, and develop new features;</li>
+        <li>send service, security, and (where permitted) marketing communications; and</li>
+        <li>comply with legal obligations and enforce our terms.</li>
+      </ul>
+      <p>Where the GDPR/UK GDPR applies, our legal bases are: <strong>performance of a contract</strong> with you; our <strong>legitimate interests</strong> in operating, securing, and improving the Service; your <strong>consent</strong> (for example, certain cookies and marketing); and <strong>compliance with legal obligations</strong>. Under the DPDP Act, we process personal data based on your consent or other legitimate uses permitted by law.</p>
+
+      <h2 id="ai-content"><span class="n">04</span>AI processing &amp; your content</h2>
+      <p>We process your Customer Content solely to provide the Service to you — for example, to generate on-model images and catalog videos at your direction.</p>
+      <div class="callout"><strong>We do not use your Customer Content to train our or any third party's general-purpose AI models without your explicit, separate permission.</strong> Your content is used to produce your outputs and to operate the Service for you.</div>
+      <p>You retain ownership of your Customer Content as set out in our <a href="terms.html">Terms &amp; Conditions</a>. You are responsible for ensuring you hold the rights and any necessary consents for the content you upload, including for any individuals depicted in it.</p>
+
+      <h2 id="sharing"><span class="n">05</span>How we share information</h2>
+      <p><strong>We do not sell your personal data.</strong> We share personal data only with:</p>
+      <ul>
+        <li><strong>Service providers and sub-processors</strong> who help us run the Service — including cloud hosting and storage, AI compute infrastructure, payment processing, analytics, email delivery, and support tooling — under contracts requiring appropriate safeguards and use limited to our instructions.</li>
+        <li><strong>Professional advisors</strong> such as lawyers, auditors, and accountants, where needed.</li>
+        <li><strong>Authorities or other parties</strong> where required by law, to enforce our terms, to protect the rights, property, or safety of Quinn, our users, or others, or in connection with a merger, acquisition, financing, or sale of assets.</li>
+      </ul>
+
+      <h2 id="transfers"><span class="n">06</span>International transfers</h2>
+      <p>We may process and store personal data in countries other than your own, including outside the EEA, the UK, or India. Where required, we put appropriate safeguards in place for such transfers (for example, the European Commission's Standard Contractual Clauses or an equivalent mechanism).</p>
+
+      <h2 id="retention"><span class="n">07</span>Data retention</h2>
+      <p>We keep personal data for as long as your account is active or as needed to provide the Service, and afterwards for a reasonable period to comply with legal, tax, accounting, or security obligations and to resolve disputes. Customer Content is deleted or anonymized within a reasonable period after account closure, subject to routine backups and any legal retention requirements. You can ask us to delete your account and Content as described in <a href="#rights">Your rights</a>.</p>
+
+      <h2 id="security"><span class="n">08</span>Security</h2>
+      <p>We use technical and organizational measures designed to protect personal data, including encryption in transit, access controls, and monitoring. No method of transmission or storage is completely secure, however, and we cannot guarantee absolute security. If we become aware of a personal-data breach, we will notify affected parties and authorities as required by applicable law.</p>
+
+      <h2 id="rights"><span class="n">09</span>Your rights &amp; choices</h2>
+      <p>Depending on where you live, you may have some or all of the following rights:</p>
+      <ul>
+        <li>access a copy of your personal data and information about how it is processed;</li>
+        <li>correct or update inaccurate or incomplete data;</li>
+        <li>delete your personal data;</li>
+        <li>port your data to another provider;</li>
+        <li>object to or restrict certain processing, and withdraw consent at any time (without affecting prior processing);</li>
+        <li>nominate another person to exercise your rights in the event of death or incapacity (under the DPDP Act); and</li>
+        <li>lodge a complaint with your data protection authority or the Data Protection Board of India.</li>
+      </ul>
+      <p><strong>California residents:</strong> under the CCPA/CPRA you may request to know, delete, and correct your personal information, and to opt out of the "sale" or "sharing" of personal information. <strong>We do not sell or share personal information</strong> as those terms are defined. We will not discriminate against you for exercising your rights.</p>
+      <p>To exercise any right, email <a href="mailto:hello@quinn.live">hello@quinn.live</a>. We will verify your request and respond within the timeframes required by applicable law.</p>
+
+      <h2 id="cookies"><span class="n">10</span>Cookies</h2>
+      <p>We use <strong>strictly necessary cookies</strong> to operate and secure the site, and — with your consent where required — <strong>analytics cookies</strong> to understand how the site is used so we can improve it. You can control or delete cookies through your browser settings; disabling some cookies may affect functionality.</p>
+
+      <h2 id="children"><span class="n">11</span>Children</h2>
+      <p>The Service is intended for businesses and is not directed to children under 18 (or the age of majority in your jurisdiction). We do not knowingly collect personal data from children. If you believe a child has provided us data, contact us and we will take appropriate steps to delete it.</p>
+
+      <h2 id="changes"><span class="n">12</span>Changes to this Policy</h2>
+      <p>We may update this Policy from time to time. We will post the updated version here with a new "Last updated" date and, where the changes are material, take additional steps to notify you. Your continued use of the Service after an update means you accept the revised Policy.</p>
+
+      <h2 id="contact"><span class="n">13</span>Contact &amp; grievances</h2>
+      <p>For any question, request, or complaint about this Policy or your personal data, contact us at <a href="mailto:hello@quinn.live">hello@quinn.live</a>. If you are in India, you may also contact our Grievance Officer at the same address regarding any concern under the DPDP Act; we will acknowledge and address grievances within the timelines prescribed by law.</p>
+
+      <a class="backhome" href="index.html">← Back to home</a>
+    </article>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="index.html"><span class="mark">Q</span> Quinn</a>
+          <p>The AI studio for fashion brands — on-model photography and catalog video, generated from the shots you already have.</p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <a href="index.html#on-model">On-model shots</a>
+          <a href="index.html#video">Catalog video</a>
+          <a href="index.html#how">How it works</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="index.html#why">Why Quinn</a>
+          <a href="mailto:hello@quinn.live">Contact</a>
+          <a href="index.html#start">Book a demo</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year">2026</span> Quinn Care Private Limited. All rights reserved.</span>
+        <span>Made for fashion, by Quinn.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    var nav = document.getElementById('nav');
+    var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 8); };
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+  </script>
+</body>
+</html>
