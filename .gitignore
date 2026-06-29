@@ -10,6 +10,9 @@ Icon?
 *.swp
 *~
 
+# Local Claude Code tooling (preview config, local settings)
+.claude/
+
 # Logs & env
 *.log
 .env
