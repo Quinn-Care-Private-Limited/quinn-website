@@ -124,13 +124,13 @@
     /* ---------- Before / After slider ---------- */
     .ba {
       --pos: 50%;
-      position: relative; width: 100%; aspect-ratio: 4 / 5;
+      position: relative; width: 100%; aspect-ratio: 3 / 4;
       border-radius: var(--radius); overflow: hidden;
       border: 1px solid var(--line); box-shadow: 0 30px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.02) inset;
-      user-select: none; touch-action: pan-y;
+      user-select: none; touch-action: pan-y; background: var(--card-2);
     }
     .ba-layer { position: absolute; inset: 0; }
-    .ba-layer svg { display: block; width: 100%; height: 100%; }
+    .ba-layer svg, .ba-layer img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
     .ba-before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
     .ba-tag {
       position: absolute; top: 14px; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
@@ -189,11 +189,12 @@
     /* variation grid for on-model */
     .varigrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 12px; }
     .varigrid .cell { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3/4; background: var(--card-2); }
-    .varigrid .cell svg { width: 100%; height: 100%; }
+    .varigrid .cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* video card */
-    .videocard { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 4/5; }
-    .videocard svg.scene { width: 100%; height: 100%; display: block; }
+    .videocard { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3/4; background: var(--card-2); }
+    .videocard .vframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 1.1s ease; }
+    .videocard .vframe.active { opacity: 1; }
     .videocard .play {
       position: absolute; inset: 0; margin: auto; width: 76px; height: 76px; border-radius: 50%;
       background: rgba(12,11,15,.5); backdrop-filter: blur(6px); border: 1.5px solid rgba(255,255,255,.85);
@@ -310,70 +311,15 @@
         <div class="hero-visual">
           <div class="ba" id="ba">
             <!-- AFTER: on-model (full, underneath) -->
-            <div class="ba-layer ba-after" aria-hidden="true">
-              <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garment shown on a model">
-                <defs>
-                  <linearGradient id="studio" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#2a2530"/><stop offset="1" stop-color="#15131a"/>
-                  </linearGradient>
-                  <radialGradient id="spot" cx="0.5" cy="0.32" r="0.6">
-                    <stop offset="0" stop-color="#4b4150" stop-opacity="0.9"/><stop offset="1" stop-color="#15131a" stop-opacity="0"/>
-                  </radialGradient>
-                  <linearGradient id="fabric" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#f7cba4"/><stop offset="0.5" stop-color="#ec9fb8"/><stop offset="1" stop-color="#b6a6e6"/>
-                  </linearGradient>
-                  <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#d8b79c"/><stop offset="1" stop-color="#bd9377"/>
-                  </linearGradient>
-                </defs>
-                <rect width="400" height="500" fill="url(#studio)"/>
-                <rect width="400" height="500" fill="url(#spot)"/>
-                <!-- floor shadow -->
-                <ellipse cx="200" cy="470" rx="120" ry="20" fill="#000" opacity="0.35"/>
-                <!-- figure: legs -->
-                <path d="M182,392 q-6,45 -8,82 l16,0 q4,-40 10,-78 z" fill="url(#skin)"/>
-                <path d="M218,392 q6,45 8,82 l-16,0 q-4,-40 -10,-78 z" fill="url(#skin)"/>
-                <!-- arms -->
-                <path d="M158,176 q-18,70 -16,128 l9,0 q4,-60 16,-126 z" fill="url(#skin)"/>
-                <path d="M242,176 q18,70 16,128 l-9,0 q-4,-60 -16,-126 z" fill="url(#skin)"/>
-                <!-- neck + head -->
-                <rect x="191" y="120" width="18" height="34" rx="8" fill="url(#skin)"/>
-                <path d="M168,96 q0,-42 32,-42 q32,0 32,42 q0,40 -32,40 q-32,0 -32,-40z" fill="#241f2a"/>
-                <ellipse cx="200" cy="92" rx="29" ry="35" fill="url(#skin)"/>
-                <!-- dress -->
-                <path d="M168,150 c0,-6 12,-14 32,-14 c20,0 32,8 32,14 c0,18 6,26 14,46 c10,62 16,128 30,196 q-76,22 -152,0 c14,-68 20,-134 30,-196 c8,-20 14,-28 14,-46z" fill="url(#fabric)"/>
-                <!-- drape shading -->
-                <path d="M200,140 c-8,40 -10,150 -14,250 q-30,-4 -52,-12 c14,-68 20,-134 30,-196 c8,-20 14,-28 14,-46 c8,-4 16,-5 22,-0z" fill="#000" opacity="0.12"/>
-                <path d="M200,140 q4,2 8,10 c-4,80 -2,180 4,248 q14,-2 28,-6 c-14,-68 -20,-134 -30,-196 c-6,-16 -10,-44 -10,-56z" fill="#fff" opacity="0.10"/>
-              </svg>
+            <div class="ba-layer ba-after">
+              <img src="media/hero-after.jpg" alt="The same denim shirt photographed on a model, generated by Quinn" width="750" height="1000" fetchpriority="high" decoding="async" />
             </div>
-            <!-- BEFORE: flatlay (clipped, on top) -->
-            <div class="ba-layer ba-before" id="baBefore" aria-hidden="true">
-              <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garment shown as a flatlay">
-                <defs>
-                  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#efeae2"/><stop offset="1" stop-color="#ddd6ca"/>
-                  </linearGradient>
-                  <radialGradient id="pvig" cx="0.5" cy="0.45" r="0.7">
-                    <stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.12"/>
-                  </radialGradient>
-                  <linearGradient id="fabricFlat" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#f2c4a2"/><stop offset="0.5" stop-color="#e6a3b6"/><stop offset="1" stop-color="#b3a7df"/>
-                  </linearGradient>
-                </defs>
-                <rect width="400" height="500" fill="url(#paper)"/>
-                <!-- soft flat shadow -->
-                <path d="M150,150 q54,-16 108,0 l24,210 q-86,24 -160,0z" fill="#000" opacity="0.10" transform="translate(8,12)"/>
-                <!-- flat dress with cap sleeves -->
-                <path d="M150,150 q50,-18 100,0 l30,26 -14,20 -12,-8 q14,150 18,182 q-78,22 -160,0 q4,-32 18,-182 l-12,8 -14,-20z" fill="url(#fabricFlat)"/>
-                <!-- neckline + fold lines -->
-                <path d="M178,150 q22,16 44,0" fill="none" stroke="#000" stroke-opacity="0.14" stroke-width="2"/>
-                <path d="M200,162 l0,196" stroke="#000" stroke-opacity="0.06" stroke-width="6"/>
-                <rect width="400" height="500" fill="url(#pvig)"/>
-              </svg>
+            <!-- BEFORE: original product shot (clipped, on top) -->
+            <div class="ba-layer ba-before" id="baBefore">
+              <img src="media/hero-before.jpg" alt="A denim shirt as a plain ghost-mannequin product shot, before Quinn" width="750" height="1000" decoding="async" />
             </div>
-            <span class="ba-tag ba-tag--before">Flatlay</span>
-            <span class="ba-tag ba-tag--after">On-model</span>
+            <span class="ba-tag ba-tag--before">Before</span>
+            <span class="ba-tag ba-tag--after">After · Quinn</span>
             <div class="ba-handle" id="baHandle"><span class="ba-knob">⇆</span></div>
             <input type="range" min="2" max="98" value="50" class="ba-range" id="baRange" aria-label="Drag to reveal the AI on-model result" />
           </div>
@@ -408,7 +354,14 @@
         </div>
         <div class="feature-visual" data-reveal>
           <div class="panel">
-            <div class="varigrid" id="varigrid"><!-- filled by JS --></div>
+            <div class="varigrid">
+              <div class="cell"><img src="media/model-shirt.jpg" alt="Denim shirt on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
+              <div class="cell"><img src="media/model-dress.jpg" alt="Plaid halter midi dress on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
+              <div class="cell"><img src="media/model-cargo.jpg" alt="Cargo trousers on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
+              <div class="cell"><img src="media/model-sweater.jpg" alt="Knit wrap cardigan on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
+              <div class="cell"><img src="media/model-top.jpg" alt="Sequined high-neck top on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
+              <div class="cell"><img src="media/model-pant.jpg" alt="Tailored trousers on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -432,33 +385,12 @@
           <a href="#start" class="btn btn-primary" style="margin-top:1.8rem">Animate my catalog</a>
         </div>
         <div class="feature-visual" data-reveal>
-          <div class="videocard">
-            <svg class="scene" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Catalog video preview">
-              <defs>
-                <linearGradient id="vbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#322a39"/><stop offset="1" stop-color="#17141d"/></linearGradient>
-                <radialGradient id="vspot" cx="0.5" cy="0.3" r="0.7"><stop offset="0" stop-color="#5a4d63" stop-opacity="0.9"/><stop offset="1" stop-color="#17141d" stop-opacity="0"/></radialGradient>
-                <linearGradient id="vfab" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7cba4"/><stop offset="0.5" stop-color="#ec9fb8"/><stop offset="1" stop-color="#b6a6e6"/></linearGradient>
-                <linearGradient id="vskin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8b79c"/><stop offset="1" stop-color="#bd9377"/></linearGradient>
-              </defs>
-              <rect width="400" height="500" fill="url(#vbg)"/>
-              <rect width="400" height="500" fill="url(#vspot)"/>
-              <ellipse cx="200" cy="468" rx="110" ry="18" fill="#000" opacity="0.35">
-                <animate attributeName="rx" values="110;96;110" dur="3.6s" repeatCount="indefinite"/>
-              </ellipse>
-              <!-- gently swaying model group -->
-              <g>
-                <animateTransform attributeName="transform" type="rotate" values="-1.4 200 470; 1.4 200 470; -1.4 200 470" dur="3.6s" repeatCount="indefinite"/>
-                <path d="M184,390 q-6,42 -8,78 l16,0 q4,-38 10,-74 z" fill="url(#vskin)"/>
-                <path d="M216,390 q6,42 8,78 l-16,0 q-4,-38 -10,-74 z" fill="url(#vskin)"/>
-                <path d="M160,178 q-16,66 -14,122 l9,0 q4,-58 14,-120 z" fill="url(#vskin)"/>
-                <path d="M240,178 q16,66 14,122 l-9,0 q-4,-58 -14,-120 z" fill="url(#vskin)"/>
-                <rect x="191" y="122" width="18" height="32" rx="8" fill="url(#vskin)"/>
-                <path d="M170,98 q0,-40 30,-40 q30,0 30,40 q0,38 -30,38 q-30,0 -30,-38z" fill="#241f2a"/>
-                <ellipse cx="200" cy="94" rx="28" ry="34" fill="url(#vskin)"/>
-                <path d="M170,152 c0,-6 12,-14 30,-14 c18,0 30,8 30,14 c0,18 6,26 14,46 c10,60 15,124 28,190 q-72,20 -144,0 c13,-66 18,-130 28,-190 c8,-20 14,-28 14,-46z" fill="url(#vfab)"/>
-                <path d="M200,142 c-8,40 -10,146 -13,242 q-28,-4 -48,-10 c13,-66 18,-130 28,-190 c8,-20 14,-28 14,-46 c6,-3 13,-4 19,0z" fill="#000" opacity="0.12"/>
-              </g>
-            </svg>
+          <div class="videocard" id="reelcard">
+            <img class="vframe active" src="media/saree-1.jpg" alt="Saree on a model, front view — generated by Quinn" width="615" height="820" loading="lazy" decoding="async">
+            <img class="vframe" src="media/saree-2.jpg" alt="Saree on a model, upper-body detail" width="615" height="820" loading="lazy" decoding="async">
+            <img class="vframe" src="media/saree-3.jpg" alt="Saree on a model, profile view" width="615" height="820" loading="lazy" decoding="async">
+            <img class="vframe" src="media/saree-4.jpg" alt="Saree on a model, back view" width="615" height="820" loading="lazy" decoding="async">
+            <img class="vframe" src="media/saree-5.jpg" alt="Saree on a model, border detail" width="615" height="820" loading="lazy" decoding="async">
             <span class="vtag">● Catalog video</span>
             <span class="play playpulse"></span>
             <div class="scrub"></div>
@@ -594,32 +526,19 @@
       }
     })();
 
-    // on-model variation grid (same garment, varied backdrops/models)
+    // catalog-video card: crossfade through the saree angles to imply motion
     (function () {
-      const grid = document.getElementById('varigrid');
-      if (!grid) return;
-      const bgs = [['#2a2530','#15131a'], ['#3a2f33','#1c1518'], ['#27303a','#141a20'], ['#3a3326','#1b1812'], ['#34283a','#181320'], ['#26352f','#121a16']];
-      const skins = [['#e6c6a8','#c79a78'], ['#d3a982','#b07f5b'], ['#b07d57','#8a5d3c'], ['#f0d3b8','#d4ad8b'], ['#a06a45','#774b2d'], ['#e0bd9b','#bd9069']];
-      const cells = bgs.map((bg, i) => {
-        const sk = skins[i];
-        return `<div class="cell"><svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="vb${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${bg[0]}"/><stop offset="1" stop-color="${bg[1]}"/></linearGradient>
-            <linearGradient id="vs${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${sk[0]}"/><stop offset="1" stop-color="${sk[1]}"/></linearGradient>
-            <linearGradient id="vf${i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7cba4"/><stop offset="0.5" stop-color="#ec9fb8"/><stop offset="1" stop-color="#b6a6e6"/></linearGradient>
-          </defs>
-          <rect width="300" height="400" fill="url(#vb${i})"/>
-          <ellipse cx="150" cy="372" rx="78" ry="13" fill="#000" opacity="0.3"/>
-          <path d="M138,312 q-4,30 -6,56 l12,0 q3,-26 7,-52z" fill="url(#vs${i})"/>
-          <path d="M162,312 q4,30 6,56 l-12,0 q-3,-26 -7,-52z" fill="url(#vs${i})"/>
-          <rect x="143" y="92" width="14" height="26" rx="6" fill="url(#vs${i})"/>
-          <path d="M126,74 q0,-32 24,-32 q24,0 24,32 q0,30 -24,30 q-24,0 -24,-30z" fill="#231f29"/>
-          <ellipse cx="150" cy="70" rx="22" ry="27" fill="url(#vs${i})"/>
-          <path d="M126,116 c0,-5 10,-11 24,-11 c14,0 24,6 24,11 c0,15 5,21 11,37 c8,48 12,98 22,150 q-57,16 -114,0 c10,-52 14,-102 22,-150 c6,-16 11,-22 11,-37z" fill="url(#vf${i})"/>
-          <path d="M150,108 c-6,32 -8,118 -11,192 q-22,-3 -38,-8 c10,-52 14,-102 22,-150 c6,-16 11,-22 11,-37 c5,-2 10,-2 16,3z" fill="#000" opacity="0.12"/>
-        </svg></div>`;
-      }).join('');
-      grid.innerHTML = cells;
+      const card = document.getElementById('reelcard');
+      if (!card) return;
+      const frames = Array.prototype.slice.call(card.querySelectorAll('.vframe'));
+      if (frames.length < 2) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      let i = 0;
+      setInterval(function () {
+        frames[i].classList.remove('active');
+        i = (i + 1) % frames.length;
+        frames[i].classList.add('active');
+      }, 1900);
     })();
 
     // reveal on scroll
