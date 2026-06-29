@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs & env
+*.log
+.env
+.env.local
+
+# Dependencies (in case the site grows a build step later)
+node_modules/
+dist/
