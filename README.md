@@ -21,6 +21,11 @@ Served as a static site via **GitHub Pages**.
     signing cert. **At launch, add** the Play App Signing SHA-256 (Play Console
     → Setup → App integrity) alongside it.
   - `apple-app-site-association` (iOS Universal Links, team `B8FN2NXFHZ`).
+    GitHub Pages serves this extensionless file as `application/octet-stream`,
+    but Apple requires `application/json` — **at iOS launch**, add a Cloudflare
+    Transform Rule (Response Header Modification) on the path
+    `/.well-known/apple-app-site-association` setting
+    `Content-Type: application/json`.
   - Both are per-app extensible: future Quinn apps claim their own path prefix
     (`/r/*` belongs to Sage) and add entries to these files.
 
