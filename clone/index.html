@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clone — Put your product in any winning fashion video. $5, 10 minutes.</title>
+  <meta name="description" content="Paste any viral fashion video. Upload your garments. Clone rebuilds it shot-for-shot with your products on your AI model — $5 a video, ~10 minutes, no subscription." />
+  <meta name="theme-color" content="#0b0c09" />
+
+  <!-- Live home: https://quinn.live/clone/. If this page later moves to the clone.quinn.live root,
+       flip canonical + og:url below, and prefix the /media/clone/… asset paths with https://quinn.live -->
+  <link rel="canonical" href="https://quinn.live/clone/" />
+  <meta property="og:title" content="Clone — your next winning ad already exists" />
+  <meta property="og:description" content="Rebuild any viral fashion video with YOUR garments and YOUR AI model. $5. 10 minutes. No subscription." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://quinn.live/clone/" />
+  <meta property="og:image" content="https://quinn.live/clone/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0c09'/%3E%3Crect x='6' y='6' width='14' height='14' rx='4' fill='none' stroke='%23555b45' stroke-width='2.4'/%3E%3Crect x='12' y='12' width='14' height='14' rx='4' fill='%230b0c09' stroke='%23c8f542' stroke-width='2.4'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Clone",
+    "brand": { "@type": "Brand", "name": "Quinn" },
+    "description": "Rebuilds any short-form fashion video with your garments and your chosen AI model. 15-second, 720p vertical video delivered in about 10 minutes.",
+    "offers": { "@type": "Offer", "price": "5.00", "priceCurrency": "USD", "url": "https://clone.quinn.live/app" }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0c09;
+      --panel: #13150e;
+      --panel-2: #181b10;
+      --line: rgba(244, 246, 236, 0.10);
+      --line-strong: rgba(244, 246, 236, 0.20);
+      --ink: #f4f6ec;
+      --muted: #a9ad9c;
+      --faint: #707464;
+      --acid: #c8f542;
+      --acid-dim: #a5cc33;
+      --acid-ink: #131805;
+      --ref: #ff5c8a;
+      --radius: 16px;
+      --maxw: 1180px;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Archivo", system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    /* film-grain texture */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 999; pointer-events: none; opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    }
+
+    .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    h1, h2, h3 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.015em; line-height: 0.96; }
+    .acid { color: var(--acid); }
+    .mono { font-family: var(--mono); }
+
+    .eyebrow {
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--acid); display: inline-flex; align-items: center; gap: 0.6rem;
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--acid); }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-family: "Archivo", sans-serif; font-weight: 700; font-size: 0.95rem;
+      padding: 0.9rem 1.6rem; border-radius: 12px; cursor: pointer;
+      border: 1px solid transparent; white-space: nowrap;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-acid { background: var(--acid); color: var(--acid-ink); box-shadow: 0 0 0 0 rgba(200,245,66,.4); }
+    .btn-acid:hover { transform: translateY(-1px); box-shadow: 0 8px 30px -8px rgba(200,245,66,.5); }
+    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+    .btn-ghost:hover { border-color: var(--acid); color: var(--acid); }
+
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s ease;
+    }
+    header.nav.scrolled { border-bottom-color: var(--line); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
+    .brand { display: flex; align-items: center; gap: 0.65rem; font-weight: 900; font-size: 1.3rem; letter-spacing: 0.02em; text-transform: uppercase; }
+    .brand .mark { position: relative; width: 24px; height: 24px; flex: none; }
+    .brand .mark::before, .brand .mark::after { content: ""; position: absolute; width: 16px; height: 16px; border-radius: 5px; border: 2.4px solid var(--faint); top: 0; left: 0; }
+    .brand .mark::after { border-color: var(--acid); top: 6px; left: 6px; background: var(--bg); }
+    .brand .by { font-family: var(--mono); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.18em; color: var(--faint); margin-left: 0.15rem; text-transform: uppercase; align-self: flex-end; padding-bottom: 3px; }
+    .nav-links { display: flex; gap: 1.9rem; align-items: center; }
+    .nav-links a { font-size: 0.9rem; color: var(--muted); transition: color .15s ease; }
+    .nav-links a:hover { color: var(--acid); }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding: clamp(3.2rem, 7vw, 6rem) 0 clamp(2.6rem, 5vw, 4.5rem); overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; z-index: 0; top: -30%; right: -12%;
+      width: 900px; height: 900px; max-width: 130vw;
+      background: radial-gradient(closest-side, rgba(200,245,66,.13), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .hero h1 { font-size: clamp(2.6rem, 6.2vw, 4.9rem); margin-top: 1.4rem; }
+    .hero .sub { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.13rem); max-width: 46ch; margin-top: 1.4rem; }
+    .hero .sub strong { color: var(--ink); font-weight: 700; }
+
+    .paste { display: flex; gap: 0.6rem; margin-top: 1.9rem; max-width: 560px; flex-wrap: wrap; }
+    .paste input {
+      flex: 1 1 260px; min-width: 0; padding: 0.9rem 1.1rem; border-radius: 12px;
+      border: 1px solid var(--line-strong); background: var(--panel); color: var(--ink);
+      font-family: var(--mono); font-size: 0.85rem;
+    }
+    .paste input::placeholder { color: var(--faint); }
+    .paste input:focus { outline: none; border-color: var(--acid); }
+
+    .microtrust { margin-top: 1.3rem; font-family: var(--mono); font-size: 0.74rem; color: var(--faint); letter-spacing: 0.04em; display: flex; flex-wrap: wrap; gap: 0.45rem 1.1rem; }
+    .microtrust span::before { content: "→ "; color: var(--acid); }
+
+    /* hero phones */
+    .duo { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; width: 100%; max-width: 480px; margin-left: auto; }
+    .beam { display: grid; gap: 6px; justify-items: center; }
+    .beam .arrows { color: var(--acid); font-weight: 900; font-size: 1.2rem; letter-spacing: -0.12em; animation: nudge 1.4s ease-in-out infinite; }
+    @keyframes nudge { 0%,100% { transform: translateX(-2px); } 50% { transform: translateX(3px); } }
+    .beam .fee { font-family: var(--mono); font-size: 0.6rem; color: var(--acid); border: 1px solid rgba(200,245,66,.4); border-radius: 100px; padding: 0.2rem 0.5rem; white-space: nowrap; background: rgba(200,245,66,.06); }
+
+    .phone {
+      position: relative; aspect-ratio: 9 / 16; border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--line-strong); background: var(--panel-2);
+      box-shadow: 0 30px 70px -30px rgba(0,0,0,.8);
+    }
+    .phone video, .phone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ptag {
+      position: absolute; top: 10px; left: 10px; z-index: 3;
+      font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; font-weight: 600;
+      padding: 0.28rem 0.55rem; border-radius: 6px; text-transform: uppercase;
+      background: rgba(11,12,9,.72); backdrop-filter: blur(6px); border: 1px solid var(--line-strong);
+    }
+    .ptag--ref { color: var(--ref); border-color: rgba(255,92,138,.45); }
+    .ptag--out { color: var(--acid); border-color: rgba(200,245,66,.45); }
+
+    /* stylized "viral reference" placeholder */
+    .refcard { position: absolute; inset: 0; display: grid; place-items: center; }
+    .refcard .playglyph {
+      width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(255,255,255,.85);
+      background: rgba(0,0,0,.35); backdrop-filter: blur(4px); display: grid; place-items: center;
+    }
+    .refcard .playglyph::before { content: ""; width: 0; height: 0; border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+    .refrail {
+      position: absolute; right: 8px; bottom: 12px; z-index: 2; display: grid; gap: 0.55rem; justify-items: center;
+      font-family: var(--mono); font-size: 0.56rem; color: rgba(255,255,255,.92); text-align: center; line-height: 1.25;
+    }
+    .refrail b { font-size: 0.86rem; display: block; font-weight: 600; }
+    .refbars { position: absolute; left: 10px; bottom: 12px; right: 56px; z-index: 2; display: grid; gap: 5px; }
+    .refbars i { display: block; height: 5px; border-radius: 3px; background: rgba(255,255,255,.35); }
+    .refbars i:nth-child(2) { width: 62%; }
+
+    /* ---------- Ticker ---------- */
+    .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; background: var(--panel); }
+    .ticker-track { display: flex; width: max-content; animation: tick 26s linear infinite; }
+    .ticker span {
+      font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); padding: 0.95rem 0; white-space: nowrap;
+    }
+    .ticker span i { font-style: normal; color: var(--acid); padding: 0 1.1rem; }
+    @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: clamp(4rem, 9vw, 7rem) 0; }
+    .section-head h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); margin-top: 1rem; max-width: 22ch; }
+    .section-head p.lede { color: var(--muted); margin-top: 1.1rem; font-size: 1.04rem; max-width: 62ch; }
+
+    /* ---------- The Wall ---------- */
+    .wall-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .count-badge {
+      font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; color: var(--acid);
+      border: 1px solid rgba(200,245,66,.4); background: rgba(200,245,66,.06);
+      padding: 0.5rem 0.9rem; border-radius: 100px; white-space: nowrap;
+    }
+    .filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 2rem; }
+    .filters button {
+      font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.06em; cursor: pointer;
+      padding: 0.5rem 0.95rem; border-radius: 100px; border: 1px solid var(--line-strong);
+      background: transparent; color: var(--muted); transition: all .15s ease;
+    }
+    .filters button:hover { border-color: var(--acid); color: var(--acid); }
+    .filters button[aria-pressed="true"] { background: var(--acid); border-color: var(--acid); color: var(--acid-ink); font-weight: 600; }
+
+    .wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 2rem; }
+    .pair { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 8px; transition: border-color .2s ease, transform .2s ease; }
+    .pair:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+    .pair-media { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .pane { position: relative; aspect-ratio: 9 / 16; border-radius: 10px; overflow: hidden; background: var(--panel-2); }
+    .pane video, .pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .pane .ptag { top: 8px; left: 8px; font-size: 0.54rem; padding: 0.22rem 0.45rem; }
+    .hint {
+      position: absolute; bottom: 8px; left: 8px; z-index: 3; font-family: var(--mono); font-size: 0.54rem;
+      letter-spacing: 0.1em; color: var(--ink); background: rgba(11,12,9,.7); border: 1px solid var(--line);
+      padding: 0.2rem 0.45rem; border-radius: 5px; text-transform: uppercase;
+    }
+    .pair-meta { display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; padding: 0.75rem 0.5rem 0.45rem; }
+    .pair-meta .lbl { font-weight: 700; font-size: 0.86rem; letter-spacing: 0.01em; }
+    .pair-meta .sub { font-family: var(--mono); font-size: 0.64rem; color: var(--faint); margin-top: 2px; }
+    .pair-meta .cat { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--acid); border: 1px solid rgba(200,245,66,.35); padding: 0.22rem 0.5rem; border-radius: 100px; white-space: nowrap; }
+
+    .pair--cta { display: grid; place-items: center; background: var(--acid); border-color: var(--acid); text-align: center; padding: 2rem 1.4rem; min-height: 300px; }
+    .pair--cta h3 { color: var(--acid-ink); font-size: 1.5rem; line-height: 1.05; }
+    .pair--cta p { color: rgba(19,24,5,.75); font-size: 0.9rem; margin-top: 0.7rem; font-weight: 500; }
+    .pair--cta .btn { margin-top: 1.3rem; background: var(--acid-ink); color: var(--acid); }
+
+    /* ---------- Steps ---------- */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 3rem; }
+    .step { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.9rem 1.7rem; position: relative; overflow: hidden; }
+    .step .num { font-family: var(--mono); font-size: 0.8rem; color: var(--acid); letter-spacing: 0.2em; }
+    .step h3 { font-size: 1.35rem; margin: 0.9rem 0 0.7rem; }
+    .step p { color: var(--muted); font-size: 0.95rem; }
+    .step::after { content: attr(data-big); position: absolute; right: -10px; bottom: -34px; font-weight: 900; font-size: 7rem; line-height: 1; color: rgba(200,245,66,.07); pointer-events: none; }
+    .platform-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 2rem; }
+    .chip { font-family: var(--mono); font-size: 0.72rem; padding: 0.42rem 0.85rem; border-radius: 100px; border: 1px solid var(--line-strong); color: var(--muted); }
+
+    /* ---------- The math ---------- */
+    .cmp { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 2.6rem; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .cmp th, .cmp td { padding: 1rem 1.2rem; text-align: left; font-size: 0.93rem; border-bottom: 1px solid var(--line); }
+    .cmp thead th { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); background: var(--panel); }
+    .cmp tbody tr:last-child td { border-bottom: none; }
+    .cmp td:first-child { color: var(--muted); font-size: 0.86rem; }
+    .cmp .win { background: rgba(200,245,66,.07); color: var(--acid); font-weight: 700; }
+    .cmp thead th.win { color: var(--acid); }
+    .cmp-scroll { overflow-x: auto; }
+
+    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 2rem; }
+    .trio .stat { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 1.8rem 1.4rem; text-align: center; }
+    .trio .big { font-weight: 900; font-size: clamp(2.2rem, 4.6vw, 3.2rem); line-height: 1; color: var(--acid); text-transform: uppercase; }
+    .trio .lbl { font-family: var(--mono); color: var(--muted); font-size: 0.72rem; letter-spacing: 0.1em; margin-top: 0.7rem; text-transform: uppercase; }
+
+    /* ---------- Receipt ---------- */
+    .receipt-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; margin-top: 3rem; }
+    .receipt {
+      font-family: var(--mono); background: #f6f5ee; color: #191a14; border-radius: 8px;
+      padding: 1.8rem 1.6rem; font-size: 0.82rem; line-height: 1.9;
+      box-shadow: 0 30px 70px -30px rgba(0,0,0,.8);
+      transform: rotate(-1.2deg);
+    }
+    .receipt .rhead { text-align: center; font-weight: 600; letter-spacing: 0.2em; border-bottom: 1.5px dashed #191a14; padding-bottom: 0.8rem; margin-bottom: 0.9rem; }
+    .receipt .row { display: flex; justify-content: space-between; gap: 1rem; }
+    .receipt .row span:first-child { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .receipt .row.total { border-top: 1.5px dashed #191a14; margin-top: 0.9rem; padding-top: 0.9rem; font-weight: 600; font-size: 1rem; }
+    .receipt .note { text-align: center; margin-top: 1rem; font-size: 0.68rem; color: #55564c; }
+    .speclist { list-style: none; display: grid; gap: 0.9rem; margin-top: 1.6rem; }
+    .speclist li { display: flex; gap: 0.8rem; align-items: baseline; font-size: 0.98rem; }
+    .speclist li::before { content: "▸"; color: var(--acid); font-weight: 900; }
+    .speclist b { font-weight: 700; }
+
+    /* ---------- FAQ ---------- */
+    .faq { max-width: 780px; margin-top: 2.6rem; }
+    .faq details { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); margin-bottom: 10px; overflow: hidden; }
+    .faq summary {
+      cursor: pointer; list-style: none; padding: 1.15rem 1.3rem; font-weight: 700; font-size: 1rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-family: var(--mono); color: var(--acid); font-size: 1.15rem; flex: none; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq .a { padding: 0 1.3rem 1.25rem; color: var(--muted); font-size: 0.95rem; }
+
+    /* ---------- Final CTA ---------- */
+    .cta-band {
+      position: relative; border-radius: 22px; padding: clamp(2.6rem, 6vw, 4.5rem) clamp(1.4rem, 4vw, 3rem);
+      overflow: hidden; border: 1px solid rgba(200,245,66,.35);
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+    }
+    .cta-band::before { content: ""; position: absolute; inset: 0; background: radial-gradient(closest-side at 50% -20%, rgba(200,245,66,.18), transparent 70%); pointer-events: none; }
+    .cta-band h2 { position: relative; font-size: clamp(2rem, 5vw, 3.4rem); max-width: 22ch; }
+    .cta-band .lede { position: relative; color: var(--muted); margin-top: 1.1rem; max-width: 52ch; }
+    .cta-band .paste { position: relative; }
+    .ps { position: relative; font-family: var(--mono); font-size: 0.82rem; color: var(--muted); margin-top: 2.4rem; max-width: 68ch; line-height: 1.9; }
+    .ps b { color: var(--ink); font-weight: 600; }
+    .ps + .ps { margin-top: 0.9rem; }
+    .ps .tag { color: var(--acid); }
+
+    .form-msg { position: relative; margin-top: 1rem; font-family: var(--mono); font-size: 0.8rem; color: var(--acid); }
+
+    /* ---------- Footer ---------- */
+    footer.site { border-top: 1px solid var(--line); padding: 3rem 0 2.4rem; margin-top: 2rem; }
+    .foot-grid { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
+    .foot-brand p { color: var(--faint); font-size: 0.88rem; margin-top: 0.7rem; max-width: 36ch; }
+    .foot-links { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .foot-links div h4 { font-family: var(--mono); font-weight: 400; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.8rem; }
+    .foot-links a { display: block; color: var(--muted); font-size: 0.9rem; padding: 0.22rem 0; }
+    .foot-links a:hover { color: var(--acid); }
+    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; margin-top: 2.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); color: var(--faint); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; }
+
+    /* ---------- Reveal ---------- */
+    [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+    [data-reveal].in { opacity: 1; transform: none; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1020px) {
+      .wall { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .duo { margin: 0 auto; }
+      .steps { grid-template-columns: 1fr; }
+      .receipt-grid { grid-template-columns: 1fr; }
+      .receipt { max-width: 420px; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .wall { grid-template-columns: 1fr; }
+      .trio { grid-template-columns: 1fr; }
+      .paste .btn { flex: 1 1 100%; }
+      .wall-head { align-items: flex-start; }
+      .brand .by { display: none; }
+      .brand { font-size: 1.15rem; }
+      .nav-inner .btn { padding: 0.65rem 1rem; font-size: 0.85rem; }
+    }
+    @media (hover: none) {
+      .hint::after { content: " · tap"; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; scroll-behavior: auto; }
+      [data-reveal] { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span> Clone <span class="by">by Quinn</span></a>
+      <nav class="nav-links">
+        <a href="#wall">The Wall</a>
+        <a href="#how">How it works</a>
+        <a href="#math">The math</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-acid" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=nav">Clone a video — $5</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">AI ad cloning for fashion brands</span>
+          <h1>Your next winning ad <span class="acid">already exists.</span></h1>
+          <p class="sub">It's just not yours — yet. Paste any viral fashion video. Upload your garments. Clone rebuilds it shot-for-shot with <strong>your products on your AI model</strong>. <strong>$5. Ten minutes. No subscription.</strong></p>
+          <form class="paste clone-form" novalidate>
+            <label for="heroUrl" style="position:absolute;left:-9999px">Reference video link</label>
+            <input type="url" id="heroUrl" placeholder="Paste a TikTok / Instagram / YouTube link…" />
+            <button class="btn btn-acid" type="submit">Clone it →</button>
+          </form>
+          <p class="microtrust"><span>credits never expire</span><span>no brand-kit setup</span><span>worst case, you're out a coffee</span></p>
+        </div>
+
+        <div class="duo" data-reveal>
+          <div class="phone">
+            <div class="refcard" style="background: linear-gradient(160deg, hsl(338 65% 38%), hsl(285 60% 22%) 60%, #16060e);">
+              <span class="playglyph" aria-hidden="true"></span>
+            </div>
+            <div class="refbars" aria-hidden="true"><i></i><i></i></div>
+            <div class="refrail" aria-hidden="true"><span><b>♥</b>412K</span><span><b>💬</b>8,120</span><span><b>➦</b>31K</span></div>
+            <span class="ptag ptag--ref">The viral one</span>
+          </div>
+          <div class="beam" aria-hidden="true">
+            <span class="arrows">≫≫</span>
+            <span class="fee">$5 · 10 MIN</span>
+          </div>
+          <div class="phone">
+            <video src="/media/clone/hero-street.mp4" poster="/media/clone/hero-street.jpg" muted loop playsinline autoplay preload="metadata" aria-label="A cloned fashion video generated by Clone"></video>
+            <span class="ptag ptag--out">Yours</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="ticker">
+        <span>paste a link<i>✦</i>upload garments<i>✦</i>press clone<i>✦</i>10 minutes<i>✦</i>your ad<i>✦</i>$5<i>✦</i>no subscription<i>✦</i>credits never expire<i>✦</i></span>
+      </div>
+    </div>
+
+    <!-- ============ THE WALL ============ -->
+    <section class="block" id="wall">
+      <div class="wrap">
+        <div class="wall-head" data-reveal>
+          <div class="section-head">
+            <span class="eyebrow">The receipts</span>
+            <h2>Watch the <span class="acid">clones.</span></h2>
+            <p class="lede">Left: a video that already won the internet. Right: the same video, wearing our customers' clothes. Hover any card to play both sides.</p>
+          </div>
+          <span class="count-badge" id="wallCount">— clones on the wall</span>
+        </div>
+
+        <div class="filters" id="filters" role="group" aria-label="Filter clones by format" data-reveal></div>
+        <div class="wall" id="wallGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="block" id="how" style="background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps. <span class="acid">Zero brainstorms.</span></h2>
+          <p class="lede">Stop creating video ads from scratch — you're not MrBeast. Start from the ones that already work.</p>
+        </div>
+        <div class="steps">
+          <div class="step" data-big="01" data-reveal>
+            <span class="num">STEP 01</span>
+            <h3>Paste a reference</h3>
+            <p>Your own past hit. A competitor's reel that's spiking. A TV ad you can't get out of your head. TikTok, Instagram, YouTube — anywhere.</p>
+          </div>
+          <div class="step" data-big="02" data-reveal>
+            <span class="num">STEP 02</span>
+            <h3>Upload your garments</h3>
+            <p>Flatlays or product shots — whatever you have. Clone reads the reference, works out how many garments the edit needs, and asks for more if you're short.</p>
+          </div>
+          <div class="step" data-big="03" data-reveal>
+            <span class="num">STEP 03</span>
+            <h3>Press Clone</h3>
+            <p>Clone splits the reference into shots, maps a product to every cut, puts it all on the AI model you picked, and rebuilds the video frame-by-frame. ~10 minutes later: your ad.</p>
+          </div>
+        </div>
+        <div class="platform-chips" data-reveal>
+          <span class="chip">TikTok</span><span class="chip">Instagram Reels</span><span class="chip">YouTube Shorts</span><span class="chip">GRWM</span><span class="chip">Try-on haul</span><span class="chip">OOTD</span><span class="chip">Outfit transition</span><span class="chip">Lookbook</span><span class="chip">Day-to-night</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE MATH ============ -->
+    <section class="block" id="math">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">The math</span>
+          <h2>Meta says "a video per SKU." Your CFO says <span class="acid">"no."</span></h2>
+          <p class="lede">You've got 200 SKUs, a launch on Wednesday, and an influencer who answers DMs every third Tuesday. The old math doesn't work. This does:</p>
+        </div>
+
+        <div class="cmp-scroll" data-reveal>
+          <table class="cmp">
+            <thead>
+              <tr><th></th><th>Influencer UGC</th><th>Agency</th><th class="win">Clone</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>One 15-second video</td><td>$50–$200</td><td>$500+</td><td class="win">$5</td></tr>
+              <tr><td>Turnaround</td><td>~14 days</td><td>2–3 weeks</td><td class="win">~10 minutes</td></tr>
+              <tr><td>Briefs &amp; meetings</td><td>Yes, many</td><td>So many</td><td class="win">None</td></tr>
+              <tr><td>Want a variation?</td><td>New invoice</td><td>New scope</td><td class="win">Another $5</td></tr>
+              <tr><td>Videos for 200 SKUs</td><td>$10,000–$40,000</td><td>Don't ask</td><td class="win">$1,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="trio">
+          <div class="stat" data-reveal><div class="big">20 tests</div><div class="lbl">per $100 — vs one UGC video</div></div>
+          <div class="stat" data-reveal><div class="big">10 min</div><div class="lbl">from paste to posted</div></div>
+          <div class="stat" data-reveal><div class="big">0</div><div class="lbl">subscriptions, briefs, or "quick calls"</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RECEIPT / PRICING ============ -->
+    <section class="block" id="pricing" style="background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Pricing</span>
+          <h2>What $5 <span class="acid">actually buys.</span></h2>
+        </div>
+        <div class="receipt-grid">
+          <div class="receipt" data-reveal aria-label="Itemized receipt for one cloned video">
+            <div class="rhead">CLONE ✂ RECEIPT #0005</div>
+            <div class="row"><span>1 winning ad structure …………………</span><span>$0.00</span></div>
+            <div class="row"><span>(it's already public) </span><span></span></div>
+            <div class="row"><span>your garments ………………………………</span><span>$0.00</span></div>
+            <div class="row"><span>AI model, posed &amp; lit ………………</span><span>$0.00</span></div>
+            <div class="row"><span>scene-split + product mapping …</span><span>$0.00</span></div>
+            <div class="row"><span>full rebuild, your brand inside</span><span>$5.00</span></div>
+            <div class="row"><span>subscription …………………………………</span><span>$0.00</span></div>
+            <div class="row"><span>onboarding calls ………………………</span><span>$0.00</span></div>
+            <div class="row total"><span>TOTAL</span><span>$5.00</span></div>
+            <div class="note">worst case, that's one coffee. thank you, come again.</div>
+          </div>
+          <div data-reveal>
+            <ul class="speclist">
+              <li><b>15 seconds, 720p, 9:16 vertical</b> — sized for Reels, TikTok &amp; Shorts</li>
+              <li><b>Delivered in ~10 minutes</b> — react to a trend while it's still a trend</li>
+              <li><b>Any reference you bring</b> — link or upload, from anywhere</li>
+              <li><b>Multi-garment mapping</b> — hauls and GRWMs with 6+ products handled</li>
+              <li><b>Your AI model, your pose</b> — you control every input</li>
+              <li><b>1080p upscale</b> — available for extra credits when a winner emerges</li>
+              <li><b>Credits never expire</b> — buy for the launch, use when ready</li>
+              <li><b>No subscription</b> — no monthly nag, no "forgot to cancel"</li>
+            </ul>
+            <a class="btn btn-acid" style="margin-top:2rem" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=pricing">Clone your first video — $5</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="block" id="faq">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">FAQ</span>
+          <h2>What you're <span class="acid">probably thinking.</span></h2>
+        </div>
+        <div class="faq" data-reveal>
+          <details>
+            <summary>Won't I get sued for cloning a competitor's ad?</summary>
+            <p class="a">You're not copying their products, their footage, or their brand — you're cloning the <em>structure</em>: the cuts, the pacing, the hook. The same way every brand on Instagram runs its own version of the same trend. The output has your products, your model, your brand. You're learning from what works, not stealing what's theirs.</p>
+          </details>
+          <details>
+            <summary>Will it look like AI slop?</summary>
+            <p class="a">Clone doesn't generate from scratch — that's where slop comes from. It maps your products onto a proven, human-made structure, so the output inherits the polish of the reference. That's the whole trick.</p>
+          </details>
+          <details>
+            <summary>Can it match my brand aesthetic?</summary>
+            <p class="a">You bring the products. You choose the model and pose. The reference dictates the vibe — and you chose the reference. You stay in control of every input.</p>
+          </details>
+          <details>
+            <summary>What if my clone comes out wrong?</summary>
+            <p class="a">At $5, the worst-case loss is less than a coffee. And if a video genuinely doesn't clone as expected, flag it — we'll quietly make it right.</p>
+          </details>
+          <details>
+            <summary>Who's behind this?</summary>
+            <p class="a">Clone is built by <a href="https://quinn.live" style="color:var(--acid)">Quinn</a> — the AI studio fashion brands already use for on-model product photography. Garment fidelity is our whole personality; Clone points it at video.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="block" id="start" style="padding-top:0">
+      <div class="wrap">
+        <div class="cta-band" data-reveal>
+          <span class="eyebrow">Last call</span>
+          <h2 style="margin-top:1rem">That reel you saved last night? <span class="acid">It's your ad now.</span></h2>
+          <p class="lede">Paste the link. Upload your garments. Ten minutes from now it's wearing your clothes.</p>
+          <form class="paste clone-form" novalidate style="margin-top:1.8rem">
+            <label for="ctaUrl" style="position:absolute;left:-9999px">Reference video link</label>
+            <input type="url" id="ctaUrl" placeholder="Paste a TikTok / Instagram / YouTube link…" />
+            <button class="btn btn-acid" type="submit">Clone it — $5 →</button>
+          </form>
+          <p class="ps"><span class="tag">P.S.</span> Meta wants a video for every SKU. Influencers want <b>$200 and 14 days</b> — each. You've got 200 SKUs, a CFO, and a launch on Wednesday. Clone is the new math: <b>$5, ten minutes, done.</b></p>
+          <p class="ps"><span class="tag">P.P.S.</span> Good artists copy. Great artists steal. The best artists <b>clone</b>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span> Clone <span class="by">by Quinn</span></a>
+          <p>Rebuild any winning fashion video with your garments and your AI model. $5, ten minutes, no subscription.</p>
+        </div>
+        <div class="foot-links">
+          <div>
+            <h4>Product</h4>
+            <a href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=footer">Open the app</a>
+            <a href="#wall">The Wall</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="https://quinn.live">Quinn — AI photography</a>
+            <a href="mailto:support@quinn.live">support@quinn.live</a>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <a href="https://quinn.live/privacy.html">Privacy</a>
+            <a href="https://quinn.live/terms.html">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year">2026</span> Quinn Care Private Limited</span>
+        <span>This page was not made by an influencer.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ==========================================================================
+       THE WALL — sample manifest
+       ==========================================================================
+       HOW TO ADD A REAL BEFORE/AFTER PAIR (takes ~1 minute):
+       1. Host the two files anywhere public (the app's CDN, or drop them in
+          this repo under media/clone/ and use the full quinn.live URL).
+       2. Add an entry below:
+            { cat: 'grwm',                       // key from CATS below
+              label: 'GRWM · college fit-check', // card title
+              meta: '6 garments mapped · 12s',   // small line under title
+              ref: { video: 'https://…/ref.mp4', poster: 'https://…/ref.jpg' },
+              out: { video: 'https://…/out.mp4', poster: 'https://…/out.jpg' } }
+       3. That's it — count badge, filters and hover-play wire up automatically.
+       NOTE ON PLACEHOLDERS: entries with ref:{likes,hue} render a stylized
+       "viral reference" stand-in (gradient + play glyph) instead of real
+       footage. Replace them with real ref/out video pairs as they're cleared
+       for marketing. The engagement numbers on placeholders are decorative —
+       swap in the real stats of the real references.
+       ========================================================================== */
+    const CLIP = 'https://clone.quinn.live/clip.mp4';          // real sample output (replace/extend)
+    const M = n => `https://quinn.live/media/${n}.jpg`;        // Quinn imagery as stand-in posters
+
+    const CATS = { grwm: 'GRWM', haul: 'Haul', transition: 'Transition', ootd: 'OOTD', lookbook: 'Lookbook', d2n: 'Day-to-night', street: 'Street' };
+
+    const SAMPLES = [
+      { cat: 'street',     label: 'Streetwear · freestyle edit',    meta: 'real pair · same cuts, new fit · 33s',
+        ref: { video: '/media/clone/ref-freestyle.mp4', poster: '/media/clone/ref-freestyle.jpg' },
+        out: { video: '/media/clone/out-freestyle.mp4', poster: '/media/clone/out-freestyle.jpg' } },
+      { cat: 'grwm',       label: 'GRWM · college fit-check',      meta: '6 garments mapped · 12s', ref: { likes: '412K', hue: 338 }, out: { video: CLIP, poster: M('model-shirt') } },
+      { cat: 'transition', label: 'Outfit transition · beat drop',  meta: '3 garments · 9s',         ref: { likes: '1.2M', hue: 262 }, out: { video: CLIP, poster: M('model-dress') } },
+      { cat: 'haul',       label: 'Try-on haul · summer drop',      meta: '5 garments · 15s',        ref: { likes: '687K', hue: 196 }, out: { poster: M('model-top') } },
+      { cat: 'ootd',       label: 'OOTD · street walk',             meta: '1 garment look · 7s',     ref: { likes: '233K', hue: 24 },  out: { video: '/media/clone/hero-street.mp4', poster: '/media/clone/hero-street.jpg' } },
+      { cat: 'lookbook',   label: 'Lookbook · saree edit',          meta: '4 garments · 14s',        ref: { likes: '904K', hue: 310 }, out: { video: CLIP, poster: M('saree-1') } },
+      { cat: 'd2n',        label: 'Day-to-night · office → dinner', meta: '2 garments · 10s',        ref: { likes: '156K', hue: 210 }, out: { poster: M('model-sweater') } },
+      { cat: 'grwm',       label: 'GRWM · date night',              meta: '4 garments · 13s',        ref: { likes: '2.1M', hue: 350 }, out: { poster: M('model-pant') } },
+      { cat: 'street',     label: 'Street fit-check interview',     meta: '3 garments · 15s',        ref: { likes: '845K', hue: 120 }, out: { poster: M('saree-3') } },
+      { cat: 'transition', label: 'Spin transition · festive',      meta: '2 garments · 8s',         ref: { likes: '519K', hue: 280 }, out: { video: CLIP, poster: M('saree-2') } },
+      { cat: 'haul',       label: 'Unboxing → try-on',              meta: '5 garments · 15s',        ref: { likes: '378K', hue: 45 },  out: { poster: M('saree-4') } },
+      { cat: 'ootd',       label: 'OOTD · mirror check',            meta: '1 garment · 7s',          ref: { likes: '92K',  hue: 180 }, out: { poster: M('hero-after') } },
+      { cat: 'lookbook',   label: 'Editorial pan · border detail',  meta: '3 garments · 12s',        ref: { likes: '640K', hue: 300 }, out: { poster: M('saree-5') } },
+    ];
+
+    // ---------- render the wall ----------
+    (function () {
+      const grid = document.getElementById('wallGrid');
+      const filters = document.getElementById('filters');
+      const countEl = document.getElementById('wallCount');
+
+      const paneHTML = (side, d) => {
+        const tag = side === 'ref'
+          ? '<span class="ptag ptag--ref">Reference</span>'
+          : '<span class="ptag ptag--out">The clone</span>';
+        if (d.video) {
+          return `<div class="pane">
+            <video src="${d.video}" ${d.poster ? `poster="${d.poster}"` : ''} muted loop playsinline preload="none" aria-label="${side === 'ref' ? 'Reference video' : 'Cloned output video'}"></video>
+            ${tag}${side === 'out' ? '<span class="hint">▶ hover</span>' : ''}
+          </div>`;
+        }
+        if (side === 'ref') {
+          return `<div class="pane">
+            <div class="refcard" style="background: linear-gradient(160deg, hsl(${d.hue} 60% 36%), hsl(${(d.hue + 50) % 360} 55% 20%) 60%, #0d0710);">
+              <span class="playglyph" aria-hidden="true"></span>
+            </div>
+            <div class="refbars" aria-hidden="true"><i></i><i></i></div>
+            <div class="refrail" aria-hidden="true"><span><b>♥</b>${d.likes}</span><span><b>➦</b></span></div>
+            ${tag}
+          </div>`;
+        }
+        return `<div class="pane">${d.poster ? `<img src="${d.poster}" alt="Cloned on-model output" loading="lazy" decoding="async">` : ''}${tag}</div>`;
+      };
+
+      grid.innerHTML = SAMPLES.map((s, i) => `
+        <article class="pair" data-cat="${s.cat}" data-reveal>
+          <div class="pair-media">${paneHTML('ref', s.ref)}${paneHTML('out', s.out)}</div>
+          <div class="pair-meta">
+            <div><div class="lbl">${s.label}</div><div class="sub">${s.meta}</div></div>
+            <span class="cat">${CATS[s.cat]}</span>
+          </div>
+        </article>`).join('') + `
+        <article class="pair pair--cta" data-cat="*" data-reveal>
+          <div>
+            <h3>Yours goes<br>here.</h3>
+            <p>Every card on this wall cost somebody $5 and ten minutes.</p>
+            <a class="btn" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=wall">Clone yours →</a>
+          </div>
+        </article>`;
+
+      countEl.textContent = `${SAMPLES.length} clones on the wall · new ones weekly`;
+
+      // filters
+      const keys = ['*', ...Object.keys(CATS)];
+      filters.innerHTML = keys.map(k =>
+        `<button type="button" data-k="${k}" aria-pressed="${k === '*'}">${k === '*' ? 'All' : CATS[k]}</button>`).join('');
+      filters.addEventListener('click', e => {
+        const btn = e.target.closest('button'); if (!btn) return;
+        const k = btn.dataset.k;
+        filters.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+        let shown = 0;
+        grid.querySelectorAll('.pair').forEach(card => {
+          const show = k === '*' || card.dataset.cat === k || card.dataset.cat === '*';
+          card.style.display = show ? '' : 'none';
+          if (show && card.dataset.cat !== '*') shown++;
+        });
+        countEl.textContent = k === '*'
+          ? `${SAMPLES.length} clones on the wall · new ones weekly`
+          : `${shown} ${CATS[k]} clone${shown === 1 ? '' : 's'} on the wall`;
+      });
+
+      // hover / tap to play both sides of a card
+      const stopAll = except => document.querySelectorAll('.pair video').forEach(v => {
+        if (!except || !except.contains(v)) { v.pause(); }
+      });
+      grid.querySelectorAll('.pair').forEach(card => {
+        const vids = card.querySelectorAll('video');
+        if (!vids.length) return;
+        const play = () => { stopAll(card); vids.forEach(v => v.play().catch(() => {})); };
+        const pause = () => vids.forEach(v => v.pause());
+        card.addEventListener('mouseenter', play);
+        card.addEventListener('mouseleave', pause);
+        card.addEventListener('touchstart', () => { vids[0].paused ? play() : pause(); }, { passive: true });
+      });
+    })();
+
+    // ---------- ticker: duplicate track for seamless loop ----------
+    (function () {
+      const t = document.getElementById('ticker');
+      t.innerHTML += t.innerHTML;
+    })();
+
+    // ---------- sticky nav ----------
+    (function () {
+      const nav = document.getElementById('nav');
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+      onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    // ---------- paste-a-link forms → app ----------
+    (function () {
+      const APP = 'https://clone.quinn.live/app';
+      document.querySelectorAll('.clone-form').forEach(form => {
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const input = form.querySelector('input');
+          const v = (input.value || '').trim();
+          const url = new URL(APP);
+          url.searchParams.set('utm_source', 'landing_v2');
+          url.searchParams.set('utm_content', 'paste_bar');
+          if (/^https?:\/\/\S+$/i.test(v)) url.searchParams.set('reference', v);
+          window.location.href = url.toString();
+        });
+      });
+    })();
+
+    // ---------- reveal on scroll ----------
+    (function () {
+      const els = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(e => io.observe(e));
+    })();
+
+    // ---------- hero video: play only when visible, never under reduced motion ----------
+    (function () {
+      const v = document.querySelector('.duo video');
+      if (!v) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        v.removeAttribute('autoplay'); v.pause(); return;
+      }
+      if (!('IntersectionObserver' in window)) return;
+      new IntersectionObserver(([e]) => {
+        e.isIntersecting ? v.play().catch(() => {}) : v.pause();
+      }, { threshold: 0.25 }).observe(v);
+    })();
+
+    // ---------- year ----------
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

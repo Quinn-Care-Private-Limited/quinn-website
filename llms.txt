@@ -8,6 +8,7 @@ Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, 
 
 - **On-model shots**: Upload a flatlay or ghost-mannequin image and Quinn generates photoreal on-model photography with control over model, pose, body type, skin tone, and backdrop — kept consistent across a catalog and ready for product detail pages (PDP) and ads.
 - **Catalog video**: Turn an existing catalog shoot — or just a flatlay — into motion: model walks, 360° product spins, and dynamic reels. Exported for Reels/TikTok (9:16), feed (1:1), and hero (16:9) placements.
+- **Clone** (https://clone.quinn.live/): Rebuilds any short-form fashion video (TikTok, Instagram, YouTube reference) shot-for-shot with the brand's own garments on an AI model of their choice — $5 per 15-second 720p vertical video, delivered in about 10 minutes, credit-based with no subscription.
 
 ## Key facts
 
