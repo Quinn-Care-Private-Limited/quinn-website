@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["B8FN2NXFHZ.live.quinn.sage"],
+        "components": [
+          {
+            "/": "/r/*",
+            "comment": "Quinn referral links"
+          }
+        ]
+      }
+    ]
+  }
+}

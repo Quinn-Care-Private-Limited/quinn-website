@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quinn</title>
+  <meta name="robots" content="noindex" />
+  <script>
+    // Referral links (quinn.live/r/CODE) land here because GitHub Pages has no
+    // server-side routing — this doubles as an invisible redirector:
+    //  - App installed → Android App Links / iOS Universal Links open the app
+    //    before the browser loads anything (see /.well-known/).
+    //  - Otherwise → straight to the Play Store; the code rides along as the
+    //    install referrer (quinn_ref) and the app auto-fills it on first
+    //    launch. iOS users type the 6-letter code from the share message.
+    var m = location.pathname.match(/^\/r\/([A-Za-z0-9]{4,12})\/?$/);
+    if (m) {
+      var code = m[1].toUpperCase();
+      // TODO iOS launch: send iPhone/iPad visitors to the App Store instead
+      // (the code can't ride an App Store install — they type it at signup).
+      location.replace(
+        'https://play.google.com/store/apps/details?id=live.quinn.sage' +
+        '&referrer=' + encodeURIComponent('quinn_ref=' + code)
+      );
+    }
+  </script>
+  <style>
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center;
+      justify-content: center; background: #0c0b0f; color: #f5f1ea;
+      font-family: "Inter", -apple-system, sans-serif; text-align: center;
+    }
+    a { color: #ec9fb8; }
+  </style>
+</head>
+<body>
+  <p>Page not found. <a href="/">Go to quinn.live</a></p>
+</body>
+</html>

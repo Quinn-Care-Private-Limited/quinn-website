@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "live.quinn.sage",
+      "sha256_cert_fingerprints": [
+        "E6:BA:4E:2E:16:71:AA:27:51:F1:78:2C:E7:88:AE:EC:0C:46:E6:49:C4:47:5D:7C:6C:38:52:02:FE:49:FE:2A"
+      ]
+    }
+  }
+]
