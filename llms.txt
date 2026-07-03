@@ -22,6 +22,7 @@ Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, 
 - [Home](https://quinn.live/): Product overview — on-model photography and catalog video for fashion brands.
 - [Privacy Policy](https://quinn.live/privacy.html): How Quinn collects, uses, and protects personal data (India DPDP Act, GDPR, CCPA).
 - [Terms & Conditions](https://quinn.live/terms.html): Terms governing use of the Quinn platform, including content and output licensing.
+- [Delete Your Account](https://quinn.live/delete.html): How to request deletion of a Quinn account and associated data.
 
 ## Contact
 
