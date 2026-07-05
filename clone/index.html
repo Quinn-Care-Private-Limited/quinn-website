@@ -128,15 +128,23 @@
     .nav-links a:hover { color: var(--accent); }
 
     /* ---------- Hero ---------- */
-    .hero { position: relative; padding: clamp(3.2rem, 7vw, 6rem) 0 clamp(2.6rem, 5vw, 4.5rem); overflow: hidden; }
+    .hero { position: relative; padding: clamp(1.7rem, 3vw, 2.5rem) 0 clamp(2.2rem, 4vw, 3.2rem); overflow: hidden; }
     .hero::before {
       content: ""; position: absolute; z-index: 0; top: -30%; right: -12%;
       width: 900px; height: 900px; max-width: 130vw;
       background: radial-gradient(closest-side, rgba(237,90,36,.16), transparent 70%);
       pointer-events: none;
     }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
-    .hero h1 { font-size: clamp(2.2rem, 5.2vw, 3.7rem); margin-top: 1.4rem; max-width: 16ch; }
+    .hero-head { position: relative; z-index: 1; }
+    .hero h1 { font-size: clamp(2.2rem, 5.2vw, 3.7rem); margin-top: 0.8rem; }
+    /* one-line headline on desktop, width-fitted */
+    @media (min-width: 961px) {
+      .hero h1 { font-size: min(3.25vw, 2.45rem); white-space: nowrap; letter-spacing: -0.02em; }
+    }
+    .hero-cta { position: relative; z-index: 1; max-width: 720px; margin: clamp(1.5rem, 2.6vw, 2rem) auto 0; text-align: center; }
+    .hero-cta .sub { margin: 0 auto; max-width: 66ch; }
+    .hero-cta .paste { justify-content: center; margin-left: auto; margin-right: auto; }
+    .hero-cta .microtrust { justify-content: center; }
     .hero .sub { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.13rem); max-width: 46ch; margin-top: 1.4rem; }
     .hero .sub strong { color: var(--ink); font-weight: 700; }
 
@@ -152,24 +160,52 @@
     .microtrust { margin-top: 1.3rem; font-family: var(--mono); font-size: 0.74rem; color: var(--muted); letter-spacing: 0.04em; display: flex; flex-wrap: wrap; gap: 0.45rem 1.1rem; }
     .microtrust span::before { content: "→ "; color: var(--accent); }
 
-    /* hero equation: ref video + flatlays >> output */
-    .duo { display: grid; grid-template-columns: 1fr auto minmax(62px, 0.58fr) auto 1fr; gap: 9px; align-items: center; width: 100%; max-width: 560px; margin-left: auto; }
-    .op { font-weight: 900; font-size: 1.35rem; color: var(--accent); line-height: 1; }
-    .fwrap { display: grid; gap: 9px; justify-items: center; align-content: center; min-width: 0; }
-    .fstack { position: relative; width: 100%; aspect-ratio: 3 / 4; }
-    .fcard {
-      position: absolute; inset: 0; border-radius: 12px; overflow: hidden;
-      background: var(--panel); border: 1px solid var(--line-strong);
-      box-shadow: 0 12px 28px -14px rgba(30,27,22,.30);
+    /* hero equation board: ref video + garment flatlay + model >> cloned output */
+    .board { display: grid; grid-template-columns: 1fr auto auto auto 1.12fr; gap: clamp(10px, 1.4vw, 18px); align-items: center; max-width: 1070px; margin: clamp(1.1rem, 2vw, 1.6rem) auto 0; }
+    .bop { display: grid; justify-items: center; align-content: center; gap: 8px; }
+    .opc {
+      width: 34px; height: 34px; border-radius: 50%; background: var(--panel);
+      border: 1px solid var(--line-strong); display: grid; place-items: center;
+      color: var(--accent); font-weight: 900; font-size: 0.95rem; line-height: 1;
+      box-shadow: 0 6px 16px -8px rgba(30,27,22,.30);
     }
-    .fcard--b2 { transform: rotate(7deg) translate(8%, 3%); background: #f1ece3; }
-    .fcard--b1 { transform: rotate(-6deg) translate(-7%, 1%); background: #fbf8f2; }
-    .fcard--top img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .fmeta { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+    .board .mnly { display: none; }
+    .bsound {
+      position: absolute; right: 10px; bottom: 10px; z-index: 3;
+      width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+      background: rgba(255,255,255,.92); border: 1px solid rgba(25,27,18,.14);
+      display: grid; place-items: center; color: var(--ink);
+      transition: transform .12s ease, color .12s ease, border-color .12s ease;
+    }
+    .bsound:hover { transform: scale(1.08); color: var(--accent); border-color: rgba(201,66,14,.4); }
+    .bsound.on { color: var(--accent); border-color: rgba(201,66,14,.5); }
+    .bsound .s-on { display: none; }
+    .bsound.on .s-on { display: block; }
+    .bsound.on .s-off { display: none; }
+    .bcard {
+      position: relative; aspect-ratio: 4 / 3; border-radius: 18px; overflow: hidden;
+      border: 1px solid var(--line-strong); background: var(--panel-2);
+      box-shadow: 0 26px 60px -28px rgba(30,27,22,.35);
+    }
+    .bcard video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .bcard--out { border: 2px solid var(--acid); box-shadow: 0 26px 60px -24px rgba(237,90,36,.45); }
+    .bmid { display: grid; justify-items: center; align-content: center; gap: 12px; padding: 0 2px; }
+    .op { font-weight: 900; font-size: 1.35rem; color: var(--accent); line-height: 1; }
+    .bthumb {
+      width: clamp(84px, 8.6vw, 118px); background: #fff; border: 1px solid var(--line);
+      border-radius: 12px; padding: 5px 5px 3px; display: grid; gap: 2px; justify-items: center;
+      box-shadow: 0 12px 28px -14px rgba(30,27,22,.28);
+    }
+    .bthumb img { width: 100%; border-radius: 8px; object-fit: cover; display: block; }
+    .bthumb--flat { transform: rotate(-2.2deg); }
+    .bthumb--flat img { aspect-ratio: 5 / 8; }
+    .bthumb--actor { transform: rotate(2deg); }
+    .bthumb--actor img { aspect-ratio: 1 / 1; }
+    .bcap { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); white-space: nowrap; padding: 2px 0 1px; }
     .beam { display: grid; gap: 6px; justify-items: center; }
     .beam .arrows { color: var(--accent); font-weight: 900; font-size: 1.2rem; letter-spacing: -0.12em; animation: nudge 1.4s ease-in-out infinite; }
     @keyframes nudge { 0%,100% { transform: translateX(-2px); } 50% { transform: translateX(3px); } }
-    .beam .fee { font-family: var(--mono); font-size: 0.6rem; color: var(--accent); border: 1px solid rgba(201,66,14,.35); border-radius: 100px; padding: 0.2rem 0.5rem; white-space: nowrap; background: rgba(237,90,36,.12); }
+    .fee { font-family: var(--mono); font-size: 0.6rem; color: var(--accent); border: 1px solid rgba(201,66,14,.35); border-radius: 100px; padding: 0.2rem 0.5rem; white-space: nowrap; background: rgba(237,90,36,.12); }
 
     .phone {
       position: relative; aspect-ratio: 9 / 16; border-radius: 20px; overflow: hidden;
@@ -224,16 +260,7 @@
       border: 1px solid rgba(201,66,14,.35); background: rgba(237,90,36,.10);
       padding: 0.5rem 0.9rem; border-radius: 100px; white-space: nowrap;
     }
-    .filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 2rem; }
-    .filters button {
-      font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.06em; cursor: pointer;
-      padding: 0.5rem 0.95rem; border-radius: 100px; border: 1px solid var(--line-strong);
-      background: transparent; color: var(--muted); transition: all .15s ease;
-    }
-    .filters button:hover { border-color: var(--accent); color: var(--accent); }
-    .filters button[aria-pressed="true"] { background: var(--acid); border-color: var(--acid); color: var(--acid-ink); font-weight: 600; }
-
-    .wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 2rem; }
+    .wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 2.4rem; }
     .pair {
       border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 8px;
       box-shadow: 0 1px 2px rgba(25,27,18,.04), 0 10px 30px -18px rgba(25,27,18,.12);
@@ -352,8 +379,11 @@
       .wall { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 960px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .duo { margin: 0 auto; }
+      .board { grid-template-columns: 1fr; max-width: none; }
+      .bop { display: none; }
+      .board .op.mnly { display: inline; }
+      .board .beam.mnly { display: grid; }
+      .bmid { grid-auto-flow: column; align-items: center; justify-content: center; gap: 14px; padding: 0.4rem 0; }
       .steps { grid-template-columns: 1fr; }
       .receipt-grid { grid-template-columns: 1fr; }
       .receipt { max-width: 420px; }
@@ -367,12 +397,11 @@
       .brand .by { display: none; }
       .brand { font-size: 1.15rem; }
       .nav-inner .btn { padding: 0.65rem 1rem; font-size: 0.85rem; }
-      .duo { gap: 6px; }
-      .duo .ptag { font-size: 0.48rem; padding: 0.18rem 0.38rem; top: 6px; left: 6px; letter-spacing: 0.1em; }
-      .op { font-size: 1rem; }
+      .board .ptag { font-size: 0.5rem; padding: 0.2rem 0.4rem; top: 8px; left: 8px; letter-spacing: 0.1em; }
+      .op { font-size: 1.05rem; }
       .beam .arrows { font-size: 0.95rem; }
       .beam .fee { font-size: 0.5rem; padding: 0.16rem 0.35rem; }
-      .fmeta { font-size: 0.48rem; letter-spacing: 0.08em; }
+      .bthumb { width: clamp(74px, 22vw, 96px); }
     }
     @media (hover: none) {
       .hint::after { content: " · tap"; }
@@ -404,10 +433,52 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
+      <div class="wrap">
+        <div class="hero-head">
           <span class="eyebrow">AI ad cloning for fashion brands</span>
           <h1>The internet <span class="acid">already tested</span> your next ad.</h1>
+        </div>
+
+        <!-- the equation board: real ref video + real inputs + real cloned output -->
+        <div class="board" data-reveal>
+          <div class="bcard">
+            <video src="/media/clone/hero-ref.mp4" poster="/media/clone/hero-ref.jpg" muted loop playsinline autoplay preload="metadata" aria-label="The viral reference video"></video>
+            <span class="ptag ptag--ref">The viral one</span>
+            <button class="bsound" type="button" aria-label="Toggle sound" aria-pressed="false">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/>
+                <path class="s-on" d="M15.5 8.5a5 5 0 0 1 0 7"/>
+                <path class="s-on" d="M18.5 6a9 9 0 0 1 0 12"/>
+                <line class="s-off" x1="16" y1="9" x2="22" y2="15"/><line class="s-off" x1="22" y1="9" x2="16" y2="15"/>
+              </svg>
+            </button>
+          </div>
+          <div class="bop" aria-hidden="true"><span class="opc">+</span></div>
+          <div class="bmid">
+            <span class="op mnly" aria-hidden="true">+</span>
+            <div class="bthumb bthumb--flat"><img src="/media/clone/hero-flatlay.jpg" alt="The garment flatlay uploaded to Clone" loading="lazy" decoding="async"><span class="bcap">your garments</span></div>
+            <div class="bthumb bthumb--actor"><img src="/media/clone/hero-actor.jpg" alt="The AI model chosen in Clone" loading="lazy" decoding="async"><span class="bcap">your model</span></div>
+            <div class="beam mnly" aria-hidden="true">
+              <span class="arrows">≫≫</span>
+              <span class="fee">$5 · 10 MIN</span>
+            </div>
+          </div>
+          <div class="bop bop--go" aria-hidden="true"><span class="opc">≫</span><span class="fee">$5 · 10 MIN</span></div>
+          <div class="bcard bcard--out">
+            <video src="/media/clone/hero-out.mp4" poster="/media/clone/hero-out.jpg" muted loop playsinline autoplay preload="metadata" aria-label="The cloned ad — the same video wearing the uploaded garments on the chosen model"></video>
+            <span class="ptag ptag--out">Yours</span>
+            <button class="bsound" type="button" aria-label="Toggle sound" aria-pressed="false">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/>
+                <path class="s-on" d="M15.5 8.5a5 5 0 0 1 0 7"/>
+                <path class="s-on" d="M18.5 6a9 9 0 0 1 0 12"/>
+                <line class="s-off" x1="16" y1="9" x2="22" y2="15"/><line class="s-off" x1="22" y1="9" x2="16" y2="15"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-cta">
           <p class="sub"><strong>Swap your products in any viral reel.</strong> Clone rebuilds the viral reel with your products, shot for shot. <strong>$5 a video. Ten minutes. No subscription.</strong></p>
           <form class="paste clone-form" novalidate>
             <label for="heroUrl" style="position:absolute;left:-9999px">Reference video link</label>
@@ -415,30 +486,6 @@
             <button class="btn btn-acid" type="submit">Clone it →</button>
           </form>
           <p class="microtrust"><span>$50 starter pack = 10 videos</span><span>credits never expire</span><span>failed clones: fixed free or refunded</span></p>
-        </div>
-
-        <div class="duo" data-reveal>
-          <div class="phone">
-            <video src="/media/clone/ref-freestyle.mp4" poster="/media/clone/ref-freestyle.jpg" muted loop playsinline autoplay preload="metadata" aria-label="The viral reference video"></video>
-            <span class="ptag ptag--ref">The viral one</span>
-          </div>
-          <span class="op" aria-hidden="true">+</span>
-          <div class="fwrap">
-            <div class="fstack" role="img" aria-label="A stack of garment flatlays you upload">
-              <div class="fcard fcard--b2"></div>
-              <div class="fcard fcard--b1"></div>
-              <div class="fcard fcard--top"><img src="https://quinn.live/media/hero-before.jpg" alt="" loading="lazy" decoding="async"></div>
-            </div>
-            <span class="fmeta">your flatlays</span>
-          </div>
-          <div class="beam" aria-hidden="true">
-            <span class="arrows">≫≫</span>
-            <span class="fee">$5 · 10 MIN</span>
-          </div>
-          <div class="phone">
-            <video src="/media/clone/out-freestyle.mp4" poster="/media/clone/out-freestyle.jpg" muted loop playsinline autoplay preload="metadata" aria-label="The same video cloned with the brand's garments"></video>
-            <span class="ptag ptag--out">Yours</span>
-          </div>
         </div>
       </div>
     </section>
@@ -462,7 +509,6 @@
           <span class="count-badge" id="wallCount">— clones on the wall</span>
         </div>
 
-        <div class="filters" id="filters" role="group" aria-label="Filter clones by format" data-reveal></div>
         <div class="wall" id="wallGrid"></div>
       </div>
     </section>
@@ -679,39 +725,33 @@
               ref: { video: 'https://…/ref.mp4', poster: 'https://…/ref.jpg' },
               out: { video: 'https://…/out.mp4', poster: 'https://…/out.jpg' } }
        3. That's it — count badge, filters and hover-play wire up automatically.
-       NOTE ON PLACEHOLDERS: entries with ref:{likes,hue} render a stylized
-       "viral reference" stand-in (gradient + play glyph) instead of real
-       footage. Replace them with real ref/out video pairs as they're cleared
-       for marketing. The engagement numbers on placeholders are decorative —
-       swap in the real stats of the real references.
+       All current cards are REAL ref/output pairs. (Entries with ref:{likes,hue}
+       would render a stylized gradient stand-in — kept as a fallback for drafts.)
        ========================================================================== */
-    const CLIP = 'https://clone.quinn.live/clip.mp4';          // real sample output (replace/extend)
-    const M = n => `https://quinn.live/media/${n}.jpg`;        // Quinn imagery as stand-in posters
 
-    const CATS = { grwm: 'GRWM', haul: 'Haul', transition: 'Transition', ootd: 'OOTD', lookbook: 'Lookbook', d2n: 'Day-to-night', street: 'Street' };
+    const CATS = { street: 'Street', ootd: 'OOTD', lookbook: 'Lookbook', sport: 'Sport', trend: 'Trend' };
+
+    const W = n => `/media/clone/${n}`;
+    const pair = (n, cat, label, meta) => ({ cat, label, meta,
+      ref: { video: W(`wall-ref${n}.mp4`), poster: W(`wall-ref${n}.jpg`) },
+      out: { video: W(`wall-out${n}.mp4`), poster: W(`wall-out${n}.jpg`) } });
 
     const SAMPLES = [
-      { cat: 'street',     label: 'Streetwear · freestyle edit',    meta: 'real pair · same cuts, new fit · 33s',
+      pair(0, 'ootd',     'Paris street OOTD',        'same cuts, new fit · 10s'),
+      pair(5, 'trend',    'Dojo cut · katana included','same blade, new fit · 16s'),
+      pair(6, 'sport',    'Tennis-core rally',         'mid-swing swap · 14s'),
+      pair(4, 'lookbook', 'Newsstand lookbook',        'same kiosk, new fit · 17s'),
+      pair(1, 'street',   'Crosswalk fit walk',        'same stride, new fit · 14s'),
+      pair(2, 'ootd',     'Coffee-run OOTD',           'same sip, new fit · 14s'),
+      { cat: 'sport', label: 'Freestyle session', meta: 'same cuts, new fit · 33s',
         ref: { video: '/media/clone/ref-freestyle.mp4', poster: '/media/clone/ref-freestyle.jpg' },
         out: { video: '/media/clone/out-freestyle.mp4', poster: '/media/clone/out-freestyle.jpg' } },
-      { cat: 'grwm',       label: 'GRWM · college fit-check',      meta: '6 garments mapped · 12s', ref: { likes: '412K', hue: 338 }, out: { video: CLIP, poster: M('model-shirt') } },
-      { cat: 'transition', label: 'Outfit transition · beat drop',  meta: '3 garments · 9s',         ref: { likes: '1.2M', hue: 262 }, out: { video: CLIP, poster: M('model-dress') } },
-      { cat: 'haul',       label: 'Try-on haul · summer drop',      meta: '5 garments · 15s',        ref: { likes: '687K', hue: 196 }, out: { poster: M('model-top') } },
-      { cat: 'ootd',       label: 'OOTD · street walk',             meta: '1 garment look · 7s',     ref: { likes: '233K', hue: 24 },  out: { video: '/media/clone/hero-street.mp4', poster: '/media/clone/hero-street.jpg' } },
-      { cat: 'lookbook',   label: 'Lookbook · saree edit',          meta: '4 garments · 14s',        ref: { likes: '904K', hue: 310 }, out: { video: CLIP, poster: M('saree-1') } },
-      { cat: 'd2n',        label: 'Day-to-night · office → dinner', meta: '2 garments · 10s',        ref: { likes: '156K', hue: 210 }, out: { poster: M('model-sweater') } },
-      { cat: 'grwm',       label: 'GRWM · date night',              meta: '4 garments · 13s',        ref: { likes: '2.1M', hue: 350 }, out: { poster: M('model-pant') } },
-      { cat: 'street',     label: 'Street fit-check interview',     meta: '3 garments · 15s',        ref: { likes: '845K', hue: 120 }, out: { poster: M('saree-3') } },
-      { cat: 'transition', label: 'Spin transition · festive',      meta: '2 garments · 8s',         ref: { likes: '519K', hue: 280 }, out: { video: CLIP, poster: M('saree-2') } },
-      { cat: 'haul',       label: 'Unboxing → try-on',              meta: '5 garments · 15s',        ref: { likes: '378K', hue: 45 },  out: { poster: M('saree-4') } },
-      { cat: 'ootd',       label: 'OOTD · mirror check',            meta: '1 garment · 7s',          ref: { likes: '92K',  hue: 180 }, out: { poster: M('hero-after') } },
-      { cat: 'lookbook',   label: 'Editorial pan · border detail',  meta: '3 garments · 12s',        ref: { likes: '640K', hue: 300 }, out: { poster: M('saree-5') } },
+      pair(3, 'street',   'Wide-shot fit walk',        'blink and it\'s yours · 8s'),
     ];
 
     // ---------- render the wall ----------
     (function () {
       const grid = document.getElementById('wallGrid');
-      const filters = document.getElementById('filters');
       const countEl = document.getElementById('wallCount');
 
       const paneHTML = (side, d) => {
@@ -754,25 +794,6 @@
         </article>`;
 
       countEl.textContent = `${SAMPLES.length} clones on the wall · new ones weekly`;
-
-      // filters
-      const keys = ['*', ...Object.keys(CATS)];
-      filters.innerHTML = keys.map(k =>
-        `<button type="button" data-k="${k}" aria-pressed="${k === '*'}">${k === '*' ? 'All' : CATS[k]}</button>`).join('');
-      filters.addEventListener('click', e => {
-        const btn = e.target.closest('button'); if (!btn) return;
-        const k = btn.dataset.k;
-        filters.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn));
-        let shown = 0;
-        grid.querySelectorAll('.pair').forEach(card => {
-          const show = k === '*' || card.dataset.cat === k || card.dataset.cat === '*';
-          card.style.display = show ? '' : 'none';
-          if (show && card.dataset.cat !== '*') shown++;
-        });
-        countEl.textContent = k === '*'
-          ? `${SAMPLES.length} clones on the wall · new ones weekly`
-          : `${shown} ${CATS[k]} clone${shown === 1 ? '' : 's'} on the wall`;
-      });
 
       // hover / tap to play both sides of a card
       const stopAll = except => document.querySelectorAll('.pair video').forEach(v => {
@@ -831,7 +852,7 @@
 
     // ---------- hero videos: play only when visible, never under reduced motion ----------
     (function () {
-      const duo = document.querySelector('.duo');
+      const duo = document.querySelector('.board');
       const vids = duo ? duo.querySelectorAll('video') : [];
       if (!vids.length) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -841,6 +862,28 @@
       new IntersectionObserver(([e]) => {
         vids.forEach(v => e.isIntersecting ? v.play().catch(() => {}) : v.pause());
       }, { threshold: 0.25 }).observe(duo);
+    })();
+
+    // ---------- hero sound toggles: one card audible at a time ----------
+    (function () {
+      const cards = document.querySelectorAll('.board .bcard');
+      cards.forEach(card => {
+        const v = card.querySelector('video');
+        const b = card.querySelector('.bsound');
+        if (!v || !b) return;
+        b.addEventListener('click', () => {
+          const enable = v.muted;
+          cards.forEach(c => {
+            const cv = c.querySelector('video'), cb = c.querySelector('.bsound');
+            if (cv) cv.muted = true;
+            if (cb) { cb.classList.remove('on'); cb.setAttribute('aria-pressed', 'false'); }
+          });
+          if (enable) {
+            v.muted = false; b.classList.add('on'); b.setAttribute('aria-pressed', 'true');
+            v.play().catch(() => {});
+          }
+        });
+      });
     })();
 
     // ---------- year ----------
