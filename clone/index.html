@@ -26,6 +26,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
+  <!-- Meta Pixel — dataset "Clone's market data" (1021072786989890). Pairs with the Meta-hosted CAPI. -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1021072786989890');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1021072786989890&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -833,8 +847,16 @@
           url.searchParams.set('utm_source', 'landing_v2');
           url.searchParams.set('utm_content', 'paste_bar');
           if (/^https?:\/\/\S+$/i.test(v)) url.searchParams.set('reference', v);
+          if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'paste_bar' });
           window.location.href = url.toString();
         });
+      });
+      // primary CTAs that hand off to the app → Lead (intent signal + retargeting audience)
+      document.addEventListener('click', e => {
+        const a = e.target.closest('a[href*="clone.quinn.live/app"]');
+        if (!a || typeof fbq !== 'function') return;
+        const c = new URL(a.href).searchParams.get('utm_content') || 'cta';
+        fbq('track', 'Lead', { content_name: c });
       });
     })();
 
