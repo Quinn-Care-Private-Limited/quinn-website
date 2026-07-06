@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clone — The internet already tested your next ad. Swap your product in.</title>
-  <meta name="description" content="A viral fashion reel is a proven ad. Clone swaps your products into it — rebuilt shot-for-shot on your AI model for $5 a video, in ~10 minutes. Packs from $50, no subscription." />
+  <meta name="description" content="A viral fashion reel is a proven ad. Clone swaps your products into it — rebuilt shot-for-shot on your AI model for ~$10 a video, in ~15 minutes. $200 credit pack, no subscription." />
   <meta name="theme-color" content="#f7f5f1" />
 
   <!-- Live home: https://quinn.live/clone/. If this page later moves to the clone.quinn.live root,
        flip canonical + og:url below, and prefix the /media/clone/… asset paths with https://quinn.live -->
   <link rel="canonical" href="https://quinn.live/clone/" />
   <meta property="og:title" content="Clone — the internet already tested your next ad" />
-  <meta property="og:description" content="A viral fashion reel is a proven ad. Swap your products in — $5 a video, packs from $50, no subscription." />
+  <meta property="og:description" content="A viral fashion reel is a proven ad. Swap your products in — ~$10 a video, $200 pack ≈ 20 videos, no subscription." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://quinn.live/clone/" />
   <!-- versioned filename: bump the number whenever the card changes, so CDN + social scrapers can't serve a stale one -->
-  <meta property="og:image" content="https://quinn.live/clone/og-v4.png" />
+  <meta property="og:image" content="https://quinn.live/clone/og-v5.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -32,8 +32,8 @@
     "@type": "Product",
     "name": "Clone",
     "brand": { "@type": "Brand", "name": "Quinn" },
-    "description": "Rebuilds any short-form fashion video with your garments and your chosen AI model. 15-second, 720p vertical videos at $5 each, delivered in about 10 minutes. Credit packs start at $50 (10 videos).",
-    "offers": { "@type": "Offer", "price": "50.00", "priceCurrency": "USD", "description": "Starter credit pack — 10 videos at $5 each", "url": "https://clone.quinn.live/app" }
+    "description": "Rebuilds any short-form fashion video with your garments and your chosen AI model. 15-second, 720p vertical videos at about $10 each, delivered in about 15 minutes. $200 credit pack (about 20 videos).",
+    "offers": { "@type": "Offer", "price": "200.00", "priceCurrency": "USD", "description": "Credit pack — about 20 videos at ~$10 each", "url": "https://clone.quinn.live/app" }
   }
   </script>
 
@@ -142,7 +142,8 @@
       .hero h1 { font-size: min(3.25vw, 2.45rem); white-space: nowrap; letter-spacing: -0.02em; }
     }
     .hero-cta { position: relative; z-index: 1; max-width: 720px; margin: clamp(1.5rem, 2.6vw, 2rem) auto 0; text-align: center; }
-    .hero-cta .sub { margin: 0 auto; max-width: 66ch; }
+    .sub-lead { font-weight: 700; font-size: clamp(1.2rem, 1.9vw, 1.5rem); letter-spacing: -0.01em; color: var(--ink); }
+    .hero .hero-cta .sub { margin: 0.45rem auto 0; max-width: none; }
     .hero-cta .paste { justify-content: center; margin-left: auto; margin-right: auto; }
     .hero-cta .microtrust { justify-content: center; }
     .hero .sub { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.13rem); max-width: 46ch; margin-top: 1.4rem; }
@@ -425,7 +426,7 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn-acid" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=nav">Get 10 videos — $50</a>
+      <a class="btn btn-acid" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=nav">Get 20 videos — $200</a>
     </div>
   </header>
 
@@ -460,10 +461,10 @@
             <div class="bthumb bthumb--actor"><img src="/media/clone/hero-actor.jpg" alt="The AI model chosen in Clone" loading="lazy" decoding="async"><span class="bcap">your model</span></div>
             <div class="beam mnly" aria-hidden="true">
               <span class="arrows">≫≫</span>
-              <span class="fee">$5 · 10 MIN</span>
+              <span class="fee">$10 · 15 MIN</span>
             </div>
           </div>
-          <div class="bop bop--go" aria-hidden="true"><span class="opc">≫</span><span class="fee">$5 · 10 MIN</span></div>
+          <div class="bop bop--go" aria-hidden="true"><span class="opc">≫</span><span class="fee">$10 · 15 MIN</span></div>
           <div class="bcard bcard--out">
             <video src="/media/clone/hero-out.mp4" poster="/media/clone/hero-out.jpg" muted loop playsinline autoplay preload="metadata" aria-label="The cloned ad — the same video wearing the uploaded garments on the chosen model"></video>
             <span class="ptag ptag--out">Yours</span>
@@ -479,13 +480,14 @@
         </div>
 
         <div class="hero-cta">
-          <p class="sub"><strong>Swap your products in any viral reel.</strong> Clone rebuilds the viral reel with your products, shot for shot. <strong>$5 a video. Ten minutes. No subscription.</strong></p>
+          <p class="sub-lead">Swap your products in any viral reel.</p>
+          <p class="sub">Clone rebuilds the viral reel with your products, shot for shot.<br /><strong>$10 a video. 15 minutes. No subscription.</strong></p>
           <form class="paste clone-form" novalidate>
             <label for="heroUrl" style="position:absolute;left:-9999px">Reference video link</label>
             <input type="url" id="heroUrl" placeholder="Paste a TikTok / Instagram / YouTube link…" />
             <button class="btn btn-acid" type="submit">Clone it →</button>
           </form>
-          <p class="microtrust"><span>$50 starter pack = 10 videos</span><span>credits never expire</span><span>failed clones: fixed free or refunded</span></p>
+          <p class="microtrust"><span>$200 credit pack ≈ 20 videos</span><span>credits never expire</span><span>failed clones: fixed free or refunded</span></p>
         </div>
       </div>
     </section>
@@ -493,7 +495,7 @@
     <!-- ============ TICKER ============ -->
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track" id="ticker">
-        <span>pick a proven reel<i>✦</i>swap your products in<i>✦</i>the test already ran<i>✦</i>$5 a video<i>✦</i>packs from $50<i>✦</i>10 minutes<i>✦</i>no subscription<i>✦</i>credits never expire<i>✦</i></span>
+        <span>pick a proven reel<i>✦</i>swap your products in<i>✦</i>the test already ran<i>✦</i>$10 a video<i>✦</i>$200 pack = 20 videos<i>✦</i>15 minutes<i>✦</i>no subscription<i>✦</i>credits never expire<i>✦</i></span>
       </div>
     </div>
 
@@ -535,7 +537,7 @@
           <div class="step" data-big="03" data-reveal>
             <span class="num">STEP 03</span>
             <h3>Press Clone</h3>
-            <p>Clone splits the reference into shots, maps a product to every cut, puts it all on the AI model you picked, and rebuilds the reel frame-by-frame. ~10 minutes later: a proven structure, wearing your brand.</p>
+            <p>Clone splits the reference into shots, maps a product to every cut, puts it all on the AI model you picked, and rebuilds the reel frame-by-frame. ~15 minutes later: a proven structure, wearing your brand.</p>
           </div>
         </div>
         <div class="platform-chips" data-reveal>
@@ -550,7 +552,7 @@
         <div class="section-head" data-reveal>
           <span class="eyebrow">The odds</span>
           <h2>Stop asking "will it work?" Start asking <span class="acid">"did it work?"</span></h2>
-          <p class="lede">Every "new creative" is a bet placed blind. A viral reel is a bet the market already paid out — proven hook, proven pacing, proven demand. Clone lets you run that playbook with your products, at $5 a test:</p>
+          <p class="lede">Every "new creative" is a bet placed blind. A viral reel is a bet the market already paid out — proven hook, proven pacing, proven demand. Clone lets you run that playbook with your products, at ~$10 a test:</p>
         </div>
 
         <div class="cmp-scroll" data-reveal>
@@ -560,20 +562,20 @@
             </thead>
             <tbody>
               <tr><td>Proof it can perform</td><td>A brief and a prayer</td><td>A deck and a prayer</td><td class="win">It already went viral</td></tr>
-              <tr><td>One 15-second video</td><td>$50–$200</td><td>$500+</td><td class="win">$5</td></tr>
-              <tr><td>What $50 gets you</td><td>One video, maybe</td><td>A discovery call</td><td class="win">Ten videos</td></tr>
-              <tr><td>Turnaround</td><td>~14 days</td><td>2–3 weeks</td><td class="win">~10 minutes</td></tr>
+              <tr><td>One 15-second video</td><td>$50–$200</td><td>$500+</td><td class="win">~$10</td></tr>
+              <tr><td>What $200 gets you</td><td>One video</td><td>A discovery call</td><td class="win">Twenty videos</td></tr>
+              <tr><td>Turnaround</td><td>~14 days</td><td>2–3 weeks</td><td class="win">~15 minutes</td></tr>
               <tr><td>Briefs &amp; meetings</td><td>Yes, many</td><td>So many</td><td class="win">None</td></tr>
-              <tr><td>Want a variation?</td><td>New invoice</td><td>New scope</td><td class="win">Another $5</td></tr>
+              <tr><td>Want a variation?</td><td>New invoice</td><td>New scope</td><td class="win">Another $10</td></tr>
               <tr><td>If the video fails</td><td>You still pay</td><td>You still pay</td><td class="win">Fixed free, or refunded</td></tr>
-              <tr><td>Videos for 200 SKUs</td><td>$10,000–$40,000</td><td>Don't ask</td><td class="win">$1,000</td></tr>
+              <tr><td>Videos for 200 SKUs</td><td>$10,000–$40,000</td><td>Don't ask</td><td class="win">$2,000</td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="trio">
-          <div class="stat" data-reveal><div class="big">10 tests</div><div class="lbl">per $50 pack — under the price of one UGC video</div></div>
-          <div class="stat" data-reveal><div class="big">10 min</div><div class="lbl">from paste to posted</div></div>
+          <div class="stat" data-reveal><div class="big">20 tests</div><div class="lbl">per $200 pack — the price of ONE influencer video</div></div>
+          <div class="stat" data-reveal><div class="big">15 min</div><div class="lbl">from paste to posted</div></div>
           <div class="stat" data-reveal><div class="big">0</div><div class="lbl">blind bets — every reference has receipts</div></div>
         </div>
       </div>
@@ -584,27 +586,27 @@
       <div class="wrap">
         <div class="section-head" data-reveal>
           <span class="eyebrow">Pricing</span>
-          <h2>What $50 <span class="acid">actually buys.</span></h2>
+          <h2>What $200 <span class="acid">actually buys.</span></h2>
         </div>
         <div class="receipt-grid">
-          <div class="receipt" data-reveal aria-label="Itemized receipt for the starter credit pack">
-            <div class="rhead">CLONE ✂ STARTER PACK #0050</div>
-            <div class="row"><span>10 pre-tested ad structures ……</span><span>$0.00</span></div>
+          <div class="receipt" data-reveal aria-label="Itemized receipt for the credit pack">
+            <div class="rhead">CLONE ✂ CREDIT PACK #0200</div>
+            <div class="row"><span>20 pre-tested ad structures ……</span><span>$0.00</span></div>
             <div class="row"><span>(the internet ran the tests) </span><span></span></div>
             <div class="row"><span>your garments ………………………………</span><span>$0.00</span></div>
             <div class="row"><span>AI models, posed &amp; lit ……………</span><span>$0.00</span></div>
             <div class="row"><span>scene-split + product mapping …</span><span>$0.00</span></div>
-            <div class="row"><span>10 full rebuilds @ $5 each ……</span><span>$50.00</span></div>
+            <div class="row"><span>20 full rebuilds @ ~$10 each …</span><span>$200.00</span></div>
             <div class="row"><span>subscription …………………………………</span><span>$0.00</span></div>
             <div class="row"><span>onboarding calls ………………………</span><span>$0.00</span></div>
-            <div class="row total"><span>TOTAL</span><span>$50.00</span></div>
-            <div class="note">≈ one influencer video. except it's ten. fix-or-refund included. thank you, come again.</div>
+            <div class="row total"><span>TOTAL</span><span>$200.00</span></div>
+            <div class="note">the price of one influencer video. except it's twenty. fix-or-refund included.</div>
           </div>
           <div data-reveal>
             <ul class="speclist">
-              <li><b>$50 starter pack = 10 videos</b> — the minimum buy; every video is $5</li>
+              <li><b>$200 credit pack ≈ 20 videos</b> — every video comes out to roughly $10</li>
               <li><b>Each video: 15 seconds, 720p, 9:16</b> — sized for Reels, TikTok &amp; Shorts</li>
-              <li><b>Delivered in ~10 minutes</b> — react to a trend while it's still a trend</li>
+              <li><b>Delivered in ~15 minutes</b> — react to a trend while it's still a trend</li>
               <li><b>Any proven reel you bring</b> — your old hit, their new hit, a TV ad. Link or upload</li>
               <li><b>Multi-garment mapping</b> — hauls and GRWMs with 6+ products handled</li>
               <li><b>Your AI model, your pose</b> — you control every input</li>
@@ -612,7 +614,7 @@
               <li><b>Credits never expire</b> — buy for the launch, use when ready</li>
               <li><b>No subscription</b> — no monthly nag, no "forgot to cancel"</li>
             </ul>
-            <a class="btn btn-acid" style="margin-top:2rem" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=pricing">Start with 10 videos — $50</a>
+            <a class="btn btn-acid" style="margin-top:2rem" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=pricing">Start with 20 videos — $200</a>
           </div>
         </div>
       </div>
@@ -628,11 +630,7 @@
         <div class="faq" data-reveal>
           <details>
             <summary>How do I know the cloned ad will actually perform?</summary>
-            <p class="a">Honestly: nobody can promise ROAS — anyone who does is selling a horoscope. What Clone changes is your starting odds. Instead of betting on a structure no audience has ever seen, you start from cuts, pacing, and a hook that already earned six figures of likes in the wild. Then you do what good media buyers do: test cheap, kill losers at $5, and scale the one that prints.</p>
-          </details>
-          <details>
-            <summary>Won't I get sued for cloning a competitor's ad?</summary>
-            <p class="a">You're not copying their products, their footage, or their brand — you're cloning the <em>structure</em>: the cuts, the pacing, the hook. The same way every brand on Instagram runs its own version of the same trend. The output has your products, your model, your brand. You're learning from what works, not stealing what's theirs.</p>
+            <p class="a">Honestly: nobody can promise ROAS — anyone who does is selling a horoscope. What Clone changes is your starting odds. Instead of betting on a structure no audience has ever seen, you start from cuts, pacing, and a hook that already earned six figures of likes in the wild. Then you do what good media buyers do: test cheap, kill losers at $10, and scale the one that prints.</p>
           </details>
           <details>
             <summary>Will it look like AI slop?</summary>
@@ -643,8 +641,8 @@
             <p class="a">You bring the products. You choose the model and pose. The reference dictates the vibe — and you chose the reference. You stay in control of every input.</p>
           </details>
           <details>
-            <summary>Why is the minimum a $50 pack?</summary>
-            <p class="a">Because one test is a coin flip — ten is a strategy. Clone is built for testing volume: the starter pack is 10 videos at $5 each, which is still less than most single influencer videos. Credits never expire, and failed clones get fixed or refunded, so the pack never burns a hole.</p>
+            <summary>Why a $200 credit pack?</summary>
+            <p class="a">Because one test is a coin flip — twenty is a strategy. Clone is built for testing volume: the $200 pack works out to about 20 videos at roughly $10 each — the price of a single influencer video, except it's twenty shots at a winner. Credits never expire, and failed clones get fixed or refunded, so the pack never burns a hole.</p>
           </details>
           <details>
             <summary>What if my clone comes out wrong?</summary>
@@ -664,13 +662,13 @@
         <div class="cta-band" data-reveal>
           <span class="eyebrow">Last call</span>
           <h2 style="margin-top:1rem">That reel you saved last night? <span class="acid">It's your ad now.</span></h2>
-          <p class="lede">Paste the link. Upload your garments. Ten minutes from now it's wearing your clothes.</p>
+          <p class="lede">Paste the link. Upload your garments. Fifteen minutes from now it's wearing your clothes.</p>
           <form class="paste clone-form" novalidate style="margin-top:1.8rem">
             <label for="ctaUrl" style="position:absolute;left:-9999px">Reference video link</label>
             <input type="url" id="ctaUrl" placeholder="Paste a TikTok / Instagram / YouTube link…" />
             <button class="btn btn-acid" type="submit">Clone it →</button>
           </form>
-          <p class="ps"><span class="tag">P.S.</span> Every campaign is one of two bets: <b>$200 and 14 days</b> on an ad that <em>might</em> work — or <b>$5 and ten minutes</b> on a structure that <b>already did</b>. That's the whole pitch.</p>
+          <p class="ps"><span class="tag">P.S.</span> Every campaign is one of two bets: <b>$200 and 14 days</b> for one influencer video that <em>might</em> work — or the same <b>$200 for twenty videos</b> built on structures that <b>already did</b>. Same money. Twenty times the shots. That's the whole pitch.</p>
           <p class="ps"><span class="tag">P.P.S.</span> Good artists copy. Great artists steal. The best artists <b>clone</b>.</p>
         </div>
       </div>
@@ -683,7 +681,7 @@
       <div class="foot-grid">
         <div class="foot-brand">
           <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span> Clone <span class="by">by Quinn</span></a>
-          <p>Rebuild any winning fashion video with your garments and your AI model. $5, ten minutes, no subscription.</p>
+          <p>Rebuild any winning fashion video with your garments and your AI model. ~$10 a video, 15 minutes, no subscription.</p>
         </div>
         <div class="foot-links">
           <div>
@@ -788,7 +786,7 @@
         <article class="pair pair--cta" data-cat="*" data-reveal>
           <div>
             <h3>Yours goes<br>here.</h3>
-            <p>Every card on this wall cost somebody $5 and ten minutes.</p>
+            <p>Every card on this wall cost somebody ten dollars and fifteen minutes.</p>
             <a class="btn" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=wall">Clone yours →</a>
           </div>
         </article>`;
