@@ -357,6 +357,8 @@
     .step p { color: var(--muted); font-size: 0.95rem; }
     .step::after { content: attr(data-big); position: absolute; right: -10px; bottom: -34px; font-weight: 900; font-size: 7rem; line-height: 1; color: rgba(237,90,36,.14); pointer-events: none; }
     .platform-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 2rem; }
+    .platform-chips a.chip { transition: border-color .15s ease, color .15s ease; }
+    .platform-chips a.chip:hover { border-color: var(--accent); color: var(--accent); }
     .chip { font-family: var(--mono); font-size: 0.72rem; padding: 0.42rem 0.85rem; border-radius: 100px; border: 1px solid var(--line-strong); color: var(--muted); }
 
     /* ---------- The math ---------- */
@@ -604,7 +606,7 @@
           </div>
         </div>
         <div class="platform-chips" data-reveal>
-          <span class="chip">TikTok</span><span class="chip">Instagram Reels</span><span class="chip">YouTube Shorts</span><span class="chip">GRWM</span><span class="chip">Try-on haul</span><span class="chip">OOTD</span><span class="chip">Outfit transition</span><span class="chip">Lookbook</span><span class="chip">Day-to-night</span>
+          <span class="chip">TikTok</span><span class="chip">Instagram Reels</span><span class="chip">YouTube Shorts</span><a class="chip" href="/clone/formats/grwm/">GRWM</a><a class="chip" href="/clone/formats/try-on-haul/">Try-on haul</a><a class="chip" href="/clone/formats/ootd/">OOTD</a><a class="chip" href="/clone/formats/outfit-transition/">Outfit transition</a><a class="chip" href="/clone/formats/lookbook/">Lookbook</a><a class="chip" href="/clone/formats/street-style/">Street style</a><a class="chip" href="/clone/formats/athleisure/">Athleisure</a><a class="chip" href="/clone/formats/" style="border-color:rgba(201,66,14,.4);color:var(--accent)">All formats →</a>
         </div>
       </div>
     </section>
@@ -754,6 +756,7 @@
             <a href="#wall">The Wall</a>
             <a href="#pricing">Pricing</a>
             <a href="/clone/how-it-works/">How it works</a>
+            <a href="/clone/formats/">Video formats</a>
             <a href="/clone/vs/">Clone vs alternatives</a>
             <a href="/clone/answers/">Questions answered</a>
           </div>

@@ -19,6 +19,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://quinn.live/clone/formats/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://quinn.live/clone/formats/grwm/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quinn.live/clone/formats/ootd/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quinn.live/clone/formats/try-on-haul/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quinn.live/clone/formats/outfit-transition/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quinn.live/clone/formats/lookbook/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quinn.live/clone/formats/street-style/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://quinn.live/clone/formats/athleisure/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url>
     <loc>https://quinn.live/clone/answers/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
