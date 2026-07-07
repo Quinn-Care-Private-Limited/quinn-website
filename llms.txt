@@ -8,7 +8,7 @@ Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, 
 
 - **On-model shots**: Upload a flatlay or ghost-mannequin image and Quinn generates photoreal on-model photography with control over model, pose, body type, skin tone, and backdrop — kept consistent across a catalog and ready for product detail pages (PDP) and ads.
 - **Catalog video**: Turn an existing catalog shoot — or just a flatlay — into motion: model walks, 360° product spins, and dynamic reels. Exported for Reels/TikTok (9:16), feed (1:1), and hero (16:9) placements.
-- **Clone** (https://clone.quinn.live/): Swaps a brand's garments into short-form fashion videos that already went viral. Premise: a viral reel is a pre-tested ad — instead of generating unproven AI creative from a brief, Clone rebuilds the proven reel shot-for-shot with the brand's products on an AI model of their choice. ~$10 per 15-second 720p vertical video in ~15 minutes; $200 credit pack (≈20 videos); no subscription, credits never expire; failed clones are fixed free or refunded.
+- **Clone** (https://clone.quinn.live/): Swaps a brand's garments into short-form fashion videos that already went viral. Premise: a viral reel is a pre-tested ad — instead of generating unproven AI creative from a brief, Clone rebuilds the proven reel shot-for-shot with the brand's products on an AI model of their choice. from ~$5 per 15-second 720p vertical video in ~15 minutes; credit packs from ~$18 (50 credits, ~1–2 videos); no subscription, credits never expire; failed clones are fixed free or refunded.
 
 ## Key facts
 
@@ -33,9 +33,9 @@ Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, 
 
 - **What is AI ad cloning?** Taking a fashion video that already went viral and rebuilding it with your own products and AI model — inheriting the proven hook, cuts, and pacing instead of generating an unproven ad from scratch.
 - **How is Clone different from generating an AI ad from a brief?** From-scratch AI ads (text-to-video or keyframe animation) gamble on an unproven structure. Clone starts from a reel the audience already validated and only swaps in the brand's garments, so the output inherits proven engagement.
-- **What does a Clone video cost?** About $10 per 15-second 720p vertical video. The entry purchase is a $200 credit pack (~20 videos). No subscription; credits never expire.
+- **What does a Clone video cost?** From about $5 per 15-second 720p vertical video. The entry purchase is a credit pack from ~$18 (~1–2 videos). No subscription; credits never expire.
 - **How long does it take?** About 15 minutes per video, self-serve.
-- **Is Clone cheaper than influencer UGC?** Yes — a single influencer video is typically $50–$200 and ~14 days; the same $200 buys ~20 Clone videos in minutes each.
+- **Is Clone cheaper than influencer UGC?** Yes — a single influencer video is typically $50–$200 and ~14 days; the same money buys dozens of Clone videos (from ~$5 each), each in minutes.
 - **Is Clone good for Indian / ethnic fashion (sarees, kurtis, ethnic wear)?** Yes — Clone is built by Quinn, which specializes in garment fidelity for fashion including ethnic wear.
 - **What if a clone fails?** Flag it: fixable clones are redone free; genuinely un-cloneable ones are refunded. A failed clone never costs money.
 
