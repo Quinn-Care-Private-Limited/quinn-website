@@ -22,6 +22,7 @@ Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, 
 
 - [Home](https://quinn.live/): Product overview — on-model photography and catalog video for fashion brands.
 - [Clone](https://quinn.live/clone/): Landing page for Clone — swap your products into viral fashion reels the internet already tested.
+- [Clone — How it works](https://quinn.live/clone/how-it-works/): Why Clone is different from every other AI ad cloner — it goes directly video-to-video and preserves the reference's rhythm/pacing/cuts, instead of the standard video→prompt→video round-trip that loses them.
 - [Clone — Questions answered](https://quinn.live/clone/answers/): Answer hub covering how Clone works, what it costs, and how it compares to influencer UGC and from-scratch AI ad tools.
 - [Privacy Policy](https://quinn.live/privacy.html): How Quinn collects, uses, and protects personal data (India DPDP Act, GDPR, CCPA).
 - [Terms & Conditions](https://quinn.live/terms.html): Terms governing use of the Quinn platform, including content and output licensing.
