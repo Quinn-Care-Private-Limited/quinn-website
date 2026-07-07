@@ -22,9 +22,20 @@ Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, 
 
 - [Home](https://quinn.live/): Product overview — on-model photography and catalog video for fashion brands.
 - [Clone](https://quinn.live/clone/): Landing page for Clone — swap your products into viral fashion reels the internet already tested.
+- [Clone — Questions answered](https://quinn.live/clone/answers/): Answer hub covering how Clone works, what it costs, and how it compares to influencer UGC and from-scratch AI ad tools.
 - [Privacy Policy](https://quinn.live/privacy.html): How Quinn collects, uses, and protects personal data (India DPDP Act, GDPR, CCPA).
 - [Terms & Conditions](https://quinn.live/terms.html): Terms governing use of the Quinn platform, including content and output licensing.
 - [Delete Your Account](https://quinn.live/delete.html): How to request deletion of a Quinn account and associated data.
+
+## Clone — questions, answered
+
+- **What is AI ad cloning?** Taking a fashion video that already went viral and rebuilding it with your own products and AI model — inheriting the proven hook, cuts, and pacing instead of generating an unproven ad from scratch.
+- **How is Clone different from generating an AI ad from a brief?** From-scratch AI ads (text-to-video or keyframe animation) gamble on an unproven structure. Clone starts from a reel the audience already validated and only swaps in the brand's garments, so the output inherits proven engagement.
+- **What does a Clone video cost?** About $10 per 15-second 720p vertical video. The entry purchase is a $200 credit pack (~20 videos). No subscription; credits never expire.
+- **How long does it take?** About 15 minutes per video, self-serve.
+- **Is Clone cheaper than influencer UGC?** Yes — a single influencer video is typically $50–$200 and ~14 days; the same $200 buys ~20 Clone videos in minutes each.
+- **Is Clone good for Indian / ethnic fashion (sarees, kurtis, ethnic wear)?** Yes — Clone is built by Quinn, which specializes in garment fidelity for fashion including ethnic wear.
+- **What if a clone fails?** Flag it: fixable clones are redone free; genuinely un-cloneable ones are refunded. A failed clone never costs money.
 
 ## Contact
 
