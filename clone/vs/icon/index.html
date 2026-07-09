@@ -20,7 +20,7 @@
   <script type="application/ld+json">
   { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Quinn","item":"https://quinn.live/"},
-    {"@type":"ListItem","position":2,"name":"Clone","item":"https://quinn.live/clone/"},
+    {"@type":"ListItem","position":2,"name":"Clone","item":"https://quinn.live/"},
     {"@type":"ListItem","position":3,"name":"Compare","item":"https://quinn.live/clone/vs/"},
     {"@type":"ListItem","position":4,"name":"vs Icon","item":"https://quinn.live/clone/vs/icon/"}
   ]}
@@ -85,14 +85,16 @@
     .foot-links { display:flex; gap:1.4rem; flex-wrap:wrap; }
     @media (max-width:640px){ .picks { grid-template-columns:1fr; } }
   </style>
+  <!-- Spor first-party analytics (app: clone-web) -->
+  <script src="/clone/spor.js" defer></script>
 </head>
 <body>
   <header class="nav"><div class="wrap nav-inner">
-    <a class="brand" href="/clone/"><span class="mark" aria-hidden="true"></span> Clone</a>
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span> Clone</a>
     <a class="btn" href="https://clone.quinn.live/app?utm_source=vs_icon&utm_content=nav">Clone a reel →</a>
   </div></header>
   <main class="wrap">
-    <nav class="crumb" aria-label="Breadcrumb"><a href="https://quinn.live/">Quinn</a> / <a href="/clone/">Clone</a> / <a href="/clone/vs/">Compare</a> / <span>vs Icon</span></nav>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="https://quinn.live/">Quinn</a> / <a href="/">Clone</a> / <a href="/clone/vs/">Compare</a> / <span>vs Icon</span></nav>
     <span class="eyebrow">Clone vs Icon</span>
     <h1>Clone vs <span class="acid">Icon</span></h1>
     <p class="intro">Icon (icon.com), "The Human Admaker," produces <strong>real human UGC</strong> — actual creators film your ads — from $399/mo, bundled with an ad-operations suite. Clone is fully AI: it rebuilds a <strong>proven viral fashion reel</strong> with your garments on an AI model, self-serve, from ~$5 a video. They solve the same problem (more performing creative) from opposite ends.</p>
@@ -155,7 +157,7 @@
   </main>
   <footer><div class="wrap foot">
     <span>© <span id="year">2026</span> Quinn Care Private Limited</span>
-    <div class="foot-links"><a href="/clone/vs/">All comparisons</a><a href="/clone/how-it-works/">How it works</a><a href="/clone/">Clone home</a></div>
+    <div class="foot-links"><a href="/clone/vs/">All comparisons</a><a href="/clone/how-it-works/">How it works</a><a href="/">Clone home</a></div>
   </div></footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>

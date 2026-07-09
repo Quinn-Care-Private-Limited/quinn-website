@@ -3,292 +3,496 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quinn — AI product photography & video for fashion</title>
-  <meta name="description" content="Quinn is the AI studio for fashion brands. Turn flatlays into photoreal on-model imagery and scroll-stopping catalog videos — no studio, no models, no logistics." />
-  <meta name="theme-color" content="#0c0b0f" />
+  <title>Clone — The internet already tested your next ad. Swap your product in.</title>
+  <meta name="description" content="A viral fashion reel is a proven ad. Clone swaps your products into it — rebuilt shot-for-shot on your AI model from about $5 a video, in ~15 minutes. Credit packs start at ~$18 — no subscription." />
+  <meta name="theme-color" content="#f7f5f1" />
 
-  <meta property="og:title" content="Quinn — AI product photography & video for fashion" />
-  <meta property="og:description" content="Turn flatlays into on-model campaigns and catalog videos with AI." />
+  <!-- Live home: https://quinn.live/clone/. If this page later moves to the clone.quinn.live root,
+       flip canonical + og:url below, and prefix the /media/clone/… asset paths with https://quinn.live -->
+  <link rel="canonical" href="https://quinn.live/" />
+  <meta property="og:title" content="Clone — the internet already tested your next ad" />
+  <meta property="og:description" content="A viral fashion reel is a proven ad. Swap your products in — from ~$5 a video, packs start at ~$18, no subscription." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://quinn.live/" />
+  <!-- versioned filename: bump the number whenever the card changes, so CDN + social scrapers can't serve a stale one -->
+  <meta property="og:image" content="https://quinn.live/clone/og-v6.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0b0f'/%3E%3Ccircle cx='15' cy='15' r='7.5' fill='none' stroke='%23ec9fb8' stroke-width='2.4'/%3E%3Cline x1='20' y1='20' x2='24' y2='25' stroke='%23b6a6e6' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ed5a24'/%3E%3Crect x='6' y='6' width='14' height='14' rx='4' fill='none' stroke='%23ffc39e' stroke-width='2.4'/%3E%3Crect x='12' y='12' width='14' height='14' rx='4' fill='%23ed5a24' stroke='%23ffffff' stroke-width='2.4'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel — dataset "Clone's market data" (1021072786989890). Pairs with the Meta-hosted CAPI. -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1021072786989890');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1021072786989890&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Clone",
+    "brand": { "@type": "Brand", "name": "Quinn" },
+    "description": "Rebuilds any short-form fashion video with your garments and your chosen AI model. 15-second, 720p vertical videos from about $5 each, delivered in about 15 minutes. Credit packs start at about $18 (your first 1–2 videos).",
+    "offers": { "@type": "AggregateOffer", "lowPrice": "18", "highPrice": "1805", "priceCurrency": "USD", "offerCount": "5", "description": "Credit packs from about $18 (50 credits, ~1-2 videos) up to volume packs; about $5 per video, less at scale. No subscription; credits never expire.", "url": "https://clone.quinn.live/app" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Quinn",
+    "alternateName": "Clone by Quinn",
+    "url": "https://quinn.live/",
+    "logo": "https://quinn.live/clone/og-v6.png",
+    "description": "Quinn is the AI studio for fashion brands. Its product Clone rebuilds viral fashion videos with a brand's own garments on a chosen AI model.",
+    "sameAs": [
+      "https://www.instagram.com/quinn.video/",
+      "https://www.linkedin.com/in/kinra/",
+      "https://apps.shopify.com/quinn-ai"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to clone a viral fashion video with your own products",
+    "description": "Rebuild any proven viral fashion reel with your garments on your chosen AI model, in about 15 minutes.",
+    "totalTime": "PT15M",
+    "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "10" },
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Pick a proven reel", "text": "Paste any fashion video that already performed — your own past hit, a competitor's spiking reel, a TV ad. TikTok, Instagram, or YouTube. If it went viral once, it's a template." },
+      { "@type": "HowToStep", "position": 2, "name": "Upload your garments", "text": "Drop in your flatlays or product shots. Clone reads the reference, works out how many garments the edit needs, and asks for more if you're short." },
+      { "@type": "HowToStep", "position": 3, "name": "Press Clone", "text": "Clone splits the reference into shots, maps a product to every cut, puts it on the AI model you picked, and rebuilds the reel frame-by-frame. About 15 minutes later you have a proven structure wearing your brand." }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I know the cloned ad will actually perform?", "acceptedAnswer": { "@type": "Answer", "text": "Nobody can promise ROAS — anyone who does is selling a horoscope. What Clone changes is your starting odds: instead of betting on a structure no audience has ever seen, you start from cuts, pacing, and a hook that already earned six figures of likes in the wild. Then you do what good media buyers do — test cheap, kill losers at about $5, and scale the one that prints." } },
+      { "@type": "Question", "name": "Will an AI-cloned ad look like AI slop?", "acceptedAnswer": { "@type": "Answer", "text": "Slop is what happens when AI invents an ad from a brief — generate keyframes, animate them, sync the music, pray. Clone never invents. It maps your products onto a human-made reel that already went viral, so the output inherits the reference's polish, pacing, and hook." } },
+      { "@type": "Question", "name": "Can Clone match my brand aesthetic?", "acceptedAnswer": { "@type": "Answer", "text": "You bring the products, you choose the model and pose, and the reference dictates the vibe — and you chose the reference. You stay in control of every input." } },
+      { "@type": "Question", "name": "How much does it cost to start with Clone?", "acceptedAnswer": { "@type": "Answer", "text": "You can start with about $18 — a 50-credit pack, enough for your first one to two videos. Bigger packs bring the cost down to around $5 a video or less. There is no subscription and credits never expire." } },
+      { "@type": "Question", "name": "What if my clone comes out wrong?", "acceptedAnswer": { "@type": "Answer", "text": "Flag it. Our team looks at every flagged clone. If it's fixable, we redo it free of charge. If it's something Clone genuinely can't handle yet, we refund that video. Either way, a failed clone never costs you money." } },
+      { "@type": "Question", "name": "Who is behind Clone?", "acceptedAnswer": { "@type": "Answer", "text": "Clone is built by Quinn, the AI studio fashion brands already use for on-model product photography. Garment fidelity is Quinn's specialty; Clone points it at video." } }
+    ]
+  }
+  </script>
 
   <style>
     :root {
-      --bg: #0c0b0f;
-      --bg-soft: #141318;
-      --card: #17161d;
-      --card-2: #1d1b23;
-      --line: rgba(255, 255, 255, 0.09);
-      --line-strong: rgba(255, 255, 255, 0.16);
-      --ink: #f5f1ea;
-      --muted: #a8a29a;
-      --faint: #726c66;
-      --grad: linear-gradient(118deg, #f7cba4 0%, #ec9fb8 50%, #b6a6e6 100%);
-      --grad-soft: linear-gradient(118deg, rgba(247,203,164,.18), rgba(236,159,184,.18), rgba(182,166,230,.18));
-      --radius: 18px;
+      --bg: #f7f5f1;
+      --panel: #ffffff;
+      --panel-2: #f0ebe4;
+      --line: rgba(30, 27, 22, 0.10);
+      --line-strong: rgba(30, 27, 22, 0.20);
+      --ink: #1e1b16;
+      --muted: #6f6a62;
+      --faint: #a8a29a;
+      --acid: #ed5a24;       /* primary orange — fills only */
+      --acid-dim: #c2410c;
+      --acid-ink: #ffffff;   /* text on orange fills */
+      --hl: #ffc39e;         /* peach highlighter behind ink headlines */
+      --accent: #c9420e;     /* accent text on light surfaces */
+      --ref: #57534b;
+      --radius: 16px;
       --maxw: 1180px;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; -webkit-text-size-adjust: 100%; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; -webkit-text-size-adjust: 100%; }
 
     body {
       background: var(--bg);
       color: var(--ink);
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-family: "Archivo", system-ui, -apple-system, sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
+    /* film-grain texture */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 999; pointer-events: none; opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+      opacity: 0.03;
+    }
 
     .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
-    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.02; }
-
-    .grad-text {
-      background: var(--grad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    h1, h2, h3 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.015em; line-height: 0.96; }
+    /* highlighter swipe — peach behind ink, wraps cleanly across lines */
+    .acid {
+      color: var(--ink); background: var(--hl); padding: 0 0.14em;
+      -webkit-box-decoration-break: clone; box-decoration-break: clone; border-radius: 0.08em;
     }
+    .mono { font-family: var(--mono); }
 
     .eyebrow {
-      font-size: 0.74rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 500;
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--accent); display: inline-flex; align-items: center; gap: 0.6rem;
     }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--accent); }
 
     a { color: inherit; text-decoration: none; }
 
     /* ---------- Buttons ---------- */
     .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-family: "Inter", sans-serif; font-weight: 500; font-size: 0.96rem;
-      padding: 0.85rem 1.5rem; border-radius: 100px; cursor: pointer;
-      border: 1px solid transparent; transition: transform .18s ease, opacity .18s ease, background .18s ease, border-color .18s ease;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-family: "Archivo", sans-serif; font-weight: 700; font-size: 0.95rem;
+      padding: 0.9rem 1.6rem; border-radius: 12px; cursor: pointer;
+      border: 1px solid transparent; white-space: nowrap;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
     }
     .btn:active { transform: translateY(1px); }
-    .btn-primary { background: var(--grad); color: #1a1118; font-weight: 600; }
-    .btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+    .btn-acid { background: var(--acid); color: var(--acid-ink); box-shadow: 0 0 0 0 rgba(237,90,36,.35); }
+    .btn-acid:hover { transform: translateY(-1px); box-shadow: 0 8px 30px -8px rgba(237,90,36,.55); }
     .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
-    .btn-ghost:hover { border-color: var(--ink); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ---------- Nav ---------- */
     header.nav {
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(14px);
-      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
       border-bottom: 1px solid transparent;
-      transition: border-color .3s ease, background .3s ease;
+      transition: border-color .3s ease;
     }
     header.nav.scrolled { border-bottom-color: var(--line); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .brand { display: flex; align-items: center; gap: 0.6rem; font-family: "Fraunces", serif; font-size: 1.45rem; letter-spacing: -0.01em; }
-    .brand .mark {
-      width: 26px; height: 26px; border-radius: 7px; background: var(--grad);
-      display: inline-grid; place-items: center; color: #1a1118; font-size: 0.9rem; font-weight: 600;
-      font-family: "Fraunces", serif;
-    }
-    .nav-links { display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { font-size: 0.92rem; color: var(--muted); transition: color .18s ease; }
-    .nav-links a:hover { color: var(--ink); }
-    .nav-cta { display: flex; align-items: center; gap: 0.9rem; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
+    .brand { display: flex; align-items: center; gap: 0.65rem; font-weight: 900; font-size: 1.3rem; letter-spacing: 0.02em; text-transform: uppercase; }
+    .brand .mark { position: relative; width: 24px; height: 24px; flex: none; }
+    .brand .mark::before, .brand .mark::after { content: ""; position: absolute; width: 16px; height: 16px; border-radius: 5px; border: 2.4px solid var(--faint); top: 0; left: 0; }
+    .brand .mark::after { border-color: var(--accent); top: 6px; left: 6px; background: var(--acid); }
+    .brand .by { font-family: var(--mono); font-size: 0.62rem; font-weight: 400; letter-spacing: 0.18em; color: var(--faint); margin-left: 0.15rem; text-transform: uppercase; align-self: flex-end; padding-bottom: 3px; }
+    .nav-links { display: flex; gap: 1.9rem; align-items: center; }
+    .nav-links a { font-size: 0.9rem; color: var(--muted); transition: color .15s ease; }
+    .nav-links a:hover { color: var(--accent); }
 
     /* ---------- Hero ---------- */
-    .hero { position: relative; padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3rem, 6vw, 5rem); overflow: hidden; }
+    .hero { position: relative; padding: clamp(1.7rem, 3vw, 2.5rem) 0 clamp(2.2rem, 4vw, 3.2rem); overflow: hidden; }
     .hero::before {
-      content: ""; position: absolute; z-index: 0;
-      top: -28%; left: 50%; transform: translateX(-50%);
-      width: 1100px; height: 800px; max-width: 150vw;
-      background: radial-gradient(closest-side, rgba(236,159,184,.20), rgba(182,166,230,.10) 55%, transparent 72%);
-      filter: blur(8px); pointer-events: none;
-      animation: drift 18s ease-in-out infinite alternate;
+      content: ""; position: absolute; z-index: 0; top: -30%; right: -12%;
+      width: 900px; height: 900px; max-width: 130vw;
+      background: radial-gradient(closest-side, rgba(237,90,36,.16), transparent 70%);
+      pointer-events: none;
     }
-    @keyframes drift { from { transform: translate(-52%, 0); } to { transform: translate(-48%, 26px); } }
+    .hero-head { position: relative; z-index: 1; }
+    .hero h1 { font-size: clamp(2.2rem, 5.2vw, 3.7rem); margin-top: 0.8rem; }
+    /* one-line headline on desktop, width-fitted */
+    @media (min-width: 961px) {
+      .hero h1 { font-size: min(3.25vw, 2.45rem); white-space: nowrap; letter-spacing: -0.02em; }
+    }
+    .hero-cta { position: relative; z-index: 1; max-width: 720px; margin: clamp(1.5rem, 2.6vw, 2rem) auto 0; text-align: center; }
+    .sub-lead { font-weight: 700; font-size: clamp(1.2rem, 1.9vw, 1.5rem); letter-spacing: -0.01em; color: var(--ink); }
+    .hero .hero-cta .sub { margin: 0.45rem auto 0; max-width: none; }
+    .hero-cta .paste { justify-content: center; margin-left: auto; margin-right: auto; }
+    .hero-cta .microtrust { justify-content: center; }
+    .hero .sub { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.13rem); max-width: 46ch; margin-top: 1.4rem; }
+    .hero .sub strong { color: var(--ink); font-weight: 700; }
 
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
-    .hero h1 { font-size: clamp(2.7rem, 6.4vw, 5rem); margin: 1.3rem 0 0; }
-    .hero .sub { color: var(--muted); font-size: clamp(1.02rem, 1.5vw, 1.18rem); max-width: 36ch; margin-top: 1.5rem; }
-    .hero-actions { display: flex; gap: 0.9rem; margin-top: 2.1rem; flex-wrap: wrap; }
-    .hero .microtrust { margin-top: 1.6rem; font-size: 0.86rem; color: var(--faint); display: flex; align-items: center; gap: 0.55rem; }
-    .hero .microtrust .dot { width: 6px; height: 6px; border-radius: 50%; background: #7bd88f; box-shadow: 0 0 10px #7bd88f; }
+    .paste { display: flex; gap: 0.6rem; margin-top: 1.9rem; max-width: 560px; flex-wrap: wrap; }
+    .paste input {
+      flex: 1 1 260px; min-width: 0; padding: 0.9rem 1.1rem; border-radius: 12px;
+      border: 1px solid var(--line-strong); background: var(--panel); color: var(--ink);
+      font-family: var(--mono); font-size: 0.85rem;
+    }
+    .paste input::placeholder { color: var(--faint); }
+    .paste input:focus { outline: none; border-color: var(--accent); }
 
-    /* ---------- Before / After slider ---------- */
-    .ba {
-      --pos: 50%;
-      position: relative; width: 100%; aspect-ratio: 3 / 4;
-      border-radius: var(--radius); overflow: hidden;
-      border: 1px solid var(--line); box-shadow: 0 30px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.02) inset;
-      user-select: none; touch-action: pan-y; background: var(--card-2);
-    }
-    .ba-layer { position: absolute; inset: 0; }
-    .ba-layer svg, .ba-layer img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
-    .ba-before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
-    .ba-tag {
-      position: absolute; top: 14px; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
-      padding: 0.32rem 0.6rem; border-radius: 100px; background: rgba(12,11,15,.62); backdrop-filter: blur(6px);
-      border: 1px solid var(--line); color: var(--ink); font-weight: 500;
-    }
-    .ba-tag--before { left: 14px; }
-    .ba-tag--after { right: 14px; }
-    .ba-handle {
-      position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; transform: translateX(-1px);
-      background: rgba(255,255,255,.85); pointer-events: none; z-index: 3;
-    }
-    .ba-knob {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 44px; height: 44px; border-radius: 50%; background: rgba(12,11,15,.7); backdrop-filter: blur(6px);
-      border: 1.5px solid rgba(255,255,255,.9); display: grid; place-items: center; color: #fff; font-size: 0.9rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,.45);
-    }
-    .ba-range {
-      position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; z-index: 4;
-      -webkit-appearance: none; appearance: none; background: transparent; cursor: ew-resize;
-    }
-    .ba-range::-webkit-slider-thumb { -webkit-appearance: none; width: 48px; height: 100%; background: transparent; cursor: ew-resize; }
-    .ba-range::-moz-range-thumb { width: 48px; height: 360px; background: transparent; border: 0; cursor: ew-resize; }
-    .ba-range:focus-visible + .ba-handle .ba-knob { outline: 2px solid #b6a6e6; outline-offset: 3px; }
+    .microtrust { margin-top: 1.3rem; font-family: var(--mono); font-size: 0.74rem; color: var(--muted); letter-spacing: 0.04em; display: flex; flex-wrap: wrap; gap: 0.45rem 1.1rem; }
+    .microtrust span::before { content: "→ "; color: var(--accent); }
 
-    /* ---------- Logo strip ---------- */
-    .marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.6rem 0; }
-    .marquee p.lbl { text-align: center; font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); margin-bottom: 1.1rem; }
-    .logos { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(1.4rem, 5vw, 3.4rem); align-items: center; opacity: 0.75; }
-    .logos span { font-family: "Fraunces", serif; font-size: clamp(1.05rem, 2.4vw, 1.5rem); color: var(--muted); letter-spacing: 0.02em; }
+    /* hero equation board: ref video + garment flatlay + model >> cloned output */
+    .board { display: grid; grid-template-columns: 1fr auto auto auto 1.12fr; gap: clamp(10px, 1.4vw, 18px); align-items: center; max-width: 1070px; margin: clamp(1.1rem, 2vw, 1.6rem) auto 0; }
+    .bop { display: grid; justify-items: center; align-content: center; gap: 8px; }
+    .opc {
+      width: 34px; height: 34px; border-radius: 50%; background: var(--panel);
+      border: 1px solid var(--line-strong); display: grid; place-items: center;
+      color: var(--accent); font-weight: 900; font-size: 0.95rem; line-height: 1;
+      box-shadow: 0 6px 16px -8px rgba(30,27,22,.30);
+    }
+    .board .mnly { display: none; }
+    .bsound {
+      position: absolute; right: 10px; bottom: 10px; z-index: 3;
+      width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+      background: rgba(255,255,255,.92); border: 1px solid rgba(25,27,18,.14);
+      display: grid; place-items: center; color: var(--ink);
+      transition: transform .12s ease, color .12s ease, border-color .12s ease;
+    }
+    .bsound:hover { transform: scale(1.08); color: var(--accent); border-color: rgba(201,66,14,.4); }
+    .bsound.on { color: var(--accent); border-color: rgba(201,66,14,.5); }
+    .bsound .s-on { display: none; }
+    .bsound.on .s-on { display: block; }
+    .bsound.on .s-off { display: none; }
+    .bcard {
+      position: relative; aspect-ratio: 4 / 3; border-radius: 18px; overflow: hidden;
+      border: 1px solid var(--line-strong); background: var(--panel-2);
+      box-shadow: 0 26px 60px -28px rgba(30,27,22,.35);
+    }
+    .bcard video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .bcard--out { border: 2px solid var(--acid); box-shadow: 0 26px 60px -24px rgba(237,90,36,.45); }
+    .bmid { display: grid; justify-items: center; align-content: center; gap: 12px; padding: 0 2px; }
+    .op { font-weight: 900; font-size: 1.35rem; color: var(--accent); line-height: 1; }
+    .bthumb {
+      width: clamp(84px, 8.6vw, 118px); background: #fff; border: 1px solid var(--line);
+      border-radius: 12px; padding: 5px 5px 3px; display: grid; gap: 2px; justify-items: center;
+      box-shadow: 0 12px 28px -14px rgba(30,27,22,.28);
+    }
+    .bthumb img { width: 100%; border-radius: 8px; object-fit: cover; display: block; }
+    .bthumb--flat { transform: rotate(-2.2deg); }
+    .bthumb--flat img { aspect-ratio: 5 / 8; }
+    .bthumb--actor { transform: rotate(2deg); }
+    .bthumb--actor img { aspect-ratio: 1 / 1; }
+    .bcap { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); white-space: nowrap; padding: 2px 0 1px; }
+    .beam { display: grid; gap: 6px; justify-items: center; }
+    .beam .arrows { color: var(--accent); font-weight: 900; font-size: 1.2rem; letter-spacing: -0.12em; animation: nudge 1.4s ease-in-out infinite; }
+    @keyframes nudge { 0%,100% { transform: translateX(-2px); } 50% { transform: translateX(3px); } }
+    .fee { font-family: var(--mono); font-size: 0.6rem; color: var(--accent); border: 1px solid rgba(201,66,14,.35); border-radius: 100px; padding: 0.2rem 0.5rem; white-space: nowrap; background: rgba(237,90,36,.12); }
+
+    .phone {
+      position: relative; aspect-ratio: 9 / 16; border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--line-strong); background: var(--panel-2);
+      box-shadow: 0 24px 60px -28px rgba(25,27,18,.35);
+    }
+    .phone video, .phone img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ptag {
+      position: absolute; top: 10px; left: 10px; z-index: 3;
+      font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; font-weight: 600;
+      padding: 0.28rem 0.55rem; border-radius: 6px; text-transform: uppercase; white-space: nowrap;
+      background: rgba(255,255,255,.88); backdrop-filter: blur(6px); border: 1px solid rgba(25,27,18,.10);
+    }
+    .ptag--ref { color: var(--ref); border-color: rgba(30,27,22,.18); }
+    .ptag--out { color: var(--accent); border-color: rgba(201,66,14,.35); }
+
+    /* stylized "viral reference" placeholder */
+    .refcard { position: absolute; inset: 0; display: grid; place-items: center; }
+    .refcard .playglyph {
+      width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(255,255,255,.85);
+      background: rgba(0,0,0,.35); backdrop-filter: blur(4px); display: grid; place-items: center;
+    }
+    .refcard .playglyph::before { content: ""; width: 0; height: 0; border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+    .refrail {
+      position: absolute; right: 8px; bottom: 12px; z-index: 2; display: grid; gap: 0.55rem; justify-items: center;
+      font-family: var(--mono); font-size: 0.56rem; color: rgba(255,255,255,.92); text-align: center; line-height: 1.25;
+    }
+    .refrail b { font-size: 0.86rem; display: block; font-weight: 600; }
+    .refbars { position: absolute; left: 10px; bottom: 12px; right: 56px; z-index: 2; display: grid; gap: 5px; }
+    .refbars i { display: block; height: 5px; border-radius: 3px; background: rgba(255,255,255,.35); }
+    .refbars i:nth-child(2) { width: 62%; }
+
+    /* ---------- Ticker ---------- */
+    .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; background: var(--panel); }
+    .ticker-track { display: flex; width: max-content; animation: tick 26s linear infinite; }
+    .ticker span {
+      font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); padding: 0.95rem 0; white-space: nowrap;
+    }
+    .ticker span i { font-style: normal; color: var(--accent); padding: 0 1.1rem; }
+    @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* ---------- Sections ---------- */
     section.block { padding: clamp(4rem, 9vw, 7rem) 0; }
-    .section-head { max-width: 56ch; }
-    .section-head h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); margin-top: 0.9rem; }
-    .section-head p { color: var(--muted); margin-top: 1rem; font-size: 1.05rem; }
+    .section-head h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); margin-top: 1rem; max-width: 22ch; }
+    .section-head p.lede { color: var(--muted); margin-top: 1.1rem; font-size: 1.04rem; max-width: 62ch; }
 
-    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
-    .feature.reverse .feature-visual { order: -1; }
-    .feature-copy h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin: 0.9rem 0 1.1rem; }
-    .feature-copy p.lede { color: var(--muted); font-size: 1.06rem; }
-    .ticklist { list-style: none; margin-top: 1.7rem; display: grid; gap: 0.85rem; }
-    .ticklist li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.98rem; color: var(--ink); }
-    .ticklist .ic { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--grad-soft); border: 1px solid var(--line-strong); display: grid; place-items: center; margin-top: 2px; }
-    .ticklist .ic svg { width: 12px; height: 12px; }
-    .feature-copy .btn { margin-top: 2rem; }
-
-    .panel {
-      position: relative; border-radius: var(--radius); border: 1px solid var(--line);
-      background: linear-gradient(180deg, var(--card), var(--bg-soft)); overflow: hidden;
-      box-shadow: 0 30px 80px -40px rgba(0,0,0,.7);
+    /* ---------- The Wall ---------- */
+    .wall-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .count-badge {
+      font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; color: var(--accent);
+      border: 1px solid rgba(201,66,14,.35); background: rgba(237,90,36,.10);
+      padding: 0.5rem 0.9rem; border-radius: 100px; white-space: nowrap;
     }
-    .panel svg { display: block; width: 100%; height: auto; }
-
-    /* variation grid for on-model */
-    .varigrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 12px; }
-    .varigrid .cell { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3/4; background: var(--card-2); }
-    .varigrid .cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    /* video card */
-    .videocard { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3/4; background: var(--card-2); }
-    .videocard .vframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 1.1s ease; }
-    .videocard .vframe.active { opacity: 1; }
-    .videocard .play {
-      position: absolute; inset: 0; margin: auto; width: 76px; height: 76px; border-radius: 50%;
-      background: rgba(12,11,15,.5); backdrop-filter: blur(6px); border: 1.5px solid rgba(255,255,255,.85);
-      display: grid; place-items: center; z-index: 3; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    .wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 2.4rem; }
+    .pair {
+      border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 8px;
+      box-shadow: 0 1px 2px rgba(25,27,18,.04), 0 10px 30px -18px rgba(25,27,18,.12);
+      transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
-    .videocard .play::before { content: ""; width: 0; height: 0; border-left: 18px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent; margin-left: 5px; }
-    .videocard .play, .videocard .playpulse { animation: breathe 3.2s ease-in-out infinite; }
-    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-    .videocard .scrub { position: absolute; left: 16px; right: 16px; bottom: 16px; height: 4px; border-radius: 100px; background: rgba(255,255,255,.22); z-index: 3; overflow: hidden; }
-    .videocard .scrub::after { content: ""; position: absolute; inset: 0; width: 40%; background: var(--grad); border-radius: 100px; animation: scrub 5s linear infinite; }
-    @keyframes scrub { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
-    .videocard .vtag { position: absolute; top: 14px; left: 14px; z-index: 3; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.3rem 0.6rem; border-radius: 100px; background: rgba(12,11,15,.6); border: 1px solid var(--line); }
-    .format-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.4rem; }
-    .chip { font-size: 0.78rem; padding: 0.4rem 0.8rem; border-radius: 100px; border: 1px solid var(--line-strong); color: var(--muted); }
+    .pair:hover { border-color: var(--line-strong); transform: translateY(-3px); box-shadow: 0 2px 4px rgba(25,27,18,.05), 0 18px 44px -18px rgba(25,27,18,.20); }
+    .pair-media { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .pane { position: relative; aspect-ratio: 9 / 16; border-radius: 10px; overflow: hidden; background: var(--panel-2); }
+    .pane video, .pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .pane .ptag { top: 8px; left: 8px; font-size: 0.54rem; padding: 0.22rem 0.45rem; }
+    .hint {
+      position: absolute; bottom: 8px; left: 8px; z-index: 3; font-family: var(--mono); font-size: 0.54rem;
+      letter-spacing: 0.1em; color: var(--ink); background: rgba(255,255,255,.88); border: 1px solid rgba(25,27,18,.10);
+      padding: 0.2rem 0.45rem; border-radius: 5px; text-transform: uppercase;
+    }
+    .pair-meta { display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; padding: 0.75rem 0.5rem 0.45rem; }
+    .pair-meta .lbl { font-weight: 700; font-size: 0.86rem; letter-spacing: 0.01em; }
+    .pair-meta .sub { font-family: var(--mono); font-size: 0.64rem; color: var(--faint); margin-top: 2px; }
+    .pair-meta .cat { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(201,66,14,.30); padding: 0.22rem 0.5rem; border-radius: 100px; white-space: nowrap; }
 
-    /* ---------- How it works ---------- */
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 3rem; }
-    .step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.8rem; position: relative; }
-    .step .num { font-family: "Fraunces", serif; font-size: 2.2rem; }
-    .step h3 { font-size: 1.25rem; margin: 0.6rem 0 0.5rem; }
+    .pair--cta { display: grid; place-items: center; background: var(--acid); border-color: var(--acid); text-align: center; padding: 2rem 1.4rem; min-height: 300px; }
+    .pair--cta h3 { color: var(--acid-ink); font-size: 1.5rem; line-height: 1.05; }
+    .pair--cta p { color: rgba(255,255,255,.88); font-size: 0.9rem; margin-top: 0.7rem; font-weight: 500; }
+    .pair--cta .btn { margin-top: 1.3rem; background: var(--acid-ink); color: var(--acid); }
+
+    /* ---------- Steps ---------- */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 3rem; }
+    .step { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.9rem 1.7rem; position: relative; overflow: hidden; }
+    .step .num { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); letter-spacing: 0.2em; }
+    .step h3 { font-size: 1.35rem; margin: 0.9rem 0 0.7rem; }
     .step p { color: var(--muted); font-size: 0.95rem; }
-    .step .num { color: transparent; background: var(--grad); -webkit-background-clip: text; background-clip: text; }
+    .step::after { content: attr(data-big); position: absolute; right: -10px; bottom: -34px; font-weight: 900; font-size: 7rem; line-height: 1; color: rgba(237,90,36,.14); pointer-events: none; }
+    .platform-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 2rem; }
+    .platform-chips a.chip { transition: border-color .15s ease, color .15s ease; }
+    .platform-chips a.chip:hover { border-color: var(--accent); color: var(--accent); }
+    .chip { font-family: var(--mono); font-size: 0.72rem; padding: 0.42rem 0.85rem; border-radius: 100px; border: 1px solid var(--line-strong); color: var(--muted); }
 
-    /* ---------- Stats ---------- */
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
-    .stat { text-align: center; padding: 2rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
-    .stat .big { font-family: "Fraunces", serif; font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1; }
-    .stat .lbl { color: var(--muted); font-size: 0.9rem; margin-top: 0.6rem; }
+    /* ---------- The math ---------- */
+    .cmp { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 2.6rem; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .cmp th, .cmp td { padding: 1rem 1.2rem; text-align: left; font-size: 0.93rem; border-bottom: 1px solid var(--line); }
+    .cmp thead th { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); background: var(--panel); }
+    .cmp tbody tr:last-child td { border-bottom: none; }
+    .cmp td:first-child { color: var(--muted); font-size: 0.86rem; }
+    .cmp .win { background: rgba(237,90,36,.09); color: var(--accent); font-weight: 700; }
+    .cmp thead th.win { color: var(--accent); }
+    .cmp-scroll { overflow-x: auto; }
 
-    /* ---------- CTA ---------- */
-    .cta-band { position: relative; border-radius: 26px; padding: clamp(2.6rem, 6vw, 4.5rem); overflow: hidden; border: 1px solid var(--line); background: linear-gradient(180deg, var(--card), var(--bg-soft)); text-align: center; }
-    .cta-band::before { content: ""; position: absolute; inset: 0; background: radial-gradient(closest-side at 50% 0%, rgba(236,159,184,.22), transparent 70%); pointer-events: none; }
-    .cta-band h2 { position: relative; font-size: clamp(2rem, 5vw, 3.3rem); max-width: 20ch; margin: 0 auto; }
-    .cta-band p { position: relative; color: var(--muted); margin: 1.1rem auto 0; max-width: 48ch; }
-    .waitlist { position: relative; display: flex; gap: 0.6rem; max-width: 460px; margin: 2rem auto 0; flex-wrap: wrap; justify-content: center; }
-    .waitlist input { flex: 1 1 240px; min-width: 0; padding: 0.85rem 1.1rem; border-radius: 100px; border: 1px solid var(--line-strong); background: var(--bg); color: var(--ink); font-size: 0.96rem; font-family: inherit; }
-    .waitlist input::placeholder { color: var(--faint); }
-    .waitlist input:focus { outline: none; border-color: #ec9fb8; }
-    .form-msg { position: relative; margin-top: 1.2rem; color: #7bd88f; font-size: 0.95rem; }
-    .form-note { position: relative; margin-top: 0.9rem; color: var(--faint); font-size: 0.82rem; }
+    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 2rem; }
+    .trio .stat { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 1.8rem 1.4rem; text-align: center; }
+    .trio .big { font-weight: 900; font-size: clamp(2.2rem, 4.6vw, 3.2rem); line-height: 1; color: var(--accent); text-transform: uppercase; }
+    .trio .lbl { font-family: var(--mono); color: var(--muted); font-size: 0.72rem; letter-spacing: 0.1em; margin-top: 0.7rem; text-transform: uppercase; }
+
+    /* ---------- Receipt ---------- */
+    .receipt-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; margin-top: 3rem; }
+    .receipt {
+      font-family: var(--mono); background: #fffef8; color: #191a14; border-radius: 8px;
+      border: 1px solid #e7e5d8;
+      padding: 1.8rem 1.6rem; font-size: 0.82rem; line-height: 1.9;
+      box-shadow: 0 24px 55px -28px rgba(25,27,18,.30);
+      transform: rotate(-1.2deg);
+    }
+    .receipt .rhead { text-align: center; font-weight: 600; letter-spacing: 0.2em; border-bottom: 1.5px dashed #191a14; padding-bottom: 0.8rem; margin-bottom: 0.9rem; }
+    .receipt .row { display: flex; justify-content: space-between; gap: 1rem; }
+    .receipt .row span:first-child { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .receipt .row.total { border-top: 1.5px dashed #191a14; margin-top: 0.9rem; padding-top: 0.9rem; font-weight: 600; font-size: 1rem; }
+    .receipt .note { text-align: center; margin-top: 1rem; font-size: 0.68rem; color: #55564c; }
+    .speclist { list-style: none; display: grid; gap: 0.9rem; margin-top: 1.6rem; }
+    .speclist li { display: flex; gap: 0.8rem; align-items: baseline; font-size: 0.98rem; }
+    .speclist li::before { content: "▸"; color: var(--acid); font-weight: 900; }
+    .speclist b { font-weight: 700; }
+
+    /* ---------- FAQ ---------- */
+    .faq { max-width: 780px; margin-top: 2.6rem; }
+    .faq details { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); margin-bottom: 10px; overflow: hidden; }
+    .faq summary {
+      cursor: pointer; list-style: none; padding: 1.15rem 1.3rem; font-weight: 700; font-size: 1rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-family: var(--mono); color: var(--accent); font-size: 1.15rem; flex: none; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq .a { padding: 0 1.3rem 1.25rem; color: var(--muted); font-size: 0.95rem; }
+
+    /* ---------- Final CTA ---------- */
+    .cta-band {
+      position: relative; border-radius: 22px; padding: clamp(2.6rem, 6vw, 4.5rem) clamp(1.4rem, 4vw, 3rem);
+      overflow: hidden; border: 1px solid rgba(201,66,14,.28);
+      background: linear-gradient(180deg, var(--panel), #faefe4);
+      box-shadow: 0 2px 4px rgba(30,27,22,.04), 0 24px 60px -30px rgba(30,27,22,.18);
+    }
+    .cta-band::before { content: ""; position: absolute; inset: 0; background: radial-gradient(closest-side at 50% -20%, rgba(237,90,36,.20), transparent 70%); pointer-events: none; }
+    .cta-band h2 { position: relative; font-size: clamp(2rem, 5vw, 3.4rem); max-width: 22ch; }
+    .cta-band .lede { position: relative; color: var(--muted); margin-top: 1.1rem; max-width: 52ch; }
+    .cta-band .paste { position: relative; }
+    .ps { position: relative; font-family: var(--mono); font-size: 0.82rem; color: var(--muted); margin-top: 2.4rem; max-width: 68ch; line-height: 1.9; }
+    .ps b { color: var(--ink); font-weight: 600; }
+    .ps + .ps { margin-top: 0.9rem; }
+    .ps .tag { color: var(--accent); }
+
+    .form-msg { position: relative; margin-top: 1rem; font-family: var(--mono); font-size: 0.8rem; color: var(--accent); }
 
     /* ---------- Footer ---------- */
-    footer.site { border-top: 1px solid var(--line); padding: 3.5rem 0 2.5rem; margin-top: 2rem; }
-    .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2rem; }
-    .foot-grid h4 { font-family: "Inter", sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 1rem; }
-    .foot-grid a { display: block; color: var(--muted); font-size: 0.95rem; padding: 0.28rem 0; transition: color .18s; }
-    .foot-grid a:hover { color: var(--ink); }
-    .foot-brand p { color: var(--muted); font-size: 0.95rem; margin-top: 0.8rem; max-width: 34ch; }
-    .foot-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--line); color: var(--faint); font-size: 0.85rem; }
+    footer.site { border-top: 1px solid var(--line); padding: 3rem 0 2.4rem; margin-top: 2rem; }
+    .foot-grid { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
+    .foot-brand p { color: var(--faint); font-size: 0.88rem; margin-top: 0.7rem; max-width: 36ch; }
+    .foot-links { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .foot-links div h4 { font-family: var(--mono); font-weight: 400; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.8rem; }
+    .foot-links a { display: block; color: var(--muted); font-size: 0.9rem; padding: 0.22rem 0; }
+    .foot-links a:hover { color: var(--accent); }
+    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; margin-top: 2.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); color: var(--faint); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; }
 
     /* ---------- Reveal ---------- */
-    [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+    [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
     [data-reveal].in { opacity: 1; transform: none; }
 
     /* ---------- Responsive ---------- */
-    @media (max-width: 960px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero .sub { max-width: none; }
-      .ba { max-width: 460px; margin: 0 auto; }
-      .feature { grid-template-columns: 1fr; }
-      .feature.reverse .feature-visual { order: 0; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .steps { grid-template-columns: 1fr; }
-      .foot-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 1020px) {
+      .wall { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 820px) {
+    @media (max-width: 960px) {
+      .board { grid-template-columns: 1fr; max-width: none; }
+      .bop { display: none; }
+      .board .op.mnly { display: inline; }
+      .board .beam.mnly { display: grid; }
+      .bmid { grid-auto-flow: column; align-items: center; justify-content: center; gap: 14px; padding: 0.4rem 0; }
+      .steps { grid-template-columns: 1fr; }
+      .receipt-grid { grid-template-columns: 1fr; }
+      .receipt { max-width: 420px; }
       .nav-links { display: none; }
     }
-    @media (max-width: 520px) {
-      .stats { grid-template-columns: 1fr 1fr; }
-      .foot-grid { grid-template-columns: 1fr; }
-      .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
+    @media (max-width: 640px) {
+      .wall { grid-template-columns: 1fr; }
+      .trio { grid-template-columns: 1fr; }
+      .paste .btn { flex: 1 1 100%; }
+      .wall-head { align-items: flex-start; }
+      .brand .by { display: none; }
+      .brand { font-size: 1.15rem; }
+      .nav-inner .btn { padding: 0.65rem 1rem; font-size: 0.85rem; }
+      .board .ptag { font-size: 0.5rem; padding: 0.2rem 0.4rem; top: 8px; left: 8px; letter-spacing: 0.1em; }
+      .op { font-size: 1.05rem; }
+      .beam .arrows { font-size: 0.95rem; }
+      .beam .fee { font-size: 0.5rem; padding: 0.16rem 0.35rem; }
+      .bthumb { width: clamp(74px, 22vw, 96px); }
+    }
+    @media (hover: none) {
+      .hint::after { content: " · tap"; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; scroll-behavior: auto; }
       [data-reveal] { transition: none; }
     }
   </style>
+  <!-- Spor first-party analytics (app: clone-web) -->
+  <script src="/clone/spor.js" defer></script>
 </head>
 <body>
 
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top"><span class="mark">Q</span> Quinn</a>
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span> Clone <span class="by">by Quinn</span></a>
       <nav class="nav-links">
-        <a href="#on-model">On-model</a>
-        <a href="#video">Catalog video</a>
+        <a href="#wall">The Wall</a>
         <a href="#how">How it works</a>
-        <a href="#why">Why Quinn</a>
+        <a href="#math">The odds</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
       </nav>
-      <div class="nav-cta">
-        <a href="#start" class="btn btn-primary">Book a demo</a>
-      </div>
+      <a class="btn btn-acid" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=nav">Clone a reel →</a>
     </div>
   </header>
 
@@ -296,165 +500,244 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">AI product photography &amp; video</span>
-          <h1>Turn flatlays into <span class="grad-text">on-model</span> campaigns.</h1>
-          <p class="sub">Quinn is the AI studio for fashion brands — generate photoreal on-model imagery and scroll-stopping catalog videos from the garment shots you already have. No studio. No models. No logistics.</p>
-          <div class="hero-actions">
-            <a href="#start" class="btn btn-primary">Book a demo</a>
-            <a href="#on-model" class="btn btn-ghost">See it work ↓</a>
-          </div>
-          <p class="microtrust"><span class="dot"></span> Built for DTC &amp; fashion teams shipping new drops every week.</p>
+      <div class="wrap">
+        <div class="hero-head">
+          <span class="eyebrow">AI ad cloning for fashion brands</span>
+          <h1>The internet <span class="acid">already tested</span> your next ad.</h1>
         </div>
 
-        <div class="hero-visual">
-          <div class="ba" id="ba">
-            <!-- AFTER: on-model (full, underneath) -->
-            <div class="ba-layer ba-after">
-              <img src="media/hero-after.jpg" alt="The same denim shirt photographed on a model, generated by Quinn" width="750" height="1000" fetchpriority="high" decoding="async" />
-            </div>
-            <!-- BEFORE: original product shot (clipped, on top) -->
-            <div class="ba-layer ba-before" id="baBefore">
-              <img src="media/hero-before.jpg" alt="A denim shirt as a plain ghost-mannequin product shot, before Quinn" width="750" height="1000" decoding="async" />
-            </div>
-            <span class="ba-tag ba-tag--before">Before</span>
-            <span class="ba-tag ba-tag--after">After · Quinn</span>
-            <div class="ba-handle" id="baHandle"><span class="ba-knob">⇆</span></div>
-            <input type="range" min="2" max="98" value="50" class="ba-range" id="baRange" aria-label="Drag to reveal the AI on-model result" />
+        <!-- the equation board: real ref video + real inputs + real cloned output -->
+        <div class="board" data-reveal>
+          <div class="bcard">
+            <video src="/media/clone/hero-ref.mp4" poster="/media/clone/hero-ref.jpg" muted loop playsinline autoplay preload="metadata" aria-label="The viral reference video"></video>
+            <span class="ptag ptag--ref">The viral one</span>
+            <button class="bsound" type="button" aria-label="Toggle sound" aria-pressed="false">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/>
+                <path class="s-on" d="M15.5 8.5a5 5 0 0 1 0 7"/>
+                <path class="s-on" d="M18.5 6a9 9 0 0 1 0 12"/>
+                <line class="s-off" x1="16" y1="9" x2="22" y2="15"/><line class="s-off" x1="22" y1="9" x2="16" y2="15"/>
+              </svg>
+            </button>
           </div>
+          <div class="bop" aria-hidden="true"><span class="opc">+</span></div>
+          <div class="bmid">
+            <span class="op mnly" aria-hidden="true">+</span>
+            <div class="bthumb bthumb--flat"><img src="/media/clone/hero-flatlay.jpg" alt="The garment flatlay uploaded to Clone" loading="lazy" decoding="async"><span class="bcap">your garments</span></div>
+            <div class="bthumb bthumb--actor"><img src="/media/clone/hero-actor.jpg" alt="The AI model chosen in Clone" loading="lazy" decoding="async"><span class="bcap">your model</span></div>
+            <div class="beam mnly" aria-hidden="true">
+              <span class="arrows">≫≫</span>
+              <span class="fee">$5 · 15 MIN</span>
+            </div>
+          </div>
+          <div class="bop bop--go" aria-hidden="true"><span class="opc">≫</span><span class="fee">$5 · 15 MIN</span></div>
+          <div class="bcard bcard--out">
+            <video src="/media/clone/hero-out.mp4" poster="/media/clone/hero-out.jpg" muted loop playsinline autoplay preload="metadata" aria-label="The cloned ad — the same video wearing the uploaded garments on the chosen model"></video>
+            <span class="ptag ptag--out">Yours</span>
+            <button class="bsound" type="button" aria-label="Toggle sound" aria-pressed="false">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none"/>
+                <path class="s-on" d="M15.5 8.5a5 5 0 0 1 0 7"/>
+                <path class="s-on" d="M18.5 6a9 9 0 0 1 0 12"/>
+                <line class="s-off" x1="16" y1="9" x2="22" y2="15"/><line class="s-off" x1="22" y1="9" x2="16" y2="15"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <p class="sub-lead">Swap your products in any viral reel.</p>
+          <p class="sub">Clone rebuilds the viral reel with your products, shot for shot.<br /><strong>From ~$5 a video. 15 minutes. No subscription.</strong></p>
+          <form class="paste clone-form" novalidate>
+            <label for="heroUrl" style="position:absolute;left:-9999px">Reference video link</label>
+            <input type="url" id="heroUrl" placeholder="Paste a TikTok / Instagram / YouTube link…" />
+            <button class="btn btn-acid" type="submit">Clone it →</button>
+          </form>
+          <p class="microtrust"><span>first videos from ~$18</span><span>credits never expire</span><span>failed clones: fixed free or refunded</span></p>
         </div>
       </div>
     </section>
 
-    <!-- ============ LOGO STRIP ============ -->
-    <div class="marquee">
-      <div class="wrap">
-        <p class="lbl">Designed for modern fashion &amp; lifestyle brands</p>
-        <div class="logos">
-          <span>ATELIER</span><span>MAISON N.</span><span>NORTH&amp;CO</span><span>Studio Ré</span><span>LÚNA</span><span>VESTRA</span>
-        </div>
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="ticker">
+        <span>pick a proven reel<i>✦</i>swap your products in<i>✦</i>the test already ran<i>✦</i>from $5 a video<i>✦</i>start for ~$18<i>✦</i>15 minutes<i>✦</i>no subscription<i>✦</i>credits never expire<i>✦</i></span>
       </div>
     </div>
 
-    <!-- ============ OFFERING 1: ON-MODEL ============ -->
-    <section class="block" id="on-model">
-      <div class="wrap feature">
-        <div class="feature-copy" data-reveal>
-          <span class="eyebrow">01 — On-model shots</span>
-          <h2>Every garment, on the perfect model.</h2>
-          <p class="lede">Upload a flatlay or ghost-mannequin shot. Quinn generates photoreal on-model imagery with full creative control — model, pose, body type, skin tone, and backdrop — all on-brand and pixel-consistent across your catalog.</p>
-          <ul class="ticklist">
-            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f3d3bd" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Diverse, license-clear model library — or your own muse</li>
-            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f3d3bd" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Consistent lighting, framing &amp; styling per collection</li>
-            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f3d3bd" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Any background — studio, street, editorial, seasonal</li>
-            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f3d3bd" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Unlimited variations per SKU, ready for PDP &amp; ads</li>
-          </ul>
-          <a href="#start" class="btn btn-primary">Generate your first look</a>
-        </div>
-        <div class="feature-visual" data-reveal>
-          <div class="panel">
-            <div class="varigrid">
-              <div class="cell"><img src="media/model-shirt.jpg" alt="Denim shirt on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
-              <div class="cell"><img src="media/model-dress.jpg" alt="Plaid halter midi dress on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
-              <div class="cell"><img src="media/model-cargo.jpg" alt="Cargo trousers on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
-              <div class="cell"><img src="media/model-sweater.jpg" alt="Knit wrap cardigan on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
-              <div class="cell"><img src="media/model-top.jpg" alt="Sequined high-neck top on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
-              <div class="cell"><img src="media/model-pant.jpg" alt="Tailored trousers on a model, generated by Quinn" width="570" height="760" loading="lazy" decoding="async"></div>
-            </div>
+    <!-- ============ THE WALL ============ -->
+    <section class="block" id="wall">
+      <div class="wrap">
+        <div class="wall-head" data-reveal>
+          <div class="section-head">
+            <span class="eyebrow">The receipts</span>
+            <h2>Watch the <span class="acid">clones.</span></h2>
+            <p class="lede">Left: a reel that already won the internet. Right: the same reel wearing our customers' clothes — same cuts, same hook, new brand. Hover any card to play both sides.</p>
           </div>
+          <span class="count-badge" id="wallCount">— clones on the wall</span>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ OFFERING 2: CATALOG VIDEO ============ -->
-    <section class="block" id="video">
-      <div class="wrap feature reverse">
-        <div class="feature-copy" data-reveal>
-          <span class="eyebrow">02 — Catalog video</span>
-          <h2>Make your catalog move.</h2>
-          <p class="lede">Turn existing catalog shoots — or just flatlays — into motion. Quinn creates social-ready catalog videos: model walks, 360° spins, and dynamic product reels generated from the assets you already own.</p>
-          <ul class="ticklist">
-            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f3d3bd" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Start from a finished shoot — or from a single flatlay</li>
-            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f3d3bd" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Model walk, turn &amp; 360° product spins</li>
-            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f3d3bd" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Brand-matched motion, pacing &amp; music</li>
-          </ul>
-          <div class="format-chips">
-            <span class="chip">9:16 Reels</span><span class="chip">1:1 Feed</span><span class="chip">16:9 Hero</span><span class="chip">TikTok-ready</span><span class="chip">PDP loops</span>
-          </div>
-          <a href="#start" class="btn btn-primary" style="margin-top:1.8rem">Animate my catalog</a>
-        </div>
-        <div class="feature-visual" data-reveal>
-          <div class="videocard" id="reelcard">
-            <img class="vframe active" src="media/saree-1.jpg" alt="Saree on a model, front view — generated by Quinn" width="615" height="820" loading="lazy" decoding="async">
-            <img class="vframe" src="media/saree-2.jpg" alt="Saree on a model, upper-body detail" width="615" height="820" loading="lazy" decoding="async">
-            <img class="vframe" src="media/saree-3.jpg" alt="Saree on a model, profile view" width="615" height="820" loading="lazy" decoding="async">
-            <img class="vframe" src="media/saree-4.jpg" alt="Saree on a model, back view" width="615" height="820" loading="lazy" decoding="async">
-            <img class="vframe" src="media/saree-5.jpg" alt="Saree on a model, border detail" width="615" height="820" loading="lazy" decoding="async">
-            <span class="vtag">● Catalog video</span>
-            <span class="play playpulse"></span>
-            <div class="scrub"></div>
-          </div>
-        </div>
+        <div class="wall" id="wallGrid"></div>
       </div>
     </section>
 
     <!-- ============ HOW IT WORKS ============ -->
-    <section class="block" id="how">
+    <section class="block" id="how" style="background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
       <div class="wrap">
         <div class="section-head" data-reveal>
           <span class="eyebrow">How it works</span>
-          <h2>From garment to campaign in three steps.</h2>
+          <h2>Three steps. <span class="acid">Zero guessing.</span></h2>
+          <p class="lede">From-scratch AI ads are a lottery — brief, keyframes, animation, prayer. Clone skips the gamble: start from a reel the internet already approved, and just add your products.</p>
+          <p style="margin-top:1.1rem"><a href="/clone/how-it-works/" style="font-family:var(--mono);font-size:0.82rem;letter-spacing:0.04em;color:var(--accent);text-decoration:underline;text-underline-offset:3px">Why Clone is different from every other ad cloner →</a></p>
         </div>
         <div class="steps">
-          <div class="step" data-reveal>
-            <div class="num">01</div>
-            <h3>Upload</h3>
-            <p>Drop in flatlays, ghost-mannequin shots, or your existing catalog. No tagging, no setup.</p>
+          <div class="step" data-big="01" data-reveal>
+            <span class="num">STEP 01</span>
+            <h3>Pick a proven reel</h3>
+            <p>Your own past hit. A competitor's reel that's spiking. Anything whose numbers you envy — TikTok, Instagram, YouTube, anywhere. If it performed once, it's a template.</p>
           </div>
-          <div class="step" data-reveal>
-            <div class="num">02</div>
-            <h3>Direct</h3>
-            <p>Pick models, poses, backdrops, and output formats. Lock your brand's look once and reuse it.</p>
+          <div class="step" data-big="02" data-reveal>
+            <span class="num">STEP 02</span>
+            <h3>Upload your garments</h3>
+            <p>Flatlays or product shots — whatever you have. Clone reads the reference, works out how many garments the edit needs, and asks for more if you're short.</p>
           </div>
-          <div class="step" data-reveal>
-            <div class="num">03</div>
-            <h3>Ship</h3>
-            <p>Download on-model images and catalog videos, export-ready for PDP, paid, and social.</p>
+          <div class="step" data-big="03" data-reveal>
+            <span class="num">STEP 03</span>
+            <h3>Press Clone</h3>
+            <p>Clone splits the reference into shots, maps a product to every cut, puts it all on the AI model you picked, and rebuilds the reel frame-by-frame. ~15 minutes later: a proven structure, wearing your brand.</p>
           </div>
+        </div>
+        <div class="platform-chips" data-reveal>
+          <span class="chip">TikTok</span><span class="chip">Instagram Reels</span><span class="chip">YouTube Shorts</span><a class="chip" href="/clone/formats/grwm/">GRWM</a><a class="chip" href="/clone/formats/try-on-haul/">Try-on haul</a><a class="chip" href="/clone/formats/ootd/">OOTD</a><a class="chip" href="/clone/formats/outfit-transition/">Outfit transition</a><a class="chip" href="/clone/formats/lookbook/">Lookbook</a><a class="chip" href="/clone/formats/street-style/">Street style</a><a class="chip" href="/clone/formats/athleisure/">Athleisure</a><a class="chip" href="/clone/formats/" style="border-color:rgba(201,66,14,.4);color:var(--accent)">All formats →</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ WHY / STATS ============ -->
-    <section class="block" id="why">
+    <!-- ============ THE MATH ============ -->
+    <section class="block" id="math">
       <div class="wrap">
-        <div class="section-head" data-reveal style="margin-bottom:2.4rem">
-          <span class="eyebrow">Why Quinn</span>
-          <h2>Studio output, without the studio.</h2>
-          <p>Replace weeks of sample shipping, model casting, and shoot logistics with an afternoon at your desk.</p>
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">The odds</span>
+          <h2>Stop asking "will it work?" Start asking <span class="acid">"did it work?"</span></h2>
+          <p class="lede">Every "new creative" is a bet placed blind. A viral reel is a bet the market already paid out — proven hook, proven pacing, proven demand. Clone lets you run that playbook with your products, from about $5 a test:</p>
         </div>
-        <div class="stats">
-          <div class="stat" data-reveal><div class="big grad-text">10×</div><div class="lbl">faster than a studio shoot</div></div>
-          <div class="stat" data-reveal><div class="big grad-text">90%</div><div class="lbl">lower cost per SKU</div></div>
-          <div class="stat" data-reveal><div class="big grad-text">∞</div><div class="lbl">on-model variations</div></div>
-          <div class="stat" data-reveal><div class="big grad-text">48h</div><div class="lbl">upload to live campaign</div></div>
+
+        <div class="cmp-scroll" data-reveal>
+          <table class="cmp">
+            <thead>
+              <tr><th></th><th>Influencer UGC</th><th>Agency</th><th class="win">Clone</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Proof it can perform</td><td>A brief and a prayer</td><td>A deck and a prayer</td><td class="win">It already went viral</td></tr>
+              <tr><td>One 15-second video</td><td>$50–$200</td><td>$500+</td><td class="win">from ~$5</td></tr>
+              <tr><td>Cost to start testing</td><td>$50–$200 (one video)</td><td>$500+</td><td class="win">~$18 (your first videos)</td></tr>
+              <tr><td>Turnaround</td><td>~14 days</td><td>2–3 weeks</td><td class="win">~15 minutes</td></tr>
+              <tr><td>Briefs &amp; meetings</td><td>Yes, many</td><td>So many</td><td class="win">None</td></tr>
+              <tr><td>Want a variation?</td><td>New invoice</td><td>New scope</td><td class="win">Another ~$5</td></tr>
+              <tr><td>If the video fails</td><td>You still pay</td><td>You still pay</td><td class="win">Fixed free, or refunded</td></tr>
+              <tr><td>Videos for 200 SKUs</td><td>$10,000–$40,000</td><td>Don't ask</td><td class="win">$2,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="trio">
+          <div class="stat" data-reveal><div class="big">~$18</div><div class="lbl">to start — your first 1–2 videos</div></div>
+          <div class="stat" data-reveal><div class="big">15 min</div><div class="lbl">from paste to posted</div></div>
+          <div class="stat" data-reveal><div class="big">0</div><div class="lbl">blind bets — every reference has receipts</div></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CTA ============ -->
-    <section class="block" id="start">
+    <!-- ============ RECEIPT / PRICING ============ -->
+    <section class="block" id="pricing" style="background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Pricing</span>
+          <h2>What it <span class="acid">actually costs.</span></h2>
+        </div>
+        <div class="receipt-grid">
+          <div class="receipt" data-reveal aria-label="Itemized receipt for the credit pack">
+            <div class="rhead">CLONE ✂ RECEIPT · 1 VIDEO</div>
+            <div class="row"><span>1 pre-tested ad structure …………</span><span>$0.00</span></div>
+            <div class="row"><span>(the internet ran the test) </span><span></span></div>
+            <div class="row"><span>your garments ………………………………</span><span>$0.00</span></div>
+            <div class="row"><span>AI model, posed &amp; lit ………………</span><span>$0.00</span></div>
+            <div class="row"><span>scene-split + product mapping …</span><span>$0.00</span></div>
+            <div class="row"><span>one 15-second video ………………</span><span>~$5.00</span></div>
+            <div class="row"><span>subscription …………………………………</span><span>$0.00</span></div>
+            <div class="row"><span>onboarding calls ………………………</span><span>$0.00</span></div>
+            <div class="row total"><span>TOTAL</span><span>~$5.00</span></div>
+            <div class="note">packs start at ~$18 (50 credits); cheaper per video the more you buy. fix-or-refund included.</div>
+          </div>
+          <div data-reveal>
+            <ul class="speclist">
+              <li><b>Start from ~$18</b> — a 50-credit pack covers your first 1–2 videos</li>
+              <li><b>Each video: 15 seconds, 720p, 9:16</b> — sized for Reels, TikTok &amp; Shorts</li>
+              <li><b>Delivered in ~15 minutes</b> — react to a trend while it's still a trend</li>
+              <li><b>Any proven reel you bring</b> — your old hit, their new hit, a TV ad. Link or upload</li>
+              <li><b>Multi-garment mapping</b> — hauls and GRWMs with 6+ products handled</li>
+              <li><b>Your AI model, your pose</b> — you control every input</li>
+              <li><b>1080p upscale</b> — available for extra credits when a winner emerges</li>
+              <li><b>Credits never expire</b> — buy for the launch, use when ready</li>
+              <li><b>No subscription</b> — no monthly nag, no "forgot to cancel"</li>
+            </ul>
+            <a class="btn btn-acid" style="margin-top:2rem" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=pricing">Start from ~$18 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="block" id="faq">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">FAQ</span>
+          <h2>What you're <span class="acid">probably thinking.</span></h2>
+        </div>
+        <div class="faq" data-reveal>
+          <details>
+            <summary>How do I know the cloned ad will actually perform?</summary>
+            <p class="a">Honestly: nobody can promise ROAS — anyone who does is selling a horoscope. What Clone changes is your starting odds. Instead of betting on a structure no audience has ever seen, you start from cuts, pacing, and a hook that already earned six figures of likes in the wild. Then you do what good media buyers do: test cheap, kill losers at about $5, and scale the one that prints.</p>
+          </details>
+          <details>
+            <summary>Will it look like AI slop?</summary>
+            <p class="a">Slop is what happens when AI invents an ad from a brief — generate keyframes, animate them, sync the music, pray. Clone never invents. It maps your products onto a human-made reel that already went viral, so the output inherits the reference's polish, pacing, and hook. That's the whole trick.</p>
+          </details>
+          <details>
+            <summary>Can it match my brand aesthetic?</summary>
+            <p class="a">You bring the products. You choose the model and pose. The reference dictates the vibe — and you chose the reference. You stay in control of every input.</p>
+          </details>
+          <details>
+            <summary>How much does it cost to start?</summary>
+            <p class="a">You can start with about <b>$18</b> — a 50-credit pack, enough for your first one or two videos. Bigger packs bring it down to around <b>$5 a video</b> or less. No subscription, credits never expire, and failed clones are fixed free or refunded — so testing never burns a hole.</p>
+          </details>
+          <details>
+            <summary>What if my clone comes out wrong?</summary>
+            <p class="a">Flag it. Our team looks at every flagged clone. If it's fixable, we redo it — free of charge, no questions. If it turns out to be something Clone genuinely can't handle yet, we refund that video. Either way, a failed clone never costs you money.</p>
+          </details>
+          <details>
+            <summary>Who's behind this?</summary>
+            <p class="a">Clone is built by <a href="/photoshoots/" style="color:var(--accent)">Quinn</a> — the AI studio fashion brands already use for on-model product photography. Garment fidelity is our whole personality; Clone points it at video.</p>
+          </details>
+          <p style="margin-top:1.5rem;font-family:var(--mono);font-size:0.85rem;color:var(--muted)">More questions? <a href="/clone/answers/" style="color:var(--accent);text-decoration:underline;text-underline-offset:2px">See everything answered →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="block" id="start" style="padding-top:0">
       <div class="wrap">
         <div class="cta-band" data-reveal>
-          <h2>Shoot your next drop without a camera.</h2>
-          <p>Book a demo and we'll turn a few of your real flatlays into on-model shots and a catalog video — on us.</p>
-          <form class="waitlist" id="waitlist" novalidate>
-            <input type="email" id="email" placeholder="you@yourbrand.com" aria-label="Work email" required />
-            <button class="btn btn-primary" type="submit">Book a demo</button>
+          <span class="eyebrow">Last call</span>
+          <h2 style="margin-top:1rem">That reel you saved last night? <span class="acid">It's your ad now.</span></h2>
+          <p class="lede">Paste the link. Upload your garments. Fifteen minutes from now it's wearing your clothes.</p>
+          <form class="paste clone-form" novalidate style="margin-top:1.8rem">
+            <label for="ctaUrl" style="position:absolute;left:-9999px">Reference video link</label>
+            <input type="url" id="ctaUrl" placeholder="Paste a TikTok / Instagram / YouTube link…" />
+            <button class="btn btn-acid" type="submit">Clone it →</button>
           </form>
-          <p class="form-msg" id="formMsg" hidden>Thanks — we'll be in touch within one business day. ✨</p>
-          <p class="form-note">Or email us directly at <a href="mailto:support@quinn.live" style="color:var(--muted);text-decoration:underline">support@quinn.live</a></p>
+          <p class="ps"><span class="tag">P.S.</span> An influencer wants <b>$50–$200 and 14 days</b> for one video that <em>might</em> work. Clone starts at <b>~$18</b>, a few dollars a video — so you can test a dozen proven structures for the price of that one maybe. That's the whole pitch.</p>
+          <p class="ps"><span class="tag">P.P.S.</span> Good artists copy. Great artists steal. The best artists <b>clone</b>.</p>
         </div>
       </div>
     </section>
@@ -465,108 +748,224 @@
     <div class="wrap">
       <div class="foot-grid">
         <div class="foot-brand">
-          <a class="brand" href="#top"><span class="mark">Q</span> Quinn</a>
-          <p>The AI studio for fashion brands — on-model photography and catalog video, generated from the shots you already have.</p>
+          <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span> Clone <span class="by">by Quinn</span></a>
+          <p>Rebuild any winning fashion video with your garments and your AI model. From ~$5 a video, 15 minutes, no subscription.</p>
         </div>
-        <div>
-          <h4>Product</h4>
-          <a href="#on-model">On-model shots</a>
-          <a href="#video">Catalog video</a>
-          <a href="/clone/">Clone — AI ad cloning</a>
-          <a href="#how">How it works</a>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <a href="#why">Why Quinn</a>
-          <a href="mailto:support@quinn.live">Contact</a>
-          <a href="#start">Book a demo</a>
-        </div>
-        <div>
-          <h4>Legal</h4>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="delete.html">Delete</a>
+        <div class="foot-links">
+          <div>
+            <h4>Product</h4>
+            <a href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=footer">Open the app</a>
+            <a href="#wall">The Wall</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/clone/how-it-works/">How it works</a>
+            <a href="/clone/formats/">Video formats</a>
+            <a href="/clone/vs/">Clone vs alternatives</a>
+            <a href="/clone/answers/">Questions answered</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="/photoshoots/">Quinn — AI photography</a>
+            <a href="mailto:support@quinn.live">support@quinn.live</a>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <a href="https://quinn.live/privacy.html">Privacy</a>
+            <a href="https://quinn.live/terms.html">Terms</a>
+          </div>
         </div>
       </div>
       <div class="foot-bottom">
-        <span>© <span id="year">2026</span> Quinn Care Private Limited. All rights reserved.</span>
-        <span>Made for fashion, by Quinn.</span>
+        <span>© <span id="year">2026</span> Quinn Care Private Limited</span>
+        <span>This page was not made by an influencer.</span>
       </div>
     </div>
   </footer>
 
   <script>
-    // year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    /* ==========================================================================
+       THE WALL — sample manifest
+       ==========================================================================
+       HOW TO ADD A REAL BEFORE/AFTER PAIR (takes ~1 minute):
+       1. Host the two files anywhere public (the app's CDN, or drop them in
+          this repo under media/clone/ and use the full quinn.live URL).
+       2. Add an entry below:
+            { cat: 'grwm',                       // key from CATS below
+              label: 'GRWM · college fit-check', // card title
+              meta: '6 garments mapped · 12s',   // small line under title
+              ref: { video: 'https://…/ref.mp4', poster: 'https://…/ref.jpg' },
+              out: { video: 'https://…/out.mp4', poster: 'https://…/out.jpg' } }
+       3. That's it — count badge, filters and hover-play wire up automatically.
+       All current cards are REAL ref/output pairs. (Entries with ref:{likes,hue}
+       would render a stylized gradient stand-in — kept as a fallback for drafts.)
+       ========================================================================== */
 
-    // sticky nav border
-    const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
-    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+    const CATS = { street: 'Street', ootd: 'OOTD', lookbook: 'Lookbook', sport: 'Sport', trend: 'Trend' };
 
-    // before/after slider
+    const W = n => `/media/clone/${n}`;
+    const pair = (n, cat, label, meta) => ({ cat, label, meta,
+      ref: { video: W(`wall-ref${n}.mp4`), poster: W(`wall-ref${n}.jpg`) },
+      out: { video: W(`wall-out${n}.mp4`), poster: W(`wall-out${n}.jpg`) } });
+
+    const SAMPLES = [
+      pair(0, 'ootd',     'Paris street OOTD',        'same cuts, new fit · 10s'),
+      pair(5, 'trend',    'Dojo cut · katana included','same blade, new fit · 16s'),
+      pair(6, 'sport',    'Tennis-core rally',         'mid-swing swap · 14s'),
+      pair(4, 'lookbook', 'Newsstand lookbook',        'same kiosk, new fit · 17s'),
+      pair(1, 'street',   'Crosswalk fit walk',        'same stride, new fit · 14s'),
+      pair(2, 'ootd',     'Coffee-run OOTD',           'same sip, new fit · 14s'),
+      { cat: 'sport', label: 'Freestyle session', meta: 'same cuts, new fit · 33s',
+        ref: { video: '/media/clone/ref-freestyle.mp4', poster: '/media/clone/ref-freestyle.jpg' },
+        out: { video: '/media/clone/out-freestyle.mp4', poster: '/media/clone/out-freestyle.jpg' } },
+      pair(3, 'street',   'Wide-shot fit walk',        'blink and it\'s yours · 8s'),
+    ];
+
+    // ---------- render the wall ----------
     (function () {
-      const ba = document.getElementById('ba');
-      const range = document.getElementById('baRange');
-      if (!ba || !range) return;
-      const set = v => ba.style.setProperty('--pos', v + '%');
-      set(range.value);
-      range.addEventListener('input', e => set(e.target.value));
-      // gentle intro nudge to hint interactivity
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!reduce) {
-        let start = null; const from = 68, to = 50, dur = 1100;
-        const tick = t => {
-          if (start === null) start = t;
-          const p = Math.min((t - start) / dur, 1);
-          const e = 1 - Math.pow(1 - p, 3);
-          const val = from + (to - from) * e;
-          range.value = val; set(val);
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        setTimeout(() => requestAnimationFrame(tick), 500);
-      }
+      const grid = document.getElementById('wallGrid');
+      const countEl = document.getElementById('wallCount');
+
+      const paneHTML = (side, d) => {
+        const tag = side === 'ref'
+          ? '<span class="ptag ptag--ref">Reference</span>'
+          : '<span class="ptag ptag--out">The clone</span>';
+        if (d.video) {
+          return `<div class="pane">
+            <video src="${d.video}" ${d.poster ? `poster="${d.poster}"` : ''} muted loop playsinline preload="none" aria-label="${side === 'ref' ? 'Reference video' : 'Cloned output video'}"></video>
+            ${tag}${side === 'out' ? '<span class="hint">▶ hover</span>' : ''}
+          </div>`;
+        }
+        if (side === 'ref') {
+          return `<div class="pane">
+            <div class="refcard" style="background: linear-gradient(160deg, hsl(${d.hue} 60% 36%), hsl(${(d.hue + 50) % 360} 55% 20%) 60%, #0d0710);">
+              <span class="playglyph" aria-hidden="true"></span>
+            </div>
+            <div class="refbars" aria-hidden="true"><i></i><i></i></div>
+            <div class="refrail" aria-hidden="true"><span><b>♥</b>${d.likes}</span><span><b>➦</b></span></div>
+            ${tag}
+          </div>`;
+        }
+        return `<div class="pane">${d.poster ? `<img src="${d.poster}" alt="Cloned on-model output" loading="lazy" decoding="async">` : ''}${tag}</div>`;
+      };
+
+      grid.innerHTML = SAMPLES.map((s, i) => `
+        <article class="pair" data-cat="${s.cat}" data-reveal>
+          <div class="pair-media">${paneHTML('ref', s.ref)}${paneHTML('out', s.out)}</div>
+          <div class="pair-meta">
+            <div><div class="lbl">${s.label}</div><div class="sub">${s.meta}</div></div>
+            <span class="cat">${CATS[s.cat]}</span>
+          </div>
+        </article>`).join('') + `
+        <article class="pair pair--cta" data-cat="*" data-reveal>
+          <div>
+            <h3>Yours goes<br>here.</h3>
+            <p>Every card on this wall cost somebody a few dollars and fifteen minutes.</p>
+            <a class="btn" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=wall">Clone yours →</a>
+          </div>
+        </article>`;
+
+      countEl.textContent = `${SAMPLES.length} clones on the wall · new ones weekly`;
+
+      // hover / tap to play both sides of a card
+      const stopAll = except => document.querySelectorAll('.pair video').forEach(v => {
+        if (!except || !except.contains(v)) { v.pause(); }
+      });
+      grid.querySelectorAll('.pair').forEach(card => {
+        const vids = card.querySelectorAll('video');
+        if (!vids.length) return;
+        const play = () => { stopAll(card); vids.forEach(v => v.play().catch(() => {})); };
+        const pause = () => vids.forEach(v => v.pause());
+        card.addEventListener('mouseenter', play);
+        card.addEventListener('mouseleave', pause);
+        card.addEventListener('touchstart', () => { vids[0].paused ? play() : pause(); }, { passive: true });
+      });
     })();
 
-    // catalog-video card: crossfade through the saree angles to imply motion
+    // ---------- ticker: duplicate track for seamless loop ----------
     (function () {
-      const card = document.getElementById('reelcard');
-      if (!card) return;
-      const frames = Array.prototype.slice.call(card.querySelectorAll('.vframe'));
-      if (frames.length < 2) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      let i = 0;
-      setInterval(function () {
-        frames[i].classList.remove('active');
-        i = (i + 1) % frames.length;
-        frames[i].classList.add('active');
-      }, 1900);
+      const t = document.getElementById('ticker');
+      t.innerHTML += t.innerHTML;
     })();
 
-    // reveal on scroll
+    // ---------- sticky nav ----------
+    (function () {
+      const nav = document.getElementById('nav');
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+      onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    // ---------- paste-a-link forms → app ----------
+    (function () {
+      const APP = 'https://clone.quinn.live/app';
+      document.querySelectorAll('.clone-form').forEach(form => {
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const input = form.querySelector('input');
+          const v = (input.value || '').trim();
+          const url = new URL(APP);
+          url.searchParams.set('utm_source', 'landing_v2');
+          url.searchParams.set('utm_content', 'paste_bar');
+          if (/^https?:\/\/\S+$/i.test(v)) url.searchParams.set('reference', v);
+          if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'paste_bar' });
+          window.location.href = url.toString();
+        });
+      });
+      // primary CTAs that hand off to the app → Lead (intent signal + retargeting audience)
+      document.addEventListener('click', e => {
+        const a = e.target.closest('a[href*="clone.quinn.live/app"]');
+        if (!a || typeof fbq !== 'function') return;
+        const c = new URL(a.href).searchParams.get('utm_content') || 'cta';
+        fbq('track', 'Lead', { content_name: c });
+      });
+    })();
+
+    // ---------- reveal on scroll ----------
     (function () {
       const els = document.querySelectorAll('[data-reveal]');
       if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
-      const io = new IntersectionObserver((entries) => {
+      const io = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.14 });
+      }, { threshold: 0.12 });
       els.forEach(e => io.observe(e));
     })();
 
-    // waitlist
+    // ---------- hero videos: play only when visible, never under reduced motion ----------
     (function () {
-      const form = document.getElementById('waitlist');
-      const msg = document.getElementById('formMsg');
-      const email = document.getElementById('email');
-      if (!form) return;
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!email.value || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value)) {
-          email.focus(); email.style.borderColor = '#e98a8a'; return;
-        }
-        form.hidden = true; msg.hidden = false;
+      const duo = document.querySelector('.board');
+      const vids = duo ? duo.querySelectorAll('video') : [];
+      if (!vids.length) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        vids.forEach(v => { v.removeAttribute('autoplay'); v.pause(); }); return;
+      }
+      if (!('IntersectionObserver' in window)) return;
+      new IntersectionObserver(([e]) => {
+        vids.forEach(v => e.isIntersecting ? v.play().catch(() => {}) : v.pause());
+      }, { threshold: 0.25 }).observe(duo);
+    })();
+
+    // ---------- hero sound toggles: one card audible at a time ----------
+    (function () {
+      const cards = document.querySelectorAll('.board .bcard');
+      cards.forEach(card => {
+        const v = card.querySelector('video');
+        const b = card.querySelector('.bsound');
+        if (!v || !b) return;
+        b.addEventListener('click', () => {
+          const enable = v.muted;
+          cards.forEach(c => {
+            const cv = c.querySelector('video'), cb = c.querySelector('.bsound');
+            if (cv) cv.muted = true;
+            if (cb) { cb.classList.remove('on'); cb.setAttribute('aria-pressed', 'false'); }
+          });
+          if (enable) {
+            v.muted = false; b.classList.add('on'); b.setAttribute('aria-pressed', 'true');
+            v.play().catch(() => {});
+          }
+        });
       });
     })();
+
+    // ---------- year ----------
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

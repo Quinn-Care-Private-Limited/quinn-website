@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Quinn", "item": "https://quinn.live/"}, {"@type": "ListItem", "position": 2, "name": "Clone", "item": "https://quinn.live/clone/"}, {"@type": "ListItem", "position": 3, "name": "Formats", "item": "https://quinn.live/clone/formats/"}]}
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Quinn", "item": "https://quinn.live/"}, {"@type": "ListItem", "position": 2, "name": "Clone", "item": "https://quinn.live/"}, {"@type": "ListItem", "position": 3, "name": "Formats", "item": "https://quinn.live/clone/formats/"}]}
   </script>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What fashion video formats can I make with AI?", "acceptedAnswer": {"@type": "Answer", "text": "With Clone you can make any short-form fashion format by cloning a proven viral reel: GRWM, OOTD, try-on haul, outfit transition, lookbook, street style or fit-check, and activewear. You paste a reel that already performed and Clone rebuilds it with your garments."}}, {"@type": "Question", "name": "Which fashion video format converts best?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single best format \u2014 it depends on the goal. GRWM and outfit transitions drive watch-time and shares, OOTD is the repeatable workhorse for testing, try-on hauls maximize products per video, and lookbooks position a full collection. Cloning a proven reel in any format inherits what already worked."}}]}
@@ -84,14 +84,16 @@
     .fcard .go { font-family:var(--mono); font-size:.76rem; color:var(--accent); margin-top:.7rem; display:inline-block; }
     @media (max-width:640px){ .cardgrid { grid-template-columns:1fr; } }
 </style>
+  <!-- Spor first-party analytics (app: clone-web) -->
+  <script src="/clone/spor.js" defer></script>
 </head>
 <body>
   <header class="nav"><div class="wrap nav-inner">
-    <a class="brand" href="/clone/"><span class="mark" aria-hidden="true"></span> Clone</a>
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span> Clone</a>
     <a class="btn" href="https://clone.quinn.live/app?utm_source=formats&utm_content=nav">Clone a reel →</a>
   </div></header>
   <main class="wrap">
-    <nav class="crumb" aria-label="Breadcrumb"><a href="https://quinn.live/">Quinn</a> / <a href="/clone/">Clone</a> / <span>Formats</span></nav>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="https://quinn.live/">Quinn</a> / <a href="/">Clone</a> / <span>Formats</span></nav>
     <span class="eyebrow">AI fashion video formats</span>
     <h1>Every fashion format, <span class="acid">cloned.</span></h1>
     <p class="intro">Whatever short-form format you want — GRWM, OOTD, try-on haul, outfit transition, lookbook, street style, activewear — the fastest way to make one that performs is to clone a reel that already went viral and swap your garments in. Here’s how each format works, and how to make it.</p>
@@ -112,7 +114,7 @@
   </main>
   <footer><div class="wrap foot">
     <span>© <span id="year">2026</span> Quinn Care Private Limited</span>
-    <div class="foot-links"><a href="/clone/formats/">All formats</a><a href="/clone/how-it-works/">How it works</a><a href="/clone/">Clone home</a></div>
+    <div class="foot-links"><a href="/clone/formats/">All formats</a><a href="/clone/how-it-works/">How it works</a><a href="/">Clone home</a></div>
   </div></footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>

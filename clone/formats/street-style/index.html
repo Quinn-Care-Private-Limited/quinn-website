@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Quinn", "item": "https://quinn.live/"}, {"@type": "ListItem", "position": 2, "name": "Clone", "item": "https://quinn.live/clone/"}, {"@type": "ListItem", "position": 3, "name": "Formats", "item": "https://quinn.live/clone/formats/"}, {"@type": "ListItem", "position": 4, "name": "Street style", "item": "https://quinn.live/clone/formats/street-style/"}]}
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Quinn", "item": "https://quinn.live/"}, {"@type": "ListItem", "position": 2, "name": "Clone", "item": "https://quinn.live/"}, {"@type": "ListItem", "position": 3, "name": "Formats", "item": "https://quinn.live/clone/formats/"}, {"@type": "ListItem", "position": 4, "name": "Street style", "item": "https://quinn.live/clone/formats/street-style/"}]}
   </script>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "HowTo", "name": "How to make a street-style AI fashion video", "description": "Create a Street style fashion video with Clone by rebuilding a proven viral reel with your own garments.", "totalTime": "PT15M", "estimatedCost": {"@type": "MonetaryAmount", "currency": "USD", "value": "5"}, "step": [{"@type": "HowToStep", "position": 1, "name": "Pick a proven Street style reel", "text": "Find a Street style fashion reel that already went viral on TikTok, Instagram, or YouTube, and paste its link into Clone."}, {"@type": "HowToStep", "position": 2, "name": "Upload your garments", "text": "Upload photos of your products. Clone reads the reference and maps your garments onto it."}, {"@type": "HowToStep", "position": 3, "name": "Press Clone", "text": "Clone rebuilds the Street style reel with your products on your chosen AI model, video-to-video, in about 15 minutes."}]}
@@ -90,14 +90,16 @@
     .fcard .go { font-family:var(--mono); font-size:.76rem; color:var(--accent); margin-top:.7rem; display:inline-block; }
     @media (max-width:640px){ .cardgrid { grid-template-columns:1fr; } }
 </style>
+  <!-- Spor first-party analytics (app: clone-web) -->
+  <script src="/clone/spor.js" defer></script>
 </head>
 <body>
   <header class="nav"><div class="wrap nav-inner">
-    <a class="brand" href="/clone/"><span class="mark" aria-hidden="true"></span> Clone</a>
+    <a class="brand" href="/"><span class="mark" aria-hidden="true"></span> Clone</a>
     <a class="btn" href="https://clone.quinn.live/app?utm_source=formats&utm_content=nav">Clone a reel →</a>
   </div></header>
   <main class="wrap">
-    <nav class="crumb" aria-label="Breadcrumb"><a href="https://quinn.live/">Quinn</a> / <a href="/clone/">Clone</a> / <a href="/clone/formats/">Formats</a> / <span>Street style</span></nav>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="https://quinn.live/">Quinn</a> / <a href="/">Clone</a> / <a href="/clone/formats/">Formats</a> / <span>Street style</span></nav>
     <span class="eyebrow">AI Street style videos for fashion</span>
     <h1>How to make a street-style AI fashion video</h1>
     <p class="intro">A street-style or fit-check video captures an outfit in a real urban setting — a crosswalk, a doorway, a city street. The candid, in-the-wild energy is what makes it read as authentic.</p>
@@ -145,7 +147,7 @@
   </main>
   <footer><div class="wrap foot">
     <span>© <span id="year">2026</span> Quinn Care Private Limited</span>
-    <div class="foot-links"><a href="/clone/formats/">All formats</a><a href="/clone/how-it-works/">How it works</a><a href="/clone/">Clone home</a></div>
+    <div class="foot-links"><a href="/clone/formats/">All formats</a><a href="/clone/how-it-works/">How it works</a><a href="/">Clone home</a></div>
   </div></footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
