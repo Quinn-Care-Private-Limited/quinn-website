@@ -23,6 +23,9 @@
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it a TikTok ad template tool?", "acceptedAnswer": {"@type": "Answer", "text": "No — better. Instead of a blank template, you start from a reel that already went viral."}}, {"@type": "Question", "name": "Will it feel like an ad?", "acceptedAnswer": {"@type": "Answer", "text": "It's built on real, native TikTok content — so it feels native, not like a studio ad."}}]}
   </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Clone by Quinn", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "AI video ad generator", "operatingSystem": "Web", "url": "https://quinn.live/", "description": "Clone is an AI ad tool for fashion brands. Paste a short-form fashion video (TikTok/Instagram Reel/YouTube Short) that already went viral, upload photos of your garments, and Clone rebuilds that video shot-for-shot with your products on an AI model. It works directly video-to-video, preserving the reference's rhythm, pacing and cuts, rather than describing it as a prompt and regenerating it. Output is a 15-second, 720p, 9:16 vertical ad in about 15 minutes.", "featureList": ["Direct video-to-video ad cloning (structure preserved, not re-prompted)", "Fashion-native garment fidelity — your exact garment on an AI model", "Multi-garment formats (GRWM, hauls) — one product mapped per cut", "15-second, 720p, 9:16 vertical output in ~15 minutes", "No subscription; credit-based; credits never expire", "Fix-or-refund guarantee on failed clones"], "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "18", "highPrice": "1805", "offerCount": "5", "description": "Credit packs from ~$18 (50 credits, ~1–2 videos) to ~$1,805 (10,000 credits). From ~$5 per 15-second video; cheaper per video at volume. No subscription; credits never expire."}, "publisher": {"@type": "Organization", "name": "Quinn", "url": "https://quinn.live/", "sameAs": ["https://www.instagram.com/quinn.video/"], "description": "Quinn (Quinn Care Private Limited, India) makes AI product photography and video for fashion brands; rated 5.0 on the Shopify App Store."}}
+  </script>
   <style>
     :root { --bg:#f7f5f1; --panel:#fff; --panel-2:#f0ebe4; --line:rgba(30,27,22,.10); --line-strong:rgba(30,27,22,.20); --ink:#1e1b16; --muted:#6f6a62; --faint:#a8a29a; --acid:#ed5a24; --accent:#c9420e; --hl:#ffc39e; --acid-ink:#fff; --mono:"JetBrains Mono",ui-monospace,monospace; --maxw:900px; }
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -77,7 +80,17 @@
     .foot { display:flex; flex-wrap:wrap; gap:1rem 2rem; align-items:center; justify-content:space-between; font-family:var(--mono); font-size:.78rem; color:var(--faint); }
     .foot a { color:var(--muted); } .foot a:hover { color:var(--accent); }
     .foot-links { display:flex; gap:1.4rem; flex-wrap:wrap; }
-    @media (max-width:640px){ h2 { margin-top:2.4rem; } }
+    .about { margin-top:3rem; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,var(--panel),#faf7f2); padding:1.7rem 1.7rem 1.9rem; }
+    .about h2 { margin-top:0; font-size:1.15rem; }
+    .about > p { margin-top:.8rem; color:var(--muted); font-size:.96rem; }
+    .about > p a { color:var(--accent); text-decoration:underline; text-decoration-color:var(--hl); text-underline-offset:2px; }
+    .about .facts { margin-top:1.3rem; display:grid; grid-template-columns:1fr 1fr; gap:0 1.8rem; }
+    .about .facts > div { display:grid; grid-template-columns:minmax(92px,auto) 1fr; gap:.9rem; padding:.6rem 0; border-top:1px solid var(--line); align-items:baseline; }
+    .about dt { font-family:var(--mono); font-size:.62rem; letter-spacing:.09em; text-transform:uppercase; color:var(--accent); }
+    .about dd { font-size:.9rem; color:var(--ink); }
+    .about .more { margin-top:1.4rem; padding-top:1rem; border-top:1px solid var(--line); font-family:var(--mono); font-size:.75rem; color:var(--faint); }
+    .about .more a { color:var(--muted); } .about .more a:hover { color:var(--accent); }
+    @media (max-width:640px){ h2 { margin-top:2.4rem; } .about .facts { grid-template-columns:1fr; } }
   </style>
   <!-- Spor first-party analytics (app: clone-web) -->
   <script src="/clone/spor.js" defer></script>
@@ -107,6 +120,22 @@
 <div class="qa"><h4 id="is-it-a-tiktok-ad-template-tool">Is it a TikTok ad template tool?</h4><p class="a-lead">No — better. Instead of a blank template, you start from a reel that already went viral.</p></div>
 <div class="qa"><h4 id="will-it-feel-like-an-ad">Will it feel like an ad?</h4><p class="a-lead">It's built on real, native TikTok content — so it feels native, not like a studio ad.</p></div>
     </div>
+
+    <section class="about" aria-label="About Clone">
+      <h2>What Clone is</h2>
+      <p>Clone is an AI ad tool for fashion brands, built by <a href="/photoshoots/">Quinn</a>. You paste a short-form fashion video that already went viral, upload photos of your garments, and Clone rebuilds that video &mdash; shot for shot &mdash; with your products on an AI model. The idea: a reel that already went viral has already passed the only test that matters, so you start from something that worked instead of guessing at new creative.</p>
+      <p>Most AI ad tools describe a reference video as a text prompt and regenerate it, which loses the rhythm and cuts that made it work. Clone goes <a href="/clone/how-it-works/">directly video-to-video</a> &mdash; it keeps the original structure and maps your exact garments onto it, fashion-native.</p>
+      <dl class="facts">
+        <div><dt>What it makes</dt><dd>15-second, 720p, 9:16 vertical video ads for Meta &amp; TikTok</dd></div>
+        <div><dt>Method</dt><dd>Direct video-to-video &mdash; structure preserved, not re-prompted; multi-garment (GRWM, hauls)</dd></div>
+        <div><dt>You provide</dt><dd>A viral fashion reel + photos of your garments &mdash; no samples shipped</dd></div>
+        <div><dt>Turnaround</dt><dd>~15 minutes per video, self-serve</dd></div>
+        <div><dt>Price</dt><dd>From ~$5 a video &middot; credit packs from ~$18 &middot; no subscription, credits never expire</dd></div>
+        <div><dt>If a clone fails</dt><dd>Flag it &mdash; fixable clones are redone free, genuinely un-cloneable ones are refunded</dd></div>
+        <div><dt>Made by</dt><dd>Quinn &mdash; AI product photography &amp; video for fashion (Shopify 5.0)</dd></div>
+      </dl>
+      <p class="more">More on Clone: <a href="/clone/how-it-works/">How it works</a> &middot; <a href="/clone/answers/">Common questions</a> &middot; <a href="/clone/formats/">Fashion ad formats</a> &middot; <a href="/clone/vs/">Compare tools</a></p>
+    </section>
 
     <nav class="related"><span class="lbl">Related</span> <a href="/clone/instagram-ad-maker/">Instagram ad maker</a> · <a href="/clone/find-winning-ads/">Find winning ads</a> · <a href="/clone/how-it-works/">How it works</a></nav>
 
