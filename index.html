@@ -47,7 +47,7 @@
     "name": "Clone",
     "brand": { "@type": "Brand", "name": "Quinn" },
     "description": "Rebuilds any short-form fashion video with your garments and your chosen AI model. 720p vertical videos priced per 10-second block — $9 each to start, tapering to ~$4.30 at volume, delivered in about 15 minutes. Credit packs start at about $18 (your first 2 videos).",
-    "offers": { "@type": "AggregateOffer", "lowPrice": "18", "highPrice": "1805", "priceCurrency": "USD", "offerCount": "5", "description": "Credit packs from about $18 (50 credits, 2 ten-second videos) up to volume packs; $9 per video at entry, ~$4.30 at scale. No subscription; credits never expire.", "url": "https://clone.quinn.live/app" }
+    "offers": { "@type": "AggregateOffer", "lowPrice": "18", "highPrice": "1805", "priceCurrency": "USD", "offerCount": "5", "description": "Credit packs from about $18 (50 credits, 2 ten-second videos) up to volume packs; $9 per video at entry, ~$4.30 at scale. No subscription; credits never expire.", "url": "https://clone.quinn.live/login" }
   }
   </script>
 
@@ -476,7 +476,7 @@
       [data-reveal] { transition: none; }
     }
   </style>
-  <!-- Spor first-party analytics (app: clone-web) -->
+  <!-- Spor first-party analytics (app: website-web) -->
   <script src="/spor.js" defer></script>
 </head>
 <body>
@@ -492,7 +492,7 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn-acid" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=nav">Clone a reel →</a>
+      <a class="btn btn-acid" href="https://clone.quinn.live/login?utm_source=landing_v2&utm_content=nav">Clone a reel →</a>
     </div>
   </header>
 
@@ -681,7 +681,7 @@
               <li><b>Credits never expire</b> — buy for the launch, use when ready</li>
               <li><b>No subscription</b> — no monthly nag, no "forgot to cancel"</li>
             </ul>
-            <a class="btn btn-acid" style="margin-top:2rem" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=pricing">Start from ~$18 →</a>
+            <a class="btn btn-acid" style="margin-top:2rem" href="https://clone.quinn.live/login?utm_source=landing_v2&utm_content=pricing">Start from ~$18 →</a>
           </div>
         </div>
       </div>
@@ -754,7 +754,7 @@
         <div class="foot-links">
           <div>
             <h4>Product</h4>
-            <a href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=footer">Open the app</a>
+            <a href="https://clone.quinn.live/login?utm_source=landing_v2&utm_content=footer">Open the app</a>
             <a href="#wall">The Wall</a>
             <a href="#pricing">Pricing</a>
             <a href="/clone/how-it-works/">How it works</a>
@@ -860,7 +860,7 @@
           <div>
             <h3>Yours goes<br>here.</h3>
             <p>Every card on this wall cost somebody a few dollars and fifteen minutes.</p>
-            <a class="btn" href="https://clone.quinn.live/app?utm_source=landing_v2&utm_content=wall">Clone yours →</a>
+            <a class="btn" href="https://clone.quinn.live/login?utm_source=landing_v2&utm_content=wall">Clone yours →</a>
           </div>
         </article>`;
 
@@ -896,7 +896,7 @@
 
     // ---------- paste-a-link forms → app ----------
     (function () {
-      const APP = 'https://clone.quinn.live/app';
+      const APP = 'https://clone.quinn.live/login';
       document.querySelectorAll('.clone-form').forEach(form => {
         form.addEventListener('submit', e => {
           e.preventDefault();
@@ -916,7 +916,7 @@
       });
       // primary CTAs that hand off to the app → Lead (intent signal + retargeting audience)
       document.addEventListener('click', e => {
-        const a = e.target.closest('a[href*="clone.quinn.live/app"]');
+        const a = e.target.closest('a[href*="clone.quinn.live/login"]');
         if (!a || typeof fbq !== 'function') return;
         const c = new URL(a.href).searchParams.get('utm_content') || 'cta';
         fbq('track', 'Lead', { content_name: c });

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Spor — first-party analytics for quinn.live (app: quinn-web)
+   Spor — first-party analytics for quinn.live (app: website-web)
    --------------------------------------------------------------------------
    Self-hosted product analytics: https://spor.quinn.live/v1/docs
    Ships a public, write-only key by design — it can only POST events, never
@@ -21,7 +21,7 @@
 
   var CONFIG = {
     endpoint: 'https://spor.quinn.live/v1/events',
-    key: 'trk_pub_8ebe8f2fdf3d1944b822b03200a50d19e171cbb11748d794', // public write-only key, scoped to quinn-web
+    key: 'trk_pub_8ebe8f2fdf3d1944b822b03200a50d19e171cbb11748d794', // public write-only key, scoped to website-web
     app_id: 'website-web', // the app the key is scoped to (spec drafted it as "quinn-web")
     release: 'prod',
     // production only on the live host, so local/preview traffic stays out of the numbers
