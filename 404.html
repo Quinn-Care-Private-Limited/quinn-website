@@ -6,22 +6,30 @@
   <title>Quinn</title>
   <meta name="robots" content="noindex" />
   <script>
-    // Referral links (quinn.live/r/CODE) land here because GitHub Pages has no
+    // Referral links (quinn.live/rs/CODE) land here because GitHub Pages has no
     // server-side routing — this doubles as an invisible redirector:
     //  - App installed → Android App Links / iOS Universal Links open the app
     //    before the browser loads anything (see /.well-known/).
-    //  - Otherwise → straight to the Play Store; the code rides along as the
-    //    install referrer (quinn_ref) and the app auto-fills it on first
-    //    launch. iOS users type the 6-letter code from the share message.
-    var m = location.pathname.match(/^\/r\/([A-Za-z0-9]{4,12})\/?$/);
+    //  - Otherwise → the right store for the visitor's OS:
+    //      Android → Play Store; the code rides along as the install referrer
+    //                (quinn_ref) and the app auto-fills it on first launch.
+    //      iOS     → App Store; there is no install-referrer equivalent, so the
+    //                user types the 6-letter code from the share message.
+    var m = location.pathname.match(/^\/rs\/([A-Za-z0-9]{4,12})\/?$/);
     if (m) {
       var code = m[1].toUpperCase();
-      // TODO iOS launch: send iPhone/iPad visitors to the App Store instead
-      // (the code can't ride an App Store install — they type it at signup).
-      location.replace(
-        'https://play.google.com/store/apps/details?id=live.quinn.sage' +
-        '&referrer=' + encodeURIComponent('quinn_ref=' + code)
-      );
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPad|iPhone|iPod/.test(ua) ||
+        // iPadOS 13+ reports as desktop Safari — detect the touch Mac.
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (isIOS) {
+        location.replace('https://apps.apple.com/app/id6789599518');
+      } else {
+        location.replace(
+          'https://play.google.com/store/apps/details?id=live.quinn.sage' +
+          '&referrer=' + encodeURIComponent('quinn_ref=' + code)
+        );
+      }
     }
   </script>
   <style>

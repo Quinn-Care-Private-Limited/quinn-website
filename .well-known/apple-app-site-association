@@ -6,8 +6,8 @@
         "appIDs": ["LJ2MN2JZ86.live.quinn.sage"],
         "components": [
           {
-            "/": "/r/*",
-            "comment": "Quinn referral links"
+            "/": "/rs/*",
+            "comment": "Quinn (Sage app) referral links"
           }
         ]
       }

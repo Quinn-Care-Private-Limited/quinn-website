@@ -11,11 +11,13 @@ Served as a static site via **GitHub Pages**.
 
 - `index.html` — single-page landing site, fully self-contained (inline CSS + JS, custom SVG art, before/after slider). No build step, no dependencies.
 - `.nojekyll` — disables Jekyll processing so files are served as-is.
-- `404.html` — page-not-found, and the **referral redirector**: `quinn.live/r/CODE`
+- `404.html` — page-not-found, and the **referral redirector**: `quinn.live/rs/CODE`
   links land here (GitHub Pages has no routing) and instantly forward to the
-  Play Store with the code attached as the install referrer (`quinn_ref`),
-  which the Sage app auto-fills at signup.
-- `.well-known/` — app-verification files so `quinn.live/r/*` links open the
+  right store for the visitor's OS — **Android** → Play Store with the code
+  attached as the install referrer (`quinn_ref`), which the Sage app auto-fills
+  at signup; **iOS** → App Store (no install-referrer equivalent, so the user
+  types the 6-letter code). App Store id: `6789599518`.
+- `.well-known/` — app-verification files so `quinn.live/rs/*` links open the
   Sage app directly when it's installed:
   - `assetlinks.json` (Android App Links). Currently holds the **debug**
     signing cert. **At launch, add** the Play App Signing SHA-256 (Play Console
@@ -27,7 +29,8 @@ Served as a static site via **GitHub Pages**.
     `/.well-known/apple-app-site-association` setting
     `Content-Type: application/json`.
   - Both are per-app extensible: future Quinn apps claim their own path prefix
-    (`/r/*` belongs to Sage) and add entries to these files.
+    (`/rs/*` belongs to Sage — `r` = refer, `s` = Sage) and add entries to
+    these files.
 
 ## Local preview
 
@@ -56,7 +59,7 @@ curl -sI https://quinn.live/.well-known/assetlinks.json           # 200, json
 curl -sI https://quinn.live/.well-known/apple-app-site-association
 # On a device with a debug build of the Sage app:
 adb shell pm get-app-links live.quinn.sage                        # → verified
-adb shell am start -a android.intent.action.VIEW -d "https://quinn.live/r/TEST12"
+adb shell am start -a android.intent.action.VIEW -d "https://quinn.live/rs/TEST12"
 ```
 
 ## Editing notes
