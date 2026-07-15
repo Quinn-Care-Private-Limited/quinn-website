@@ -477,7 +477,7 @@
     }
   </style>
   <!-- Spor first-party analytics (app: clone-web) -->
-  <script src="/clone/spor.js" defer></script>
+  <script src="/spor.js" defer></script>
 </head>
 <body>
 
@@ -904,9 +904,13 @@
           const v = (input.value || '').trim();
           const url = new URL(APP);
           url.searchParams.set('utm_source', 'landing_v2');
+          url.searchParams.set('utm_medium', 'referral');
+          url.searchParams.set('utm_campaign', 'launch_app');
           url.searchParams.set('utm_content', 'paste_bar');
+          if (typeof window.qid === 'function') url.searchParams.set('qid', window.qid());
           if (/^https?:\/\/\S+$/i.test(v)) url.searchParams.set('reference', v);
           if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'paste_bar' });
+          if (typeof sporTrack === 'function') sporTrack('clone_cta_clicked', { placement: 'paste_bar', path: location.pathname, qid: window.qid() });
           window.location.href = url.toString();
         });
       });
