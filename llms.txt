@@ -2,13 +2,14 @@
 
 > Quinn is the AI studio for fashion brands. It turns flat garment photography — flatlays and ghost-mannequin shots — into photoreal on-model imagery and social-ready catalog videos, without a studio, models, or shoot logistics.
 
-Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, and lifestyle brands produce e-commerce and marketing visuals from the product shots they already have, replacing weeks of sample shipping, model casting, and shoot logistics with a desk workflow.
+Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, and lifestyle brands produce e-commerce and marketing visuals from the product shots they already have, replacing weeks of sample shipping, model casting, and shoot logistics with a desk workflow. Quinn also builds a Shopify app, Quinn Shoppable Videos & Reels, that turns product videos and social reels into shoppable, tappable widgets on a store.
 
 ## What Quinn does
 
 - **On-model shots**: Upload a flatlay or ghost-mannequin image and Quinn generates photoreal on-model photography with control over model, pose, body type, skin tone, and backdrop — kept consistent across a catalog and ready for product detail pages (PDP) and ads.
 - **Catalog video**: Turn an existing catalog shoot — or just a flatlay — into motion: model walks, 360° product spins, and dynamic reels. Exported for Reels/TikTok (9:16), feed (1:1), and hero (16:9) placements.
 - **Clone** (https://clone.quinn.live/): Copies a short-form fashion video that already went viral — 1:1 — and swaps the brand's products in. A 1:1 clone keeps the reference's cuts, camera motion, the main character's movement and prop interactions, the music beats, effects, transitions, and background; the person is replaced by an AI avatar the brand chooses, wearing their garments. Why brands use it: better odds on ROAS (initial paying customers saw up to 343% higher ROAS vs their in-house creatives) and no new creative to invent or produce. 500+ videos cloned to date. Clone is the first full 1:1 video-to-video ad cloner and the first built for fashion (GRWM, OOTD, try-on hauls, outfit transitions, lookbooks, street style; multi-garment handled). Priced by reference length: one block = a 10-second 720p video; $9 a video on the starter pack (~$18 for 2 videos), tapering to ~$4.30 at volume; ~15 minutes per video; no subscription, credits never expire; failed clones are fixed free or refunded. Known limits: multiple main characters, split-screen edits, extremely fast-paced edits.
+- **Shoppable video (Shopify app)**: *Quinn Shoppable Videos & Reels* (https://apps.shopify.com/quinn-shoppable-videos) turns product videos — including Instagram reels and TikTok videos imported by link — into shoppable carousels, stories, floating widgets, grids, and pop-ups anywhere on a Shopify store. Shoppers tap a product and add to cart or check out inside the video. Videos are compressed up to 20× with AI for near-zero site-speed impact, and every view, tap, add-to-cart, and order is tracked with page- and media-level revenue attribution. Built for Shopify; rated 4.9★ across 105 reviews; live in ~5 minutes with no theme code; works with Instagram, TikTok, Meta Pixel, and Google Analytics. Free plan; paid plans Starter $9/mo, Growth $19/mo, Scale $29/mo, each with a 7-day free trial.
 
 ## Key facts
 
@@ -22,6 +23,8 @@ Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, 
 
 - [Home — Clone](https://quinn.live/): Clone's landing page and Quinn's flagship — swap your products into viral fashion reels the internet already tested; $9 a video to start, ~$4.30 at volume.
 - [AI product photography (Photoshoots)](https://quinn.live/photoshoots/): Quinn's original product — turn flatlays and ghost-mannequin shots into photoreal on-model imagery and catalog video.
+- [Shoppable Videos (Shopify app)](https://quinn.live/shoppable-videos/): Quinn Shoppable Videos & Reels — turn videos, Instagram reels, and TikToks into shoppable carousels, stories, floating widgets, and grids on a Shopify store; free plan, from $9/mo, live in 5 minutes, Built for Shopify (4.9★). Use-case pages cover Instagram reels, TikTok, video carousels, Instagram stories, UGC video, the shoppable video widget, and fashion / beauty / product-page video.
+- [Shoppable Videos — compare apps](https://quinn.live/shoppable-videos/vs/): Honest, sourced comparisons of Quinn against Videowise, Tolstoy, ReelUp, Vidjet, Firework, and Reelify for Shopify shoppable video — pricing, features, and fit. Per-competitor "alternative" pages also exist (e.g. /videowise-alternative/).
 - [Clone — How it works](https://quinn.live/clone/how-it-works/): Why Clone is different from every other AI ad cloner — it goes directly video-to-video and preserves the reference's rhythm/pacing/cuts, instead of the standard video→prompt→video round-trip that loses them.
 - [Clone — Questions answered](https://quinn.live/clone/answers/): Answer hub covering how Clone works, what it costs, and how it compares to influencer UGC and from-scratch AI ad tools.
 - [Clone vs alternatives](https://quinn.live/clone/vs/): Honest comparisons of Clone against Icon, Arcads, Creatify, Higgsfield, Billo, Insense, and Botika for fashion brands — who each tool is for, and when Clone is the better fit. Per-competitor "alternative" pages also exist (e.g. /heygen-alternative/).
@@ -46,6 +49,16 @@ Quinn is operated by Quinn Care Private Limited (India). It helps DTC, fashion, 
 - **Is Clone cheaper than influencer UGC?** Yes — a single influencer video is typically $50–$200 and ~14 days; one influencer budget ($50–$200) buys 5–22 Clone videos ($9 each at entry, ~$4.30 at volume), each ready in minutes.
 - **Is Clone good for Indian / ethnic fashion (sarees, kurtis, ethnic wear)?** Yes — you copy a proven viral reel 1:1 and swap your products in, and because Clone is built by Quinn, ethnic garments like sarees and kurtis hold up faithfully in the swap.
 - **What if a clone fails?** Flag it: fixable clones are redone free; genuinely un-cloneable ones are refunded. A failed clone never costs money.
+
+## Shoppable Videos — questions, answered
+
+- **What is a shoppable video?** A video with tappable product tags: a shopper watches, taps a product, and adds it to cart or checks out without leaving the video.
+- **What is Quinn Shoppable Videos & Reels?** A Shopify app that turns product videos — including Instagram reels and TikTok videos — into shoppable carousels, stories, floating widgets, grids, and pop-ups anywhere on a store. Built for Shopify; rated 4.9★ across 105 reviews.
+- **Can I import Instagram reels and TikToks?** Yes — paste a link and the video imports; no re-downloading or editing. You then tag the products it features.
+- **Will it slow my store down?** No. Videos are compressed up to 20× with AI, served from a CDN, and lazy-loaded, so pages stay fast and Core Web Vitals stay healthy.
+- **What does it cost?** There is a free plan; paid plans are Starter $9/mo, Growth $19/mo, and Scale $29/mo, each with a 7-day free trial. Plans are metered by monthly video views (Free 550, Starter 3,000, Growth 7,000, Scale 12,000).
+- **How does it compare to other shoppable-video apps?** Quinn is Built for Shopify with flat, low pricing and a generous free plan, and adds 20× AI compression and page- and media-level revenue attribution. Broader platforms (Videowise, Tolstoy, Firework) add live shopping or AI suites at higher, often view-metered pricing; ReelUp is the closest head-to-head. See https://quinn.live/shoppable-videos/vs/.
+- **How long does setup take?** About 5 minutes, with no theme code.
 
 ## Contact
 
