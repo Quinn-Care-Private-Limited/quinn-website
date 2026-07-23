@@ -1,0 +1,45 @@
+name: Update sitemap
+
+# Regenerates sitemap.xml from the pages on disk after every push to main,
+# so new pages are listed and <lastmod> stays accurate — no manual edits.
+# Google re-reads the sitemap on its own schedule, so there is nothing to
+# "submit"; keeping this file correct is all that's needed.
+
+on:
+  workflow_dispatch:          # allow manual runs from the Actions tab
+  push:
+    branches: [main]
+    paths-ignore:
+      - "sitemap.xml"        # the bot's own sitemap commit must not loop
+      - ".github/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0       # full history so per-file lastmod dates are real
+
+      - name: Regenerate sitemap.xml
+        run: python3 scripts/gen_sitemap.py
+
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain sitemap.xml)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add sitemap.xml
+            git commit -m "chore: update sitemap.xml [skip ci]"
+            git push
+            echo "sitemap.xml updated."
+          else
+            echo "sitemap.xml already up to date."
+          fi
