@@ -3,7 +3,8 @@ name: Update sitemap
 # Regenerates sitemap.xml from the pages on disk after every push to main,
 # so new pages are listed and <lastmod> stays accurate — no manual edits.
 # Google re-reads the sitemap on its own schedule, so there is nothing to
-# "submit"; keeping this file correct is all that's needed.
+# "submit"; keeping this file correct is all that's needed. Then pings
+# IndexNow so Bing/Yandex/etc. pick up today's changed URLs immediately.
 
 on:
   workflow_dispatch:          # allow manual runs from the Actions tab
@@ -43,3 +44,6 @@ jobs:
           else
             echo "sitemap.xml already up to date."
           fi
+
+      - name: Notify IndexNow (Bing / Yandex / Seznam / Naver)
+        run: python3 scripts/indexnow_ping.py
