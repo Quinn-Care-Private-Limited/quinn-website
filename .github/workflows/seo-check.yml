@@ -1,0 +1,25 @@
+name: SEO check
+
+# Guardrail: on every push, validate the site and fail if any indexable page
+# has a broken internal link, invalid JSON-LD, a missing canonical/og:image,
+# the wrong <h1> count, or an over-length title/description. Orphan pages
+# (0 inbound internal links) are reported as warnings. See scripts/seo_check.py.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.html"
+      - "scripts/seo_check.py"
+      - ".github/workflows/seo-check.yml"
+  pull_request:
+    paths:
+      - "**.html"
+
+jobs:
+  seo-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run SEO checks
+        run: python3 scripts/seo_check.py
