@@ -27,29 +27,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Meta Pixel — two datasets, both receive every event:
-         1021072786989890  "Clone's market data" (pairs with the Meta-hosted CAPI)
-         931040346691564   added 2026-07-27
-       fbq('track', …) dispatches to every initialised pixel, so the PageView here and
-       the Lead events further down this page reach both. To retire a dataset, delete
-       its init line. For a single-pixel event use fbq('trackSingle', '<id>', …).
-       Subpages load the same pair via /clone/meta-pixel.js -->
+  <!-- Meta Pixel — dataset 931040346691564 (sole dataset since 2026-07-27;
+       previous pixel 1021072786989890 retired). Pairs with the Conversions API,
+       which is configured server-side — no token belongs in this repo.
+       fbq('track', …) dispatches to every initialised pixel, so the PageView here
+       and the Lead events further down this page both report to it.
+       Subpages load the same pixel via /clone/meta-pixel.js -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1021072786989890');
     fbq('init', '931040346691564');
     fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" alt=""
-      src="https://www.facebook.com/tr?id=1021072786989890&ev=PageView&noscript=1" />
-    <img height="1" width="1" style="display:none" alt=""
-      src="https://www.facebook.com/tr?id=931040346691564&ev=PageView&noscript=1" />
-  </noscript>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=931040346691564&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel -->
 
   <script type="application/ld+json">

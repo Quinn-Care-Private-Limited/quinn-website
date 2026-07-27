@@ -1,17 +1,19 @@
 /* Meta Pixel — Clone pages only.
  *
- * Two datasets are initialised, and both receive every event:
- *   1021072786989890  "Clone's market data" — the original, paired with the
- *                     Meta-hosted Conversions API.
- *   931040346691564   added 2026-07-27.
+ * Dataset: 931040346691564 (sole dataset since 2026-07-27).
+ * The previous pixel, 1021072786989890 "Clone's market data", has been retired.
  *
  * fbq('track', …) dispatches to every initialised pixel, so PageView here — and
  * any custom event fired elsewhere on the page, e.g. the Lead events on the
- * landing page — reach both datasets automatically.
+ * landing page — report to this dataset automatically.
  *
- * To retire a dataset: delete its fbq('init', …) line below.
+ * SECURITY: the Conversions API pairs with this pixel but is configured
+ * server-side (Meta Events Manager, or the clone.quinn.live backend). A CAPI
+ * access token must NEVER appear in this repository — it is public, and every
+ * file here is served to the browser. See CAPI notes in the deploy docs.
+ *
  * To send an event to one dataset only, use:
- *   fbq('trackSingle', '<pixel-id>', '<EventName>', { … });
+ *   fbq('trackSingle', '931040346691564', '<EventName>', { … });
  *
  * Loaded on the Clone landing page and its subpages. NOT loaded on
  * /shoppable-videos/*, /photoshoots/, or the Shoppable Videos comparison pages.
@@ -27,6 +29,5 @@
   s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
 }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '1021072786989890');
 fbq('init', '931040346691564');
 fbq('track', 'PageView');
